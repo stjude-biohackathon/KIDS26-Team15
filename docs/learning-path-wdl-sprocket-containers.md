@@ -9,6 +9,7 @@ A recommended reading order for building bioinformatics workflows. Follow these 
 - [resources-snap.md](resources-snap.md) — what SNAP is and how the analysis pipeline is organized
 - [resources-sprocket.md](resources-sprocket.md) — what Sprocket does and how the repo is organized
 - [resources-wilds-wdl.md](resources-wilds-wdl.md) — overview of the WILDS WDL Library
+- [resources-trainings.md](resources-trainings.md) — St. Jude GitHub team guide and reproducibility course
 
 ---
 

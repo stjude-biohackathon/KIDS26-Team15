@@ -41,6 +41,7 @@ assets/             Images or other supporting project assets
 - **VM / local-only setup:** [vm-local-only-setup.md](../docs/vm-local-only-setup.md) — no HPC, Docker + `sprocket.local.toml`
 - **Test results log:** [hackathon-test-results.md](../results/hackathon-test-results.md) — Track C maintains during the event
 - New to Git or GitHub: [Git and GitHub basics](../docs/git-github-basics.md)
+- St. Jude trainings (GitHub + reproducibility): [resources-trainings.md](../docs/resources-trainings.md)
 - WDL + Sprocket primer: [learning-path-wdl-sprocket-containers.md](../docs/learning-path-wdl-sprocket-containers.md)
 - SNAP overview: [resources-snap.md](../docs/resources-snap.md)
 - Sprocket overview: [resources-sprocket.md](../docs/resources-sprocket.md)
@@ -98,7 +99,7 @@ For details, please visit: https://issuu.com/sjcrh/docs/st._jude_code_of_conduct
 - [ ] Share [hackathon-runbook.md](hackathon-runbook.md) with the team.
 
 
-## During the Hackathon (6–10 hours)
+## During the Hackathon
 
 Follow the [hackathon runbook](hackathon-runbook.md) for the detailed timeline. Summary:
 
@@ -182,8 +183,8 @@ Keep communication easy to find and easy to use during the event.
 - **Primary channel:** [Slack general channel](https://stjudebiohackathon.slack.com/archives/C04JD4M3TCM)
 - **Slack team channel:** [Add the team slack channel]
 - **Team lead:** Antonia Chroni ([@AntoniaChroni](https://github.com/AntoniaChroni))
-- **Demo lead:** Jason Vu ([@JVVU01](https://github.com/JVVU01))
-- **Test log owner:** Lindsey Warren ([@lrwarren94](https://github.com/lrwarren94))
+- **Demo lead:** TBD
+- **Test log owner:** TBD
 - **Check-in time:** Hour 3 sync (see [runbook](hackathon-runbook.md))
 
 Use `project-management/check-in.md` for short updates when useful (create the file if needed). Do not store private contact details or sensitive project information in this public repository.
@@ -195,5 +196,6 @@ Use `project-management/check-in.md` for short updates when useful (create the f
 - [Hackathon runbook](hackathon-runbook.md)
 - [Test results log](../results/hackathon-test-results.md)
 - [SNAP overview](../docs/resources-snap.md)
+- [St. Jude trainings](../docs/resources-trainings.md)
 
 Use only the templates that help. The repository should make progress easier, not require paperwork for its own sake.

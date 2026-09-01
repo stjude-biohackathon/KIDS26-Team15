@@ -312,6 +312,7 @@ workflow_profile:
 - [Snap-Sprocket-ROI-one-pager.md](../analyses/sc-rna-seq-snap-Victoria-Knockout/docs/Snap-Sprocket-ROI-one-pager.md) — ROI narrative for slides
 - [resources-snap.md](../docs/resources-snap.md) — SNAP learning resources
 - [resources-sprocket.md](../docs/resources-sprocket.md) — Sprocket learning resources
+- [resources-trainings.md](../docs/resources-trainings.md) — GitHub team guide + reproducibility course
 - [learning-path-wdl-sprocket-containers.md](../docs/learning-path-wdl-sprocket-containers.md) — WDL + containers primer
 
 ---
