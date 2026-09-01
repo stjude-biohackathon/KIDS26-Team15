@@ -11,9 +11,10 @@ Use this page to get the team moving. It is intentionally short: a three-day pro
 
 ## The Team
 
-- **Members and roles:** Record these in [team.md](team.md).
-- **Ways of working:** Use the [team lead checklist](CHECKLIST.md) to agree on branches, reviews, communication, and check-ins.
-- **Current plan:** Keep small first tasks and risks in [project-plan.md](project-plan.md).
+- **Members and roles:** [team.md](team.md)
+- **Hackathon runbook:** [hackathon-runbook.md](hackathon-runbook.md)
+- **Test log:** [hackathon-test-results.md](../results/hackathon-test-results.md)
+- **Current plan:** [project-plan.md](project-plan.md)
 
 ## Project Structure
 
@@ -24,6 +25,7 @@ data/raw/           Original inputs; do not edit in place
 data/processed/     Cleaned or transformed data
 models/             Models, predictions, or model notes
 project-management/ Team plan, roles, decisions, and check-ins
+results/            Test logs, ROI notes, and event artifacts
 src/                Reusable code, organized by purpose
 docs/               Optional learning and troubleshooting guides
 assets/             Images or other supporting project assets
@@ -34,10 +36,17 @@ assets/             Images or other supporting project assets
 
 ## Resources
 
-- New to Git or GitHub or need to know how to work with git in a shared repo: read [Git and GitHub basics](../docs/git-github-basics.md).
-- Using Copilot agents: read [AI assistance](../docs/ai-guidance.md).
-- Stuck during setup: open [troubleshooting](../docs/troubleshooting.md).
-- Collaborating on changes: see [Contributing to your team](#contributing-to-your-team) below.
+- **Hackathon runbook:** [hackathon-runbook.md](hackathon-runbook.md) — pairs, test matrix, timeline, commands
+- **VM and HPC setup:** [vm-hpc-setup.md](../docs/vm-hpc-setup.md) — shared VM + St. Jude HPC
+- **VM / local-only setup:** [vm-local-only-setup.md](../docs/vm-local-only-setup.md) — no HPC, Docker + `sprocket.local.toml`
+- **Test results log:** [hackathon-test-results.md](../results/hackathon-test-results.md) — Track C maintains during the event
+- New to Git or GitHub: [Git and GitHub basics](../docs/git-github-basics.md)
+- WDL + Sprocket primer: [learning-path-wdl-sprocket-containers.md](../docs/learning-path-wdl-sprocket-containers.md)
+- SNAP overview: [resources-snap.md](../docs/resources-snap.md)
+- Sprocket overview: [resources-sprocket.md](../docs/resources-sprocket.md)
+- Using Copilot agents: [AI assistance](../docs/ai-guidance.md)
+- Stuck during setup: [troubleshooting](../docs/troubleshooting.md)
+- SNAP launcher details: [scripts/README.md](../analyses/sc-rna-seq-snap-Victoria-Knockout/scripts/README.md)
 
 ## Contributing to your team
 ### A Simple Workflow
@@ -77,13 +86,58 @@ For details, please visit: https://issuu.com/sjcrh/docs/st._jude_code_of_conduct
 
 ## Team Leads: Before the Event
 
-- [ ] Complete the [project profile](../README.md#project-profile).
+- [x] Complete the [project profile](../README.md#project-profile).
 - [ ] Agree on one communication channel and a short check-in rhythm.
-- [ ] Create three to six small first tasks in the project board or [project-plan.md](project-plan.md).
-- [ ] Use the plan and the expected output to suggest practical roles in [team.md](team.md).
+- [x] Create first tasks in [project-plan.md](project-plan.md) and roles in [team.md](team.md).
+- [ ] Cell Ranger complete for Victoria Knockout cohort.
+- [ ] `project_metadata.tsv` present and valid.
+- [ ] Apptainer `.sif` image accessible on HPC.
+- [ ] One upstream-only job pre-submitted as demo backup.
+- [ ] All teammates added to GitHub repo and can clone.
+- [ ] VM and HPC access confirmed for each pair.
+- [ ] Share [hackathon-runbook.md](hackathon-runbook.md) with the team.
 
 
-## During the Three Days
+## During the Hackathon (6–10 hours)
+
+Follow the [hackathon runbook](hackathon-runbook.md) for the detailed timeline. Summary:
+
+### Hour 0–1: Align and start
+
+- [ ] Kickoff: confirm pairs (A/B/C/D) and shared test log.
+- [ ] Everyone clones repo and runs T1 (`test-downstream-layout.sh`).
+- [ ] Everyone runs T2 dry-run (`launch-snap-downstream.sh`).
+- [ ] HPC pairs confirm `module load sprocket R singularity`.
+
+### Hour 1–3: Parallel track work
+
+- [ ] **Track A** (Rojina + Antonia): code audit started; issues filed.
+- [ ] **Track B** (Sarthak + David): T1–T4 logged with screenshots.
+- [ ] **Track C** (Lindsey + Rachana): test log open; PR review checklist ready.
+- [ ] **Track D** (Tanjim + Jason): HPC golden-path submit (T13).
+
+### Hour 3: Sync
+
+- [ ] Blockers raised; VM-only pairs hand off HPC tests to St Jude members.
+- [ ] Redistribute work if anyone is stuck.
+
+### Hour 3–5: Build and learn
+
+- [ ] Track B: T5–T8 (error handling, resource scaling).
+- [ ] Track A: T9–T12 (YAML overlay, WDL safety, parallel workers).
+- [ ] Track D: T14–T16 (monitoring, email, biology sanity check).
+- [ ] Track C: T17–T19 (ROI comparison, troubleshooting doc updates).
+- [ ] Record decisions in test log or GitHub issues.
+
+### Hour 5–8: Explain and hand off
+
+- [ ] Slides drafted (1–2 per track).
+- [ ] Demo rehearsed once (live or recorded fallback).
+- [ ] Sign-off rows completed in [hackathon-test-results.md](../results/hackathon-test-results.md).
+- [ ] Open PRs merged or clearly documented as follow-up.
+
+
+## During the Three Days (general guidance)
 
 ### Day 1: Align and start
 
@@ -110,25 +164,27 @@ For details, please visit: https://issuu.com/sjcrh/docs/st._jude_code_of_conduct
 
 Use this space for the material that helps someone understand the project after the event.
 
-- **Final demo or report:** [Add a link]
-- **Main result:** [Summarize what the team built or learned]
-- **How to reproduce or run it:** [Link to the relevant instructions]
-- **Data and source notes:** [Link to provenance, citations, and licenses]
-- **Known limitations:** [What should a reader be careful about?]
-- **Next steps:** [What would be worth doing next?]
+- **Final demo or report:** [Add link to recording or slide deck]
+- **Main result:** Resource-aware SNAP + Sprocket orchestrator tested on Victoria Knockout; ROI documented vs legacy `launch_full_pipeline.sh`
+- **How to reproduce or run it:** [hackathon-runbook.md](hackathon-runbook.md) and [scripts/README.md](../analyses/sc-rna-seq-snap-Victoria-Knockout/scripts/README.md)
+- **Test results:** [hackathon-test-results.md](../results/hackathon-test-results.md)
+- **Code review:** `docs/code-review-notes.md` (created during event)
+- **Data and source notes:** Victoria Knockout cohort in `analyses/sc-rna-seq-snap-Victoria-Knockout/`; see [ROI one-pager](../analyses/sc-rna-seq-snap-Victoria-Knockout/docs/Snap-Sprocket-ROI-one-pager.md)
+- **Known limitations:** VM cannot submit to LSF; Day-1 Sprocket tuning required ~17 attempts before stable upstream success
+- **Next steps:** Multi-project scatter (`snap_multi_project.wdl`), CI layout check, production rollout to additional SNAP projects
 
 Keep generated figures and reports clearly named. Do not commit sensitive data or files that cannot be redistributed.
 
 ## Communications
 
-Keep communication easy to find and easy to use during the three-day event.
+Keep communication easy to find and easy to use during the event.
 
-- **Primary channel:** [Add the team channel or meeting link]
+- **Primary channel:** [Slack general channel](https://stjudebiohackathon.slack.com/archives/C04JD4M3TCM)
 - **Slack team channel:** [Add the team slack channel]
-- **Team lead:** [Add name and GitHub handle]
-- **Mentor or support contact:** [Add contact]
-- **Check-in time:** [Add a recurring time or agree in the team plan]
-- **Slack general channel:** [Use this general channel for communication to all teams](https://stjudebiohackathon.slack.com/archives/C04JD4M3TCM)
+- **Team lead:** Antonia Chroni ([@AntoniaChroni](https://github.com/AntoniaChroni))
+- **Demo lead:** Jason Vu ([@JVVU01](https://github.com/JVVU01))
+- **Test log owner:** Lindsey Warren ([@lrwarren94](https://github.com/lrwarren94))
+- **Check-in time:** Hour 3 sync (see [runbook](hackathon-runbook.md))
 
 Use `project-management/check-in.md` for short updates when useful (create the file if needed). Do not store private contact details or sensitive project information in this public repository.
 
@@ -136,5 +192,8 @@ Use `project-management/check-in.md` for short updates when useful (create the f
 
 - [Team and roles](team.md)
 - [Project plan](project-plan.md)
+- [Hackathon runbook](hackathon-runbook.md)
+- [Test results log](../results/hackathon-test-results.md)
+- [SNAP overview](../docs/resources-snap.md)
 
 Use only the templates that help. The repository should make progress easier, not require paperwork for its own sake.
