@@ -2,6 +2,8 @@
 
 This is the short path for participants who are new to Git or GitHub. You only need the parts that help your team work today.
 
+**St. Jude team courses:** For code review, PR checklists, and reproducibility practices, see [resources-trainings.md](resources-trainings.md).
+
 ## Official Guides
 
 - [Hello World](https://docs.github.com/en/get-started/start-your-journey/hello-world)
