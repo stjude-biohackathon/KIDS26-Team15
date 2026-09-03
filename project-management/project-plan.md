@@ -10,14 +10,14 @@
 
 ## Goal
 
-By the end of the hackathon (6–10 hours), the team will have **tested, documented, and demonstrated** the new SNAP + Sprocket resource-aware downstream orchestrator (`launch-snap-downstream.sh`) and shown measurable ROI over the legacy `launch_full_pipeline.sh` path.
+By the end of the hackathon (Day 1: 4 h · Day 2: 8 h · Day 3: 4 h afternoon + demo 3:00–6:00 PM), the team will have **tested, documented, and demonstrated** the new SNAP + Sprocket resource-aware downstream orchestrator (`launch-snap-downstream.sh`) and shown measurable ROI over the legacy `launch_full_pipeline.sh` path.
 
 Specific outcomes:
 
 1. Test matrix (T1–T20) executed and logged with pass/fail evidence
 2. Code-review notes and GitHub issues for any bugs found
 3. Updated troubleshooting docs from real VM/HPC errors
-4. 5-minute demo + slides showing YAML toggles, auto-scaling, and one-command launch
+4. Organizer **3-slide template** deck + **2-minute lightning talk** + live demo for judges (3:00–6:00 PM, Day 3)
 
 A full upstream Seurat run completing on HPC is a **bonus**, not required for success.
 
@@ -42,33 +42,42 @@ A full upstream Seurat run completing on HPC is a **bonus**, not required for su
 
 ### Before the event (team lead)
 
-- [ ] Cell Ranger complete for Victoria Knockout — Antonia
+- [x] Cell Ranger complete for Victoria Knockout — Antonia
 - [ ] `project_metadata.tsv` present and valid — Antonia
 - [ ] Apptainer `.sif` image accessible on HPC — Antonia
-- [ ] One upstream-only job pre-submitted as demo backup — Antonia + Jason
+- [x] One upstream-only job pre-submitted as demo backup — Antonia
 - [ ] All teammates added to GitHub repo — Antonia
 - [ ] VM and HPC access confirmed for each pair — Antonia
 
-### Day of — Phase 0 (everyone, first 45 min)
+### Day 1 — Align and start (4 h)
 
+- [ ] Kickoff: confirm pairs (A/B/C/D) and shared test log — All
 - [ ] Clone repo and enter analysis directory — All
-- [ ] T1: `bash scripts/test-downstream-layout.sh` — All pairs
-- [ ] T2: `bash launch-snap-downstream.sh` dry-run — All pairs
+- [ ] T1: `bash scripts/test-downstream-layout.sh` — All
+- [ ] T2: `bash launch-snap-downstream.sh` dry-run — All
 - [ ] Open shared test log — Track C
+- [ ] Track A: Code audit started — Rojina + Antonia
+- [ ] Track B: T1–T4 logged with screenshots — Sarthak
+- [ ] Track D: HPC submit plan confirmed — Tanjim + Antonia
+- [ ] End-of-day sync: blockers and Day 2 priorities — All
 
-### Day of — Parallel tracks (hours 1–5)
+### Day 2 — Build and learn (8 h)
 
-- [ ] Track A: Code audit of launcher, estimator, WDL generator — Rojina + Antonia
-- [ ] Track B: Run T1–T8, log results with screenshots — Sarthak + David
-- [ ] Track C: Maintain test log, review PRs, draft troubleshooting — Lindsey + Rachana
-- [ ] Track D: HPC golden-path submit (T13–T16), capture demo assets — Jason + Tanjim
+- [ ] Track A: Code audit of launcher, estimator, WDL generator (T9–T12) — Rojina + Antonia
+- [ ] Track B: Run T5–T8, log results with screenshots — Sarthak
+- [ ] Track C: Maintain test log, review PRs, draft troubleshooting (T17–T19) — Lindsey + Rachana
+- [ ] Track D: HPC golden-path submit (T13–T16), capture demo assets — Tanjim + Antonia
+- [ ] Mid-day sync: redistribute HPC handoffs for blocked VM pairs — All
+- [ ] Draft 3-slide deck content (organizer template) — Track C + D
 
-### Day of — Wrap-up (hours 5–8)
+### Day 3 — Explain and hand off (4 h afternoon + demo 3:00–6:00 PM)
 
-- [ ] Sync at 3 h mark: redistribute HPC handoffs for blocked VM pairs — All
-- [ ] Slides draft (1–2 slides per track) — All
-- [ ] Demo rehearsal + backup screen recording — Track D
-- [ ] Sign-off in test-results log — All track leads
+- [ ] Final test sign-off in test-results log — All track leads
+- [ ] Finalize 3-slide deck — Track C + D
+- [ ] Rehearse 2-min lightning talk (2–4 presenters) — Tanjim + Antonia (+ Sarthak/Lindsey)
+- [ ] **3:00–4:00 PM:** Lightning presentations to judges (2 min, 3-slide template)
+- [ ] **After lightning:** Live demo in demo room; capture judge Q&A and feedback
+- [ ] **4:00–6:00 PM:** Demo session continues; feedback documented — Presenters + Track C
 
 ---
 
@@ -76,14 +85,13 @@ A full upstream Seurat run completing on HPC is a **bonus**, not required for su
 
 | When | Focus | Expected outcome |
 |------|-------|------------------|
-| **Hour 0–1** | Setup, clone, smoke tests (T1–T2) | Everyone passes layout + dry-run on their environment |
-| **Hour 1–3** | Parallel track work | Each pair has first deliverable started |
-| **Hour 3** | Sync + blocker triage | VM/HPC gaps documented; HPC pairs pick up blocked tests |
-| **Hour 3–5** | Continue testing + incorporate findings | T1–T16 logged; issues filed; troubleshooting updated |
-| **Hour 5–7** | Slides + demo prep | 6–8 slides drafted; demo rehearsed once |
-| **Hour 7–8** | Buffer | PR merges, final sign-off, backup recording if HPC slow |
-
-**6-hour compressed version:** Skip T4, T8, T12, T20; shorten slide time to 1 h.
+| **Day 1 (4 h)** | Setup, clone, smoke tests (T1–T2), start parallel tracks | Everyone passes layout + dry-run; T1–T4 started; test log open |
+| **Day 1 end** | Sync + blocker triage | VM/HPC gaps documented; Day 2 priorities assigned |
+| **Day 2 (8 h)** | Parallel track work + documentation | T1–T16 logged; issues filed; troubleshooting updated |
+| **Day 2 end** | 3-slide content drafted | Slide 1–3 content ready; demo screenshots captured |
+| **Day 3 (4 h afternoon)** | Polish + rehearse | Deck final; lightning + live demo rehearsed once |
+| **Day 3, 3:00–4:00 PM** | Lightning talks | 2-min presentation to judges (2–4 presenters, 3-slide template) |
+| **Day 3, 3:00–6:00 PM** | Live demo + judge feedback | Demo room walkthrough; Q&A captured |
 
 ---
 
@@ -95,8 +103,9 @@ The project is complete when:
 - [ ] At least **one HPC submit** (T13) documented with job ID
 - [ ] **Code-review notes** committed or issues filed for any major findings
 - [ ] **Troubleshooting doc** updated with at least 3 real errors + fixes
-- [ ] **5-minute demo** rehearsed (live or recorded fallback)
-- [ ] **Slides** cover: problem, solution, how it works, ROI, limitations
+- [ ] **3-slide deck** (organizer template) covers: problem, solution, results/impact
+- [ ] **2-minute lightning talk** rehearsed with 2–4 presenters
+- [ ] **Live demo** rehearsed (or recorded fallback ready)
 
 ### If done early — stretch goals
 
@@ -112,14 +121,14 @@ The project is complete when:
 | Risk | Mitigation | Owner |
 |------|------------|-------|
 | VM cannot run `sprocket` or submit to LSF | VM pairs do dry-run + YAML tests (T1–T6); HPC pairs run T7+ | Antonia |
-| Long upstream runtime blocks demo | Pre-submit one job before event; demo shows submitted state + recording | Jason |
+| Long upstream runtime blocks demo | Pre-submit one job before event; demo shows submitted state + recording | Antonia |
 | Apptainer `.sif` missing on VM | Resource estimation and config tests only on VM | Sarthak |
 | NFS bus errors with parallel R workers | Default `SNAP_FUTURE_WORKERS=1`; document in T12 | Rojina |
-| Remote teammates lack HPC access | Pair with St Jude members (Jason, Rojina) for submit tests | Antonia |
+| Remote teammates lack HPC access | Pair with St Jude members (Rojina, Antonia) for submit tests | Antonia |
 | Git clone slow on event day | Pre-clone on shared drive or distribute zip | Lindsey |
 
 **Open questions:**
 
-- [ ] Which Slack channel is the team channel?
+- [x] Which Slack channel is the team channel?
 - [ ] Are hackathon VMs pre-loaded with `module load sprocket R singularity`?
-- [ ] Is Victoria Knockout Cell Ranger output staged and accessible to all testers?
+- [ ] Is Victoria Knockout Cell Ranger output accessible to all testers? 

@@ -18,18 +18,48 @@ Use this page to get the team moving. It is intentionally short: a three-day pro
 
 ## Project Structure
 
-Use the folders that fit your project. You do not need to fill every folder. The following is just a suggestion, yours might look different.
+Current layout for KIDS26 Team 15. The main work area is `analyses/sc-rna-seq-snap-Victoria-Knockout/`.
 
 ```text
-data/raw/           Original inputs; do not edit in place
-data/processed/     Cleaned or transformed data
-models/             Models, predictions, or model notes
-project-management/ Team plan, roles, decisions, and check-ins
-results/            Test logs, ROI notes, and event artifacts
-src/                Reusable code, organized by purpose
-docs/               Optional learning and troubleshooting guides
-assets/             Images or other supporting project assets
+KIDS26-Team15/
+├── README.md                    Team profile and getting started
+├── LICENSE.md                   Repository license
+│
+├── analyses/                    SNAP analysis projects
+│   ├── sc-rna-seq-snap-Victoria-Knockout/   Active hackathon analysis (start here)
+│   │   ├── launch-snap-downstream.sh        One-command downstream launcher
+│   │   ├── launch_full_pipeline.sh          Legacy launcher (for ROI comparison)
+│   │   ├── project_parameters.Config.yaml   Master workflow config (edit by hand)
+│   │   ├── scripts/                         Launcher, estimator, WDL generator, tests
+│   │   ├── wdl/                             Workflow definitions (snap.wdl, tasks.wdl, …)
+│   │   ├── inputs/                          Sprocket JSON/YAML inputs (generated + test)
+│   │   ├── data/                            Project metadata and staged inputs
+│   │   ├── docs/                            ROI one-pager, run metrics, pipeline notes
+│   │   ├── figures/                         QC plots and demo screenshots
+│   │   └── out/                             Sprocket run outputs (not committed)
+│
+├── docs/                        Team learning guides and setup
+│   ├── vm-hpc-setup.md          Shared VM + St. Jude HPC setup
+│   ├── vm-local-only-setup.md   Local/Docker setup (no HPC)
+│   ├── troubleshooting.md       Common errors and fixes
+│   ├── git-github-basics.md     Git and GitHub workflow
+│   ├── resources-snap.md          SNAP learning resources
+│   ├── resources-sprocket.md    Sprocket learning resources
+│   └── …                        WDL primer, trainings, AI guidance
+│
+├── project-management/          Team plan, roles, and event coordination
+│   ├── CHECKLIST.md             This file — team lead checklist
+│   ├── hackathon-runbook.md     Pairs, test matrix, 3-day timeline, demo prep
+│   ├── project-plan.md          Goals, milestones, definition of done
+│   ├── team.md                  Roster, pair assignments, deliverables
+│   ├── meetings.txt             Sync notes and judge feedback
+│   └── stjude-biohackathon-kids26-team15-info.xlsx   Team roster source
+│
+└── results/                     Event artifacts and test logs
+    └── hackathon-test-results.md   Shared pass/fail log (Track C maintains)
 ```
+
+**Quick start:** `cd analyses/sc-rna-seq-snap-Victoria-Knockout` then run `bash scripts/test-downstream-layout.sh`.
 
 ## Data, meta data and secrets
 **Do not commit passwords, API keys, private information, or identifiable human or clinical data. Check the source and license before sharing external data or media.**
@@ -101,64 +131,67 @@ For details, please visit: https://issuu.com/sjcrh/docs/st._jude_code_of_conduct
 
 ## During the Hackathon
 
-Follow the [hackathon runbook](hackathon-runbook.md) for the detailed timeline. Summary:
+Follow the [hackathon runbook](hackathon-runbook.md) for the detailed timeline. **Schedule: Day 1 (4 h) · Day 2 (8 h) · Day 3 (4 h afternoon) · Demo 3:00–6:00 PM.**
 
-### Hour 0–1: Align and start
+### Day 1 — Align and start (4 h)
 
 - [ ] Kickoff: confirm pairs (A/B/C/D) and shared test log.
 - [ ] Everyone clones repo and runs T1 (`test-downstream-layout.sh`).
 - [ ] Everyone runs T2 dry-run (`launch-snap-downstream.sh`).
 - [ ] HPC pairs confirm `module load sprocket R singularity`.
-
-### Hour 1–3: Parallel track work
-
 - [ ] **Track A** (Rojina + Antonia): code audit started; issues filed.
-- [ ] **Track B** (Sarthak + David): T1–T4 logged with screenshots.
+- [ ] **Track B** (Sarthak): T1–T4 logged with screenshots.
 - [ ] **Track C** (Lindsey + Rachana): test log open; PR review checklist ready.
-- [ ] **Track D** (Tanjim + Jason): HPC golden-path submit (T13).
+- [ ] **Track D** (Tanjim + Antonia): HPC submit plan confirmed.
+- [ ] End-of-day sync: blockers raised; Day 2 priorities set.
 
-### Hour 3: Sync
+### Day 2 — Build and learn (8 h)
 
-- [ ] Blockers raised; VM-only pairs hand off HPC tests to St Jude members.
-- [ ] Redistribute work if anyone is stuck.
-
-### Hour 3–5: Build and learn
-
-- [ ] Track B: T5–T8 (error handling, resource scaling).
-- [ ] Track A: T9–T12 (YAML overlay, WDL safety, parallel workers).
-- [ ] Track D: T14–T16 (monitoring, email, biology sanity check).
-- [ ] Track C: T17–T19 (ROI comparison, troubleshooting doc updates).
+- [ ] **Track B** (Sarthak): T5–T8 (error handling, resource scaling).
+- [ ] **Track A** (Rojina + Antonia): T9–T12 (YAML overlay, WDL safety, parallel workers).
+- [ ] **Track D** (Tanjim + Antonia): T13–T16 (HPC submit, monitoring, biology sanity check).
+- [ ] **Track C** (Lindsey + Rachana): T17–T19 (ROI comparison, troubleshooting doc updates).
+- [ ] Mid-day sync: VM-only pairs hand off HPC tests to St Jude members.
 - [ ] Record decisions in test log or GitHub issues.
-
-### Hour 5–8: Explain and hand off
-
-- [ ] Slides drafted (1–2 per track).
-- [ ] Demo rehearsed once (live or recorded fallback).
+- [ ] Draft 3-slide deck content (organizer template).
 - [ ] Sign-off rows completed in [hackathon-test-results.md](../results/hackathon-test-results.md).
+
+### Day 3 — Explain and hand off (4 h afternoon + demo 3:00–6:00 PM)
+
+- [ ] Finalize 3-slide deck (organizer template) — Track C + D.
+- [ ] Confirm 2–4 lightning presenters: Tanjim + Antonia (+ Sarthak and/or Lindsey).
+- [ ] Rehearse 2-min lightning talk (total ≤ 2 min).
+- [ ] Rehearse live demo flow for demo room.
+- [ ] **3:00–4:00 PM:** Lightning presentations to judges.
+- [ ] **After lightning:** Live demo in demo room; field judge questions.
+- [ ] **4:00–6:00 PM:** Capture judge feedback in `meetings.txt` or shared doc.
 - [ ] Open PRs merged or clearly documented as follow-up.
 
 
 ## During the Three Days (general guidance)
 
-### Day 1: Align and start
+### Day 1: Align and start (4 h)
 
 - Confirm the question, problem, or opportunity.
 - Confirm the inputs and expected output.
 - Make sure everyone can clone the repository and make a small change.
 - Agree on branch, commit, and review habits.
+- Complete smoke tests (T1–T2) and start parallel track work.
 
-### Day 2: Build and learn
+### Day 2: Build and learn (8 h)
 
 - Keep tasks small enough to finish or review in one sitting.
 - Record decisions that change the approach in a decision log (create `decisions.md` if useful).
 - Document data sources, assumptions, and unexpected limitations as they appear.
-- Check in briefly and redistribute work when someone is blocked.
+- Check in at mid-day and redistribute work when someone is blocked.
+- Draft 3-slide deck content before end of day.
 
-### Day 3: Explain and hand off
+### Day 3: Explain and hand off (4 h afternoon)
 
-- Decide what the final demo and booth must show as a team.
-- Make the main workflow understandable to someone who was not in the room.
-- Capture what worked, what did not, and what should happen next.
+- Finalize the organizer 3-slide template deck.
+- Rehearse the 2-minute lightning talk and live demo.
+- Present to judges (3:00–4:00 PM lightning; demo room after).
+- Capture what worked, what did not, and judge feedback (4:00–6:00 PM).
 - Run the available checks and record their results.
 
 # Final Output and Handoff
@@ -166,6 +199,8 @@ Follow the [hackathon runbook](hackathon-runbook.md) for the detailed timeline. 
 Use this space for the material that helps someone understand the project after the event.
 
 - **Final demo or report:** [Add link to recording or slide deck]
+- **Lightning talk:** 2 min, 3-slide organizer template, 2–4 presenters (Day 3, 3:00–4:00 PM)
+- **Live demo:** Demo room after lightning; judge Q&A and feedback (3:00–6:00 PM)
 - **Main result:** Resource-aware SNAP + Sprocket orchestrator tested on Victoria Knockout; ROI documented vs legacy `launch_full_pipeline.sh`
 - **How to reproduce or run it:** [hackathon-runbook.md](hackathon-runbook.md) and [scripts/README.md](../analyses/sc-rna-seq-snap-Victoria-Knockout/scripts/README.md)
 - **Test results:** [hackathon-test-results.md](../results/hackathon-test-results.md)
@@ -183,9 +218,10 @@ Keep communication easy to find and easy to use during the event.
 - **Primary channel:** [Slack general channel](https://stjudebiohackathon.slack.com/archives/C04JD4M3TCM)
 - **Slack team channel:** [Add the team slack channel]
 - **Team lead:** Antonia Chroni ([@AntoniaChroni](https://github.com/AntoniaChroni))
-- **Demo lead:** TBD
-- **Test log owner:** TBD
-- **Check-in time:** Hour 3 sync (see [runbook](hackathon-runbook.md))
+- **Demo lead:** Tanjim Hassan + Antonia Chroni
+- **Test log owner:** Lindsey Warren + Rachana Pandey
+- **Check-in times:** Day 1 end-of-day sync · Day 2 mid-day sync (see [runbook](hackathon-runbook.md))
+- **Demo session:** Day 3, 3:00–6:00 PM (lightning 3:00–4:00 PM, then live demo + judge feedback)
 
 Use `project-management/check-in.md` for short updates when useful (create the file if needed). Do not store private contact details or sensitive project information in this public repository.
 
