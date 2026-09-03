@@ -207,7 +207,7 @@ Use this space for the material that helps someone understand the project after 
 - **Code review:** `docs/code-review-notes.md` (created during event)
 - **Data and source notes:** Victoria Knockout cohort in `analyses/sc-rna-seq-snap-Victoria-Knockout/`; see [ROI one-pager](../analyses/sc-rna-seq-snap-Victoria-Knockout/docs/Snap-Sprocket-ROI-one-pager.md)
 - **Known limitations:** VM cannot submit to LSF; Day-1 Sprocket tuning required ~17 attempts before stable upstream success
-- **Next steps:** Multi-project scatter (`snap_multi_project.wdl`), CI layout check, production rollout to additional SNAP projects
+- **Next steps:** Extend orchestrator to other automated SNAP modalities (sc-ATAC, sc-PARSE, etc.); multi-omics runs (e.g. sc-RNA-seq + sc-ATAC); multiple projects in parallel (`snap_multi_project.wdl`); CI layout check; production rollout across St. Jude SNAP projects
 
 Keep generated figures and reports clearly named. Do not commit sensitive data or files that cannot be redistributed.
 

@@ -109,10 +109,11 @@ The project is complete when:
 
 ### If done early — stretch goals
 
-- Test `snap_multi_project.wdl` (T20)
+- Test `snap_multi_project.wdl` (T20) — multiple projects in parallel
 - Compare `SNAP_FUTURE_WORKERS=1` vs `2` on HPC (T12)
 - Open PRs for any quick fixes found during code review
 - Add GitHub Actions check: `bash scripts/test-downstream-layout.sh`
+- Document extension path to other SNAP modalities (sc-ATAC, sc-PARSE) and multi-omics pairing (sc-RNA-seq + sc-ATAC)
 
 ---
 

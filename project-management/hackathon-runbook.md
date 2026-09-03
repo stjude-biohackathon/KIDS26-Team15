@@ -199,7 +199,14 @@ Record results in `results/hackathon-test-results.md`. Status values: `PASS` | `
 |-------|-------|---------|
 | 1 — Problem | Track C | Manual LSF wiring: analyst time, fixed resources, error-prone bash flags |
 | 2 — Solution & what we built | Track A + B | YAML toggles + one-command launcher; test evidence (T1–T13) |
-| 3 — Results & impact | Track C + D | ROI table (T17–T18), limitations, next steps |
+| 3 — Results & impact | Track C + D | ROI table (T17–T18), limitations, next steps (see below) |
+
+**Slide 3 — next steps (for deck):**
+
+- Extend orchestrator pattern to other automated SNAP pipelines: **sc-ATAC**, **sc-PARSE**, and beyond (today validated on sc-RNA-seq)
+- Run **multi-omics workflows** — e.g. sc-RNA-seq paired with sc-ATAC — under one resource-aware launcher
+- Scale to **multiple projects** in parallel via `snap_multi_project.wdl` (scatter across cohorts)
+- CI layout check and production rollout to additional SNAP projects at St. Jude
 
 **2-minute lightning script:**
 
