@@ -241,7 +241,7 @@ docker info
 
 ## No-HPC test matrix
 
-Log results in [hackathon-test-results.md](../results/hackathon-test-results.md). Use IDs **L1–L18**. Status: `PASS` | `FAIL` | `SKIP` | `BLOCKED`.
+Log results in [hackathon-test-log.md](../deliverables/validation/hackathon-test-log.md). Use IDs **L1–L18**. Status: `PASS` | `FAIL` | `SKIP` | `BLOCKED`.
 
 | ID | Test | Tier | Owner track | Environment | Command / action | Expected |
 |----|------|------|-------------|-------------|------------------|----------|
@@ -341,7 +341,7 @@ docker images | grep rstudio
 sprocket validate wdl/snap.wdl @inputs/sprocket_inputs.json --config sprocket.local.toml
 ```
 
-Log L1, L2, L6 in [hackathon-test-results.md](../results/hackathon-test-results.md).
+Log L1, L2, L6 in [hackathon-test-log.md](../deliverables/validation/hackathon-test-log.md).
 
 ---
 

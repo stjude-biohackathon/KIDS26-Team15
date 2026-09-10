@@ -2,7 +2,7 @@
 
 **Project:** Resource-Aware SNAP + Sprocket Orchestrator  
 **Context:** One shared VM for the team + St. Jude HPC for real pipeline runs  
-**Related:** [hackathon-runbook.md](../project-management/hackathon-runbook.md) · [hackathon-test-results.md](../results/hackathon-test-results.md) · [resources-snap.md](./resources-snap.md) · [vm-local-only-setup.md](./vm-local-only-setup.md) (no HPC)
+**Related:** [hackathon-runbook.md](../project-management/hackathon-runbook.md) · [hackathon-test-log.md](../deliverables/validation/hackathon-test-log.md) · [resources-snap.md](./resources-snap.md) · [vm-local-only-setup.md](./vm-local-only-setup.md) (no HPC)
 
 ---
 
@@ -144,7 +144,7 @@ Complete before event day to save 1–2 hours.
 - [ ] Apptainer `.sif` path valid in `project_parameters.Config.yaml`
 - [ ] One upstream-only job pre-submitted on HPC (demo backup)
 - [ ] tmux session `team15` created; window layout agreed
-- [ ] Shared test log linked: [hackathon-test-results.md](../results/hackathon-test-results.md)
+- [ ] Shared test log linked: [hackathon-test-log.md](../deliverables/validation/hackathon-test-log.md)
 
 ---
 
@@ -173,7 +173,7 @@ cd /path/to/sc-rna-seq-snap-Victoria-Knockout
 bash launch-snap-downstream.sh    # dry-run
 ```
 
-Log results in [hackathon-test-results.md](../results/hackathon-test-results.md) (T1, T2).
+Log results in [hackathon-test-log.md](../deliverables/validation/hackathon-test-log.md) (T1, T2).
 
 ---
 
