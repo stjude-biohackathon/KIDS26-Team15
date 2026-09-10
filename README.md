@@ -37,7 +37,7 @@ KIDS26-Team15/
 └── deliverables/
     ├── validation/hackathon-test-log.md   Shared test log
     ├── reports/                           Event report-outs
-    └── slides/                            Presentation deck (+ speaker-notes links)
+    └── slides/                            Kickoff deck + event deck (TBD; see README there)
 ```
 
 **Tools:** SNAP (`sc-rna-seq-snap`), WDL, Sprocket, R/Seurat, Apptainer, LSF, YAML config · Victoria Knockout cohort (4 samples, ~27k cells)

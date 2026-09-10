@@ -1,7 +1,7 @@
 # Problem and solution overview
 
 **Use for:** Slide 1–2 narrative, reception report-out, quick team onboarding  
-**Go deeper:** [Participant FAQ](./participant-faq-snap-sprocket-resources.md) · [Hackathon runbook](../project-management/hackathon-runbook.md) · [Deck](../deliverables/slides/)
+**Go deeper:** [Participant FAQ](./participant-faq-snap-sprocket-resources.md) · [Hackathon runbook](../project-management/hackathon-runbook.md) · [Slides folder](../deliverables/slides/) (event deck TBD)
 
 ---
 
@@ -48,20 +48,20 @@ Both          →  sprocket validate / run
 
 ## Slide talking points
 
-### Slide 1 — Problem (Lindsey/Sarthak)
+### Slide 1 — Problem (Lindsey Warren)
 
 - Analysts spend time on **infrastructure**, not biology
 - Legacy launcher uses **static** resources — OOM kills or wasted queue time
 - Module toggles and LSF wiring are **scattered across bash scripts**
 
-### Slide 2 — Solution (Rojina/Antonia + Rachana/Tanjim)
+### Slide 2 — Solution (Antonia Chroni, Rojina Sapkota, Rachana Pandey)
 
 - **One launcher** — `launch-snap-downstream.sh`
 - **YAML toggles** — `run_upstream`, `run_integrative`, etc.
 - **Data-driven scaling** — resources from Victoria Knockout Cell Ranger metrics
 - **HPC evidence** — upstream submit (T4) and upstream + integrative submit (T8)
 
-### Slide 3 — Results (Lindsey/Sarthak + Rachana/Tanjim)
+### Slide 3 — Results (Lindsey Warren, Rachana Pandey)
 
 - ROI timing: legacy vs new (T15–T16)
 - Biology sign-off on upstream and integrative outputs (T6, T9)

@@ -24,7 +24,7 @@ By the end of the hackathon, the team will have **tested, documented, and demons
 - [ ] Code-review notes committed or issues filed for major findings
 - [ ] **Troubleshooting doc** updated with ≥3 real errors + fixes
 - [ ] **3-slide deck** (organizer template): problem, solution, results/impact
-- [ ] **2-minute lightning talk** rehearsed (2–4 presenters)
+- [ ] **2-minute lightning talk** rehearsed (Lindsey, Antonia, Rojina, Rachana)
 - [ ] **Live demo** rehearsed (or recorded fallback ready)
 
 ---
@@ -46,7 +46,7 @@ Assignments follow `Task_to_assign: pairs` from the roster.
 | Lindsey Warren | [lrwarren94](https://github.com/lrwarren94) | Lindsey/Sarthak | PR hygiene, doc structure, test log maintenance | Memphis |
 | Sarthak Dhanke | [Sarztak](https://github.com/Sarztak) | Lindsey/Sarthak | ROI tables (T15–T16), legacy vs new comparison, PR review | Remote |
 | Rachana Pandey | [rachanapandey2016](https://github.com/rachanapandey2016) | Rachana/A.S.M. Tanjim | Layout (T1); resource + YAML tests (T10–T11); log pass/fail | Remote |
-| Tanjim Hassan | [asmtanjimhassan](https://github.com/asmtanjimhassan) | Rachana/A.S.M. Tanjim | Biology sign-off (T6, T9); slide narrative | Remote (async) |
+| Tanjim Hassan | [asmtanjimhassan](https://github.com/asmtanjimhassan) | Rachana/A.S.M. Tanjim | Biology sign-off (T6, T9) | Remote (async) |
 
 ### Deliverables by pair
 
@@ -162,9 +162,9 @@ At the beginning of the reception, each team gives a brief, **60-second report-o
 
 **Action required:** Identify who from your team will give the report-out. If that person will not attend the reception, designate a teammate who will be present to share the update on your team's behalf.
 
-| Report-out speakers | Backup (if speaker absent) | Confirmed? |
-|-------------------|----------------------------|------------|
-| Lindsey Warren, Antonia Chroni, Rojina Sapkota, Rachana Pandey | Sarthak Dhanke / Tanjim Hassan (remote) | ☑ |
+| Report-out speakers | Confirmed? |
+|-------------------|------------|
+| Lindsey Warren, Antonia Chroni, Rojina Sapkota, Rachana Pandey | ☑ |
 
 Organizer note: [01-report-out-Wednesday-reception-email.md](../deliverables/reports/01-report-out-Wednesday-reception-email.md)
 
@@ -174,13 +174,13 @@ Organizer note: [01-report-out-Wednesday-reception-email.md](../deliverables/rep
 
 | Slide | Owner | Content |
 |-------|-------|---------|
-| 1 — Problem | Lindsey/Sarthak | Manual LSF wiring: analyst time, fixed resources, error-prone bash flags |
-| 2 — Solution | Rojina/Antonia + Rachana/A.S.M. Tanjim | YAML toggles + one-command launcher; HPC evidence (T4, T8) |
-| 3 — Results | Lindsey/Sarthak + Rachana/A.S.M. Tanjim | ROI (T15–T16), biology (T6, T9), limitations, next steps |
+| 1 — Problem | Lindsey Warren | Manual LSF wiring: analyst time, fixed resources, error-prone bash flags |
+| 2 — Solution | Antonia Chroni, Rojina Sapkota, Rachana Pandey | YAML toggles + one-command launcher; HPC evidence (T4, T8) |
+| 3 — Results | Lindsey Warren, Rachana Pandey | ROI (T15–T16), biology (T6, T9), limitations, next steps |
 
 **Slide 3 — next steps:** sc-ATAC, sc-PARSE; multi-omics (sc-RNA + sc-ATAC); `snap_multi_project.wdl`; CI layout check; production rollout.
 
-**Presenters (2–4):** Lindsey Warren, Antonia Chroni, Rojina Sapkota, Rachana Pandey (Sarthak/Tanjim remote backup).
+**Presenters:** Lindsey Warren, Antonia Chroni, Rojina Sapkota, Rachana Pandey
 
 **Live demo:** Show `workflow_profile` toggles → dry-run + `sprocket validate` → scaled resources in `inputs/generated_downstream.json` → LSF status or completed outputs. **Fallback:** submitted state + pre-recorded walkthrough.
 
@@ -236,6 +236,7 @@ Organizer note: [01-report-out-Wednesday-reception-email.md](../deliverables/rep
 - [x] Shared test log location communicated
 - [x] HPC accounts verified; remote members know handoff process
 - [ ] Organizer 3-slide template downloaded
+- [ ] Event deck added to `deliverables/slides/` (filename TBD; separate from kickoff `kickoff/kids26-team15-2026-09-04.pptx`)
 - [x] Report-out speaker (and backup) designated for Wednesday reception
 - [x] Legacy-run LSF log files provided by Antonia (`launch_full_pipeline.sh`; for T15)
 - [ ] `CONTACT_EMAIL` set in `project_parameters.Config.yaml`
