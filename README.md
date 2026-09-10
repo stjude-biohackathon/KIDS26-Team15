@@ -1,39 +1,51 @@
-# Biohackathon Project Template
+# KIDS26 Team 15 — Resource-Aware SNAP Orchestrator
 
-This repository is a starting point for a three-day team project. This repository is populated with a starting template for team organization and planning. Use it to plan, build, and document work. Please adjust this repository to suit the needs of your team.
+**Question:** Can a resource-aware SNAP + Sprocket orchestrator replace manual LSF wiring for scalable single-cell analysis?
 
-> **Team leads:** Start with the [team lead checklist](project-management/CHECKLIST.md) before the event or during your first team meeting.
+**Expected output:** Tested downstream launcher, documented HPC test results, code-review notes, 3-slide deck, 2-minute lightning talk, and live demo for judges.
 
-## Project Profile
+**Team lead:** Antonia Chroni ([@AntoniaChroni](https://github.com/AntoniaChroni))  
+**Slack:** [Team channel](https://stjudebiohackathon.slack.com/archives/C0BT8BF4JEL) (team15)
 
-- **Project name:** [Add a short, descriptive name]
-- **Question, problem, or opportunity:** [What are you exploring?]
-- **Data, inputs, or evidence:** [What will you use, and where does it come from?]
-- **Expected output:** [What will you show, test, explain, or demonstrate?]
-- **Tools and stack:** [Languages, libraries, notebooks, APIs, databases, services, or other tools]
-- **Team lead:** [Name and GitHub handle]
-- **Team members and roles:** [Link to `project-management/team.md`]
-- **Communication:** [Add the agreed channel or contact]
+---
 
-Naming the tools and stack early helps the team lead create useful roles and divide work realistically. It is fine to revise this section as the project develops.
+## Start here
 
-## Vision and Mission
+| Doc | Purpose |
+|-----|---------|
+| [Hackathon runbook](project-management/hackathon-runbook.md) | Team, schedule, test spec (T1–T17), deliverables, checklists, demo prep |
+| [Test log](deliverables/validation/hackathon-test-log.md) | Live pass/fail log — fill in during the event |
+| [HPC setup](docs/vm-hpc-setup.md) | St. Jude HPC access and modules |
+| [Team roster (xlsx)](project-management/stjude-biohackathon-kids26-team15-info.xlsx) | Source of truth for pair assignments |
 
-- **Vision:** [Describe the change, insight, or capability you hope this project supports.]
-- **Mission:** [Describe what the team will do during the biohackathon to move toward that vision.]
+**Quick start:** `cd analyses/sc-rna-seq-snap-Victoria-Knockout` then `bash scripts/test-downstream-layout.sh`
 
-## About
+---
 
-[Add a short explanation of the motivation, background, and why the question or problem matters.]
+## Repo layout
 
-## Roadmap and Milestones
+```text
+KIDS26-Team15/
+├── README.md                              This file
+├── analyses/sc-rna-seq-snap-Victoria-Knockout/   Main work area (launcher, WDL, scripts)
+├── docs/                                  Setup guides, troubleshooting, learning resources
+├── project-management/
+│   ├── hackathon-runbook.md               Operational guide (read this before Day 1)
+│   └── stjude-biohackathon-kids26-team15-info.xlsx
+└── deliverables/
+    ├── validation/hackathon-test-log.md   Shared test log
+    ├── reports/                           Event report-outs
+    └── slides/                            Presentation deck
+```
 
-| When | Focus | Expected outcome |
-| --- | --- | --- |
-| Day 1 | Agree on the question, inputs, stack, roles, and first tasks | A shared plan and a first small change in the repository |
-| Day 2 | Build, test, and compare approaches | A working result or clear evidence about what does not work |
-| Day 3 | Stabilize, document, and present | A demo or handoff with methods, limitations, and next steps |
+**Tools:** SNAP (`sc-rna-seq-snap`), WDL, Sprocket, R/Seurat, Apptainer, LSF, YAML config · Victoria Knockout cohort (4 samples, ~27k cells)
 
-The goal is not a perfect production system. The goal is a clear, honest, useful result that the team can explain and others can build on.
+**Schedule:** Day 1 (4 h) · Day 2 (8 h) · Day 3 (4 h afternoon) · Demo 3:00–6:00 PM
 
+---
 
+## Contributing
+
+1. Branch → focused change → PR → teammate review → merge.
+2. Do not commit secrets, credentials, or private data.
+3. See [Git and GitHub basics](docs/git-github-basics.md) if needed.
