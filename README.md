@@ -14,6 +14,8 @@
 | Doc | Purpose |
 |-----|---------|
 | [Hackathon runbook](project-management/hackathon-runbook.md) | Team, schedule, test spec (T1–T17), deliverables, checklists, demo prep |
+| [Problem & solution overview](docs/problem-and-solution-overview.md) | Slide-ready problem/solution narrative |
+| [Participant FAQ](docs/participant-faq-snap-sprocket-resources.md) | Onboarding: WDL vs bash, resource scaling, pair roles |
 | [Test log](deliverables/validation/hackathon-test-log.md) | Live pass/fail log — fill in during the event |
 | [HPC setup](docs/vm-hpc-setup.md) | St. Jude HPC access and modules |
 | [Team roster (xlsx)](project-management/stjude-biohackathon-kids26-team15-info.xlsx) | Source of truth for pair assignments |
@@ -28,14 +30,14 @@
 KIDS26-Team15/
 ├── README.md                              This file
 ├── analyses/sc-rna-seq-snap-Victoria-Knockout/   Main work area (launcher, WDL, scripts)
-├── docs/                                  Setup guides, troubleshooting, learning resources
+├── docs/                                  Problem overview, onboarding FAQ, setup, learning resources
 ├── project-management/
 │   ├── hackathon-runbook.md               Operational guide (read this before Day 1)
 │   └── stjude-biohackathon-kids26-team15-info.xlsx
 └── deliverables/
     ├── validation/hackathon-test-log.md   Shared test log
     ├── reports/                           Event report-outs
-    └── slides/                            Presentation deck
+    └── slides/                            Presentation deck (+ speaker-notes links)
 ```
 
 **Tools:** SNAP (`sc-rna-seq-snap`), WDL, Sprocket, R/Seurat, Apptainer, LSF, YAML config · Victoria Knockout cohort (4 samples, ~27k cells)

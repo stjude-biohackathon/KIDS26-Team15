@@ -168,6 +168,8 @@ At the beginning of the reception, each team gives a brief, **60-second report-o
 
 Organizer note: [01-report-out-Wednesday-reception-email.md](../deliverables/reports/01-report-out-Wednesday-reception-email.md)
 
+**Slide narrative:** [problem-and-solution-overview.md](../docs/problem-and-solution-overview.md) · **Onboarding FAQ:** [participant-faq-snap-sprocket-resources.md](../docs/participant-faq-snap-sprocket-resources.md)
+
 **3-slide template:**
 
 | Slide | Owner | Content |
@@ -330,6 +332,8 @@ workflow_profile:
 
 ## References
 
+- [Problem & solution overview](../docs/problem-and-solution-overview.md)
+- [Participant FAQ — SNAP, Sprocket, and resource scaling](../docs/participant-faq-snap-sprocket-resources.md)
 - [scripts/README.md](../analyses/sc-rna-seq-snap-Victoria-Knockout/scripts/README.md)
 - [wdl/README.md](../analyses/sc-rna-seq-snap-Victoria-Knockout/wdl/README.md)
 - [Snap-Sprocket-ROI-one-pager.md](../analyses/sc-rna-seq-snap-Victoria-Knockout/docs/Snap-Sprocket-ROI-one-pager.md)
