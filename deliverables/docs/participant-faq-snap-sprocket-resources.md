@@ -1,7 +1,7 @@
 # Participant FAQ — SNAP, Sprocket, and resource scaling
 
 **Audience:** Team members new to the project (e.g. remote participants onboarding before the hackathon)  
-**Related:** [Problem & solution overview](./problem-and-solution-overview.md) · [Hackathon runbook](../project-management/hackathon-runbook.md) · [scripts/README.md](../analyses/sc-rna-seq-snap-Victoria-Knockout/scripts/README.md) · [Test log](../deliverables/validation/hackathon-test-log.md)
+**Related:** [Problem & solution overview](./problem-and-solution-overview.md) · [Daedalus pitch](./daedalus-pitch.md) · [Hackathon runbook](../../project-management/hackathon-runbook.md) · [scripts/README.md](../../analyses/sc-rna-seq-snap-Victoria-Knockout/scripts/README.md) · [Test log](../validation/hackathon-test-log.md)
 
 ---
 
@@ -39,7 +39,7 @@ The **new path** uses **WDL + Sprocket** plus a **custom resource estimator** so
 | `scripts/estimate-snap-downstream-resources.R` | **Scales LSF resources** from sample count + Cell Ranger metrics |
 | Existing R/bash under `analyses/*/` | Still the actual biology code; WDL tasks call into them |
 
-**Hackathon focus:** test, document, and demonstrate that orchestrator (tests **T1–T17** in the [runbook](../project-management/hackathon-runbook.md)) — upstream + integrative on HPC, biology sign-off, ROI vs legacy, troubleshooting, and slides.
+**Hackathon focus:** test, document, and demonstrate that orchestrator (tests **T1–T17** in the [runbook](../../project-management/hackathon-runbook.md)) — upstream + integrative on HPC, biology sign-off, ROI vs legacy, troubleshooting, and slides.
 
 ---
 
@@ -83,7 +83,7 @@ At launch, `launch-snap-downstream.sh` runs these steps in order:
 | 4. Validate inputs | `sprocket validate wdl/snap.wdl @inputs/sprocket_inputs.json` | — |
 | 5. Submit (if not dry-run) | `sprocket run ...` | LSF jobs |
 
-See [scripts/README.md](../analyses/sc-rna-seq-snap-Victoria-Knockout/scripts/README.md) for full launcher and config details.
+See [scripts/README.md](../../analyses/sc-rna-seq-snap-Victoria-Knockout/scripts/README.md) for full launcher and config details.
 
 ---
 
@@ -104,11 +104,12 @@ For WDL runs, modules load the **generated overlay** (scaled resources). Legacy 
 | Doc | Purpose |
 |-----|---------|
 | [Problem & solution overview](./problem-and-solution-overview.md) | Slide-ready problem/solution narrative |
-| [Hackathon runbook](../project-management/hackathon-runbook.md) | Schedule, team pairs, test matrix T1–T17, deliverables |
-| [scripts/README.md](../analyses/sc-rna-seq-snap-Victoria-Knockout/scripts/README.md) | Launcher flow, YAML config, troubleshooting |
-| [Test log](../deliverables/validation/hackathon-test-log.md) | Live pass/fail log during the event |
-| [vm-hpc-setup.md](./vm-hpc-setup.md) | HPC access and modules |
-| [resources-snap.md](./resources-snap.md) · [resources-sprocket.md](./resources-sprocket.md) | Background on SNAP and Sprocket |
+| [Daedalus pitch](./daedalus-pitch.md) | Tool name, pitches, naming rationale |
+| [Hackathon runbook](../../project-management/hackathon-runbook.md) | Schedule, team pairs, test matrix T1–T17, deliverables |
+| [scripts/README.md](../../analyses/sc-rna-seq-snap-Victoria-Knockout/scripts/README.md) | Launcher flow, YAML config, troubleshooting |
+| [Test log](../validation/hackathon-test-log.md) | Live pass/fail log during the event |
+| [vm-hpc-setup.md](../../docs/vm-hpc-setup.md) | HPC access and modules |
+| [resources-snap.md](../../docs/resources-snap.md) · [resources-sprocket.md](../../docs/resources-sprocket.md) | Background on SNAP and Sprocket |
 
 ---
 

@@ -1,7 +1,7 @@
 # Problem and solution overview
 
 **Use for:** Slide 1–2 narrative, reception report-out, quick team onboarding  
-**Go deeper:** [Participant FAQ](./participant-faq-snap-sprocket-resources.md) · [Hackathon runbook](../project-management/hackathon-runbook.md) · [Slides folder](../deliverables/slides/) (event deck TBD)
+**Go deeper:** [Daedalus pitch](./daedalus-pitch.md) · [Participant FAQ](./participant-faq-snap-sprocket-resources.md) · [Hackathon runbook](../../project-management/hackathon-runbook.md) · [Slides folder](../slides/) (event deck TBD)
 
 ---
 
@@ -22,9 +22,9 @@ Running SNAP single-cell pipelines on St. Jude HPC today means **manual LSF wiri
 
 ---
 
-## Our solution
+## Our solution — Daedalus
 
-A **resource-aware SNAP + Sprocket orchestrator** — one command replaces manual bash wiring:
+**Daedalus** is our resource-aware SNAP + Sprocket orchestrator — one command replaces manual bash wiring:
 
 ```bash
 bash launch-snap-downstream.sh          # dry-run + validate
@@ -65,7 +65,7 @@ Both          →  sprocket validate / run
 
 - ROI timing: legacy vs new (T15–T16)
 - Biology sign-off on upstream and integrative outputs (T6, T9)
-- See [Snap-Sprocket-ROI-one-pager.md](../analyses/sc-rna-seq-snap-Victoria-Knockout/docs/Snap-Sprocket-ROI-one-pager.md)
+- See [Snap-Sprocket-ROI-one-pager.md](../../analyses/sc-rna-seq-snap-Victoria-Knockout/docs/Snap-Sprocket-ROI-one-pager.md)
 
 ---
 
@@ -73,7 +73,7 @@ Both          →  sprocket validate / run
 
 We are **not** converting bash to WDL from scratch — that work is largely done. We are **testing and demonstrating** the orchestrator on Victoria Knockout (4 samples, ~27k cells):
 
-- [Test log](../deliverables/validation/hackathon-test-log.md) — T1–T17 pass/fail
+- [Test log](../validation/hackathon-test-log.md) — T1–T17 pass/fail
 - Live demo — YAML toggle → dry-run → LSF submit
 - Legacy comparison — Antonia provides LSF logs from `launch_full_pipeline.sh` (T15)
 

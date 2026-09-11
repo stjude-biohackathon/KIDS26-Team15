@@ -7,5 +7,5 @@
 
 **Presenters (event):** Lindsey Warren, Antonia Chroni, Rojina Sapkota, Rachana Pandey
 
-**Speaker notes source (event deck):** [Problem & solution overview](../../docs/problem-and-solution-overview.md)  
-**Deeper context:** [Participant FAQ](../../docs/participant-faq-snap-sprocket-resources.md) · [ROI one-pager](../../analyses/sc-rna-seq-snap-Victoria-Knockout/docs/Snap-Sprocket-ROI-one-pager.md)
+**Speaker notes source (event deck):** [Daedalus pitch](../docs/daedalus-pitch.md) · [Problem & solution overview](../docs/problem-and-solution-overview.md)  
+**Deeper context:** [Participant FAQ](../docs/participant-faq-snap-sprocket-resources.md) · [ROI one-pager](../../analyses/sc-rna-seq-snap-Victoria-Knockout/docs/Snap-Sprocket-ROI-one-pager.md)
