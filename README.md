@@ -5,6 +5,8 @@
 **Expected output:** Tested downstream launcher, documented HPC test results, code-review notes, 3-slide deck, 2-minute lightning talk, and live demo for judges.
 
 **Team lead:** Antonia Chroni ([@AntoniaChroni](https://github.com/AntoniaChroni))  
+**Code review & development leads:** Emma Bishop, Rojina Sapkota, Antonia Chroni  
+**Dry-run & HPC testers:** Rojina Sapkota, Antonia Chroni (only)  
 **Slack:** [Team channel](https://stjudebiohackathon.slack.com/archives/C0BT8BF4JEL) (team15)
 
 ---
@@ -14,6 +16,9 @@
 | Doc | Purpose |
 |-----|---------|
 | [Hackathon runbook](project-management/hackathon-runbook.md) | Team, schedule, test spec (T1–T17), deliverables, checklists, demo prep |
+| [Problem & solution overview](deliverables/docs/problem-and-solution-overview.md) | Slide-ready problem/solution narrative |
+| [Daedalus pitch](deliverables/docs/daedalus-pitch.md) | Tool name, 30/60s pitches, naming rationale |
+| [Participant FAQ](deliverables/docs/participant-faq-snap-sprocket-resources.md) | Onboarding: WDL vs bash, resource scaling, pair roles |
 | [Test log](deliverables/validation/hackathon-test-log.md) | Live pass/fail log — fill in during the event |
 | [HPC setup](docs/vm-hpc-setup.md) | St. Jude HPC access and modules |
 | [Team roster (xlsx)](project-management/stjude-biohackathon-kids26-team15-info.xlsx) | Source of truth for pair assignments |
@@ -28,14 +33,15 @@
 KIDS26-Team15/
 ├── README.md                              This file
 ├── analyses/sc-rna-seq-snap-Victoria-Knockout/   Main work area (launcher, WDL, scripts)
-├── docs/                                  Setup guides, troubleshooting, learning resources
+├── docs/                                  HPC setup, troubleshooting, learning resources
 ├── project-management/
 │   ├── hackathon-runbook.md               Operational guide (read this before Day 1)
 │   └── stjude-biohackathon-kids26-team15-info.xlsx
 └── deliverables/
+    ├── docs/                              Pitches, problem overview, participant FAQ
     ├── validation/hackathon-test-log.md   Shared test log
     ├── reports/                           Event report-outs
-    └── slides/                            Presentation deck
+    └── slides/                            Kickoff deck + event deck (TBD; see README there)
 ```
 
 **Tools:** SNAP (`sc-rna-seq-snap`), WDL, Sprocket, R/Seurat, Apptainer, LSF, YAML config · Victoria Knockout cohort (4 samples, ~27k cells)

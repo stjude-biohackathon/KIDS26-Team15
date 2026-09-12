@@ -10,18 +10,9 @@ Curated courses from the DNB Bioinformatics Core for team collaboration, reprodu
 
 **Course:** [github-team-guide](https://github.com/stjude-dnb-binfcore/trainings/tree/main/courses/github-team-guide)
 
-How to collaborate effectively on GitHub: code review communication, PR checklists, bug reporting, and catching hidden review comments.
+Code review communication, PR checklists, bug reporting, and catching hidden review comments.
 
-| Topic | What it covers |
-|-------|----------------|
-| Code review communication (The 7 Cs) | Clear, constructive feedback during reviews |
-| PR review checklist | Practical guidance for reviewers at any level |
-| How to report bugs on GitHub | Reproducible, well-documented issue reports |
-| Hidden comments on GitHub | Make sure all review feedback is visible before merge |
-
-**Use during the hackathon when:** opening or reviewing PRs, filing issues for test failures (T5–T6, T19), or onboarding teammates new to GitHub workflows.
-
-**Materials location:** `./resources/` in the course directory (HTML guides).
+**When to use:** PRs, code review, and filing issues for test failures.
 
 ---
 
@@ -29,35 +20,19 @@ How to collaborate effectively on GitHub: code review communication, PR checklis
 
 **Course:** [Automation-Reproducibility-compbio](https://github.com/stjude-dnb-binfcore/trainings/tree/main/courses/Automation-Reproducibility-compbio)
 
-Workshop series on reproducibility, documentation, automation, and containers for computational biology teams.
+Reproducibility, documentation, automation, and containers (including Docker on HPC).
 
-| Topic | What it covers |
-|-------|----------------|
-| Best practices | Reproducibility, documentation, automation for scientists |
-| Containers | Docker setup, command line, running images on HPC |
-| Tools and resources | GitHub setup, tokens, GitKraken/Desktop, Teams/Slack integration |
-
-**Use during the hackathon when:** documenting decisions, container troubleshooting (L8, L16), or explaining reproducibility practices in slides and handoff.
-
-**Materials location:**
-
-- `./lectures/` — slide decks per topic
-- `./resources/` — setup guides (GitHub account, Docker, HPC registry, cheat sheets)
-- `./demo/` — worked examples
-
-**Prerequisite:** basic shell and Git/GitHub familiarity ([git-github-basics.md](git-github-basics.md)).
+**When to use:** documenting decisions, container troubleshooting, or reproducibility talking points for slides.
 
 ---
 
-## Quick links
+## HPC Memory Diagnostics & Troubleshooting
 
-| Need | Start here |
-|------|------------|
-| Clone, branch, PR basics | [git-github-basics.md](git-github-basics.md) |
-| Review a teammate's PR | [GitHub Team Guide](https://github.com/stjude-dnb-binfcore/trainings/tree/main/courses/github-team-guide) |
-| Report a test failure as an issue | [How to report bugs](https://github.com/stjude-dnb-binfcore/trainings/tree/main/courses/github-team-guide) |
-| Docker / container setup | [Automation course resources](https://github.com/stjude-dnb-binfcore/trainings/tree/main/courses/Automation-Reproducibility-compbio/resources) |
-| WDL + Sprocket workflow | [learning-path-wdl-sprocket-containers.md](learning-path-wdl-sprocket-containers.md) |
+**Course:** [hpc-memory-diagnostics](https://github.com/stjude-dnb-binfcore/trainings/tree/main/courses/hpc-memory-diagnostics)
+
+For anyone who wants to know more about issues with HPC/LSF and how to diagnose them, please check this out. Covers OOM kills, reading LSF resource summaries, and debugging workflows.
+
+**When to use:** LSF job monitoring (T5), troubleshooting entries (T17), or parallel R / NFS issues (T13).
 
 ---
 

@@ -1,0 +1,5 @@
+ID	SAMPLE	FASTQ	experiment	condition	Kit	seq_technology	species	tissue	PI
+DYE_2521	library_DYE_2521	/filepath/	Victoria Knockout	knock-out	10x RNA	10Xv3	mouse	Retina	Dyer
+DYE_2522	library_DYE_2522	/filepath/	Victoria Knockout	knock-out	10x RNA	10Xv3	mouse	Retina	Dyer
+DYE_2519	library_DYE_2519	/filepath/	Victoria Knockout	wt	10x RNA	10Xv3	mouse	Retina	Dyer
+DYE_2520	library_DYE_2520	/filepath/	Victoria Knockout	wt	10x RNA	10Xv3	mouse	Retina	Dyer
