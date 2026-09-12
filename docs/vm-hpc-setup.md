@@ -38,7 +38,7 @@ Pre-installed:
 
 ### St. Jude HPC (required for real testing)
 
-**HPC testers:** Rojina Sapkota and Antonia Chroni only. 
+**Dry-run and HPC testers:** Rojina Sapkota and Antonia Chroni only. 
 
 ```text
 module load sprocket R singularity

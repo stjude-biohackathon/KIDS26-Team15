@@ -6,7 +6,7 @@
 
 **Team lead:** Antonia Chroni ([@AntoniaChroni](https://github.com/AntoniaChroni))  
 **Code review & development leads:** Emma Bishop, Rojina Sapkota, Antonia Chroni  
-**St. Jude HPC testers:** Rojina Sapkota, Antonia Chroni  
+**Dry-run & HPC testers:** Rojina Sapkota, Antonia Chroni (only)  
 **Slack:** [Team channel](https://stjudebiohackathon.slack.com/archives/C0BT8BF4JEL) (team15)
 
 ---

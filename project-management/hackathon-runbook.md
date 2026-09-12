@@ -38,14 +38,14 @@ Assignments follow `Task_to_assign: pairs` from the roster.
 |------|---------|-----------------|
 | **Lindsey/Sarthak** | Lindsey Warren + Sarthak Dhanke | GitHub PRs/reviews, docs, automated ROI and project impact |
 | **Emma/Rojina/Antonia** | Emma Bishop + Rojina Sapkota + Antonia Chroni | Code review and development (co-leads); live demo lead |
-| **Rojina/Antonia (HPC)** | Rojina Sapkota + Antonia Chroni | St. Jude HPC testing only (T4, T5, T8, T13, T14) |
+| **Rojina/Antonia (testing)** | Rojina Sapkota + Antonia Chroni | Dry-run and St. Jude HPC testing only (T2–T5, T7–T8, T12–T14) |
 | **Rachana/A.S.M. Tanjim** | Rachana Pandey + Tanjim Hassan | Testing results/biology of sc-RNA; GitHub PR review |
 
 | Person | GitHub | Pair | Main responsibility | HPC |
 | --- | --- | --- | --- | --- |
 | Emma Bishop | [emjbishop](https://github.com/emjbishop) | Emma/Rojina/Antonia (co-lead) | Code review and development lead; PR review; live demo | No |
-| Antonia Chroni | [AntoniaChroni](https://github.com/AntoniaChroni) | Emma/Rojina/Antonia (co-lead) · Rojina/Antonia (HPC) | Tool author; code review; HPC submit (T4, T5, T8, T13, T14); live demo | Yes |
-| Rojina Sapkota | [Rojinasap](https://github.com/Rojinasap) | Emma/Rojina/Antonia · Rojina/Antonia (HPC) | Dry-run + WDL toggles (T2–T3, T7); HPC submits (T4, T5, T8); WDL chain (T12–T14) | Yes |
+| Antonia Chroni | [AntoniaChroni](https://github.com/AntoniaChroni) | Emma/Rojina/Antonia (co-lead) · Rojina/Antonia (testing) | Tool author; code review; dry-run + HPC testing (T2–T5, T7–T8, T12–T14); live demo | Yes |
+| Rojina Sapkota | [Rojinasap](https://github.com/Rojinasap) | Emma/Rojina/Antonia · Rojina/Antonia (testing) | Dry-run + WDL toggles (T2–T3, T7); HPC submits (T4, T5, T8); WDL chain (T12–T14) | Yes |
 | Lindsey Warren | [lrwarren94](https://github.com/lrwarren94) | Lindsey/Sarthak | PR hygiene, doc structure, test log maintenance | Memphis |
 | Sarthak Dhanke | [Sarztak](https://github.com/Sarztak) | Lindsey/Sarthak | ROI tables (T15–T16), legacy vs new comparison, PR review | Remote |
 | Rachana Pandey | [rachanapandey2016](https://github.com/rachanapandey2016) | Rachana/A.S.M. Tanjim | Layout (T1); resource + YAML tests (T10–T11); log pass/fail | Remote |
@@ -56,8 +56,8 @@ Assignments follow `Task_to_assign: pairs` from the roster.
 | Pair | Lead | Output |
 |------|------|--------|
 | Lindsey/Sarthak | Lindsey | `deliverables/validation/hackathon-test-log.md`, `docs/troubleshooting.md`, PR merges, ROI for slides |
-| Emma/Rojina/Antonia | Emma Bishop | `docs/code-review-notes.md` + issues; T2–T3, T7, T12 (dry-run / code review); live demo |
-| Rojina/Antonia (HPC) | Rojina Sapkota | T4–T5, T8, T13–T14 (St. Jude HPC only); Antonia provides legacy-run LSF log files (T15) |
+| Emma/Rojina/Antonia | Emma Bishop | `docs/code-review-notes.md` + issues; live demo |
+| Rojina/Antonia (testing) | Rojina Sapkota | T2–T5, T7–T8, T12–T14 (dry-run + St. Jude HPC only); Antonia provides legacy-run LSF log files (T15) |
 | Rachana/A.S.M. Tanjim | Rachana | Test log rows T1, T6, T9–T11; biology sign-off T6, T9; Antonia provides legacy run outputs (`sc-rna-seq-snap-legacy-Victoria-Knockout`) |
 
 **Communications:** [Slack team15](https://stjudebiohackathon.slack.com/archives/C0BT8BF4JEL) · Check-ins: Day 1 end · Day 2 mid-day · Demo Day 3, 3:00–6:00 PM
@@ -100,7 +100,7 @@ bash scripts/test-downstream-layout.sh    # T1
 bash launch-snap-downstream.sh            # T2 dry-run
 ```
 
-Remote teammates without HPC login pair with **Rojina/Antonia** for submit tests (T4, T8). **St. Jude HPC testing:** Rojina Sapkota and Antonia Chroni only.
+Remote teammates without HPC login pair with **Rojina/Antonia** for dry-run and submit tests (T2–T5, T7–T8, T12–T14). **Dry-run and St. Jude HPC testing:** Rojina Sapkota and Antonia Chroni only.
 
 Lindsey/Sarthak maintains [hackathon-test-log.md](../deliverables/validation/hackathon-test-log.md). One row per test: tester, date, pass/fail, LSF job ID, notes, screenshot link.
 
@@ -115,17 +115,17 @@ Record results in [hackathon-test-log.md](../deliverables/validation/hackathon-t
 | ID | Test | Module(s) | Owner | Command / action | Expected result |
 |----|------|-----------|-------|------------------|-----------------|
 | **T1** | Layout sanity | — | Rachana/A.S.M. Tanjim | `bash scripts/test-downstream-layout.sh` | All expected WDL/input files present |
-| **T2** | Dry-run pipeline | — | Emma/Rojina/Antonia | `bash launch-snap-downstream.sh` | WDL regen → estimate → check → validate pass |
-| **T3** | Upstream — WDL toggle | `run_upstream` | Emma/Rojina/Antonia | Only `run_upstream: true`; dry-run | WDL contains upstream task only |
+| **T2** | Dry-run pipeline | — | Rojina/Antonia | `bash launch-snap-downstream.sh` | WDL regen → estimate → check → validate pass |
+| **T3** | Upstream — WDL toggle | `run_upstream` | Rojina/Antonia | Only `run_upstream: true`; dry-run | WDL contains upstream task only |
 | **T4** | Upstream — HPC submit | `run_upstream` | Rojina/Antonia | `bash launch-snap-downstream.sh --submit` | LSF job ID returned |
 | **T5** | Upstream — LSF monitoring | `run_upstream` | Rojina/Antonia | `bjobs -u $USER`; tail upstream stderr | Job visible; logs accessible |
 | **T6** | Upstream — biology QC | `run_upstream` | Rachana/A.S.M. Tanjim | Review QC plots, cell counts, filters | Tanjim signs off upstream outputs |
-| **T7** | Upstream + integrative — WDL toggle | both | Emma/Rojina/Antonia | Both modules true; dry-run | WDL chain: upstream → integrative |
+| **T7** | Upstream + integrative — WDL toggle | both | Rojina/Antonia | Both modules true; dry-run | WDL chain: upstream → integrative |
 | **T8** | Upstream + integrative — HPC submit | both | Rojina/Antonia | `bash launch-snap-downstream.sh --submit` | LSF job ID returned |
 | **T9** | Integrative — biology QC | `run_integrative` | Rachana/A.S.M. Tanjim | Review Harmony outputs, UMAP | Tanjim signs off integrative outputs |
 | **T10** | Resource scaling | both | Rachana/A.S.M. Tanjim | `estimate-snap-downstream-resources.R --update-yaml` | JSON reflects sample count; resources updated |
 | **T11** | Generated YAML overlay | — | Rachana/A.S.M. Tanjim | Inspect `project_parameters.generated.yaml` | Master YAML untouched; scaled resources in overlay |
-| **T12** | WDL module chain | upstream → integrative | Emma/Rojina/Antonia | Inspect generated WDL dependency chain | Integrative depends on upstream |
+| **T12** | WDL module chain | upstream → integrative | Rojina/Antonia | Inspect generated WDL dependency chain | Integrative depends on upstream |
 | **T13** | `snap_parallel_plan.R` safety | upstream | Rojina/Antonia | `SNAP_FUTURE_WORKERS=1` vs `2` | No NFS bus errors; document behavior |
 | **T14** | Email notification | — | Rojina/Antonia | Confirm `CONTACT_EMAIL` on submit | Workflow submitted email received |
 | **T15** | Legacy vs new comparison | — | Lindsey/Sarthak | Compare `launch_full_pipeline.sh` vs `workflow_profile` | Side-by-side table for slides |
@@ -146,7 +146,7 @@ Review: `launch-snap-sprocket.sh`, `estimate-snap-downstream-resources.R`, `gene
 
 **Emma Bishop:** Lead code review and development coordination with Rojina and Antonia; maintain `docs/code-review-notes.md` and PR review standards. 
 
-**Rojina Sapkota + Antonia Chroni:** Sole St. Jude HPC testers (T4, T5, T8, T13, T14). Antonia provides LSF log files from the legacy `launch_full_pipeline.sh` run for Lindsey/Sarthak (T15 legacy vs new comparison).
+**Rojina Sapkota + Antonia Chroni:** Sole dry-run and St. Jude HPC testers (T2–T5, T7–T8, T12–T14). Antonia provides LSF log files from the legacy `launch_full_pipeline.sh` run for Lindsey/Sarthak (T15 legacy vs new comparison).
 
 Issue template: **Severity** · **Found by** · **Steps** · **Expected** · **Actual**
 
@@ -199,8 +199,8 @@ PR checklist: `set -euo pipefail`; YAML edits only in `project_parameters.Config
 | Block | Activity | Who |
 |-------|----------|-----|
 | 0:00–0:30 | Kickoff: pairs, test log, HPC access | All |
-| 0:30–1:15 | Clone, T1, T2 dry-run | All |
-| 1:15–3:00 | Parallel work | Emma/Rojina/Antonia: T2–T3 · Rojina/Antonia: T4 (if ready) · Rachana/A.S.M. Tanjim: T1 · Lindsey/Sarthak: test log |
+| 0:30–1:15 | Clone, T1 | All · Rojina/Antonia: T2 dry-run |
+| 1:15–3:00 | Parallel work | Rojina/Antonia: T2–T4 · Rachana/A.S.M. Tanjim: T1 · Emma/Rojina/Antonia: code review · Lindsey/Sarthak: test log |
 | 3:00–4:00 | Sync; schedule T4; Day 2 priorities | All |
 
 ### Wednesday reception report-out (60 seconds)
@@ -220,7 +220,7 @@ Organizer note: [01-report-out-Wednesday-reception-email.md](../deliverables/rep
 
 | Block | Activity | Who |
 |-------|----------|-----|
-| 0:00–3:00 | Parallel work | Emma/Rojina/Antonia: T7, T12 · Rojina/Antonia: T4–T5, T8, T13–T14 · Rachana/A.S.M. Tanjim: T6, T9–T11 · Lindsey/Sarthak: T15–T17 |
+| 0:00–3:00 | Parallel work | Rojina/Antonia: T3–T5, T7–T8, T12–T14 · Rachana/A.S.M. Tanjim: T6, T9–T11 · Emma/Rojina/Antonia: code review · Lindsey/Sarthak: T15–T17 |
 | 3:00–3:30 | Mid-day sync | All |
 | 3:30–7:30 | Continue testing; draft slide content | All |
 | 7:30–8:00 | Day 2 wrap | Pair leads |
