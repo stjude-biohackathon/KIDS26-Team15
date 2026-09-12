@@ -99,6 +99,40 @@ For WDL runs, modules load the **generated overlay** (scaled resources). Legacy 
 
 ---
 
+## `workflow_profile` examples (for T3, T4, and T7, T8)
+
+Edit `project_parameters.Config.yaml` → `workflow_profile`, then run `bash launch-snap-downstream.sh` (dry-run) or `--submit` (HPC).
+
+### Upstream only (T3, T4)
+
+```yaml
+workflow_profile:
+  run_upstream: true
+  run_integrative: false
+  run_cluster: false
+  run_contamination_removal: false
+  run_cell_types: false
+  run_clone_phylogeny: false
+  run_de_go: false
+  run_rshiny: false
+```
+
+### Upstream + integrative (T7, T8)
+
+```yaml
+workflow_profile:
+  run_upstream: true
+  run_integrative: true
+  run_cluster: false
+  run_contamination_removal: false
+  run_cell_types: false
+  run_clone_phylogeny: false
+  run_de_go: false
+  run_rshiny: false
+```
+
+---
+
 ## Where to read more
 
 | Doc | Purpose |
@@ -117,8 +151,10 @@ For WDL runs, modules load the **generated overlay** (scaled resources). Legacy 
 
 | Pair | Focus |
 |------|--------|
-| **Rojina/Antonia** | Code, HPC submit, live demo (T2–T5, T7–T8, T12–T14) |
+| **Emma/Rojina/Antonia** | Code review and development (Emma Bishop, Rojina Sapkota, Antonia Chroni); live demo |
+| **Rojina/Antonia (testing)** | Dry-run and St. Jude HPC testing only — Rojina Sapkota and Antonia Chroni (T2–T5, T7–T8, T12–T14) |
 | **Rachana/A.S.M. Tanjim** | Layout, resource/YAML tests, biology sign-off (T1, T6, T9–T11) |
+| **Lindsey/Rachana** | Hackathon test log ([hackathon-test-log.md](../validation/hackathon-test-log.md)) |
 | **Lindsey/Sarthak** | Docs, PRs, ROI tables, legacy vs new comparison (T15–T17) |
 
 **T15 input:** Antonia provides LSF log files from a legacy `launch_full_pipeline.sh` run for the side-by-side comparison and slides.
@@ -131,4 +167,4 @@ For WDL runs, modules load the **generated overlay** (scaled resources). Legacy 
 
 ---
 
-**Maintainer:** KIDS26 Team 15 · **Last updated:** 2026-09-10
+**Maintainer:** KIDS26 Team 15 · **Last updated:** 2026-09-12

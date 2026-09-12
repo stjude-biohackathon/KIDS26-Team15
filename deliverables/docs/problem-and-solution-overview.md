@@ -48,13 +48,13 @@ Both          →  sprocket validate / run
 
 ## Slide talking points
 
-### Slide 1 — Problem (Lindsey Warren)
+### Slide 1 — Problem (Antonia Chroni)
 
 - Analysts spend time on **infrastructure**, not biology
 - Legacy launcher uses **static** resources — OOM kills or wasted queue time
 - Module toggles and LSF wiring are **scattered across bash scripts**
 
-### Slide 2 — Solution (Antonia Chroni, Rojina Sapkota, Rachana Pandey)
+### Slide 2 — Solution (Rojina Sapkota)
 
 - **One launcher** — `launch-snap-downstream.sh`
 - **YAML toggles** — `run_upstream`, `run_integrative`, etc.
@@ -85,4 +85,4 @@ We are **not** converting bash to WDL from scratch — that work is largely done
 
 ---
 
-**Maintainer:** KIDS26 Team 15 · **Last updated:** 2026-09-10
+**Maintainer:** KIDS26 Team 15 · **Last updated:** 2026-09-12

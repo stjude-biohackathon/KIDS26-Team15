@@ -1,7 +1,7 @@
 # KIDS26 Team 15 — Hackathon Test Log
 
 **Runbook (commands, owners, schedule):** [hackathon-runbook.md](../../project-management/hackathon-runbook.md)  
-**Maintained by:** Lindsey/Sarthak · **Analysis repo:** `analyses/sc-rna-seq-snap-Victoria-Knockout/`
+**Maintained by:** Lindsey Warren and Rachana Pandey · **Analysis repo:** `analyses/sc-rna-seq-snap-Victoria-Knockout/`
 
 Fill in one row per test. Status: `PASS` | `FAIL` | `SKIP` | `BLOCKED`.
 
@@ -148,6 +148,8 @@ List new entries added to [troubleshooting.md](../../docs/troubleshooting.md) du
 
 | Pair | Lead | Complete? | Notes |
 |------|------|-----------|-------|
+| Lindsey/Rachana — Test log | Lindsey Warren · Rachana Pandey | ☐ | |
 | Lindsey/Sarthak — Docs, PRs, ROI | Lindsey Warren | ☐ | |
-| Rojina/Antonia — Code, HPC submit, demo | Rojina Sapkota | ☐ | |
+| Emma/Rojina/Antonia — Code review, development, demo | Emma Bishop | ☐ | |
+| Rojina/Antonia — Dry-run and St. Jude HPC testing | Rojina Sapkota | ☐ | |
 | Rachana/A.S.M. Tanjim — Testing, biology | Rachana Pandey | ☐ | |
