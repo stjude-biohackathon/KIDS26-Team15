@@ -161,28 +161,16 @@ Rachana: T1, T10, T11. Tanjim: biology sign-off T6, T9. Screenshot every PASS an
 
 PR checklist: `set -euo pipefail`; YAML edits only in `project_parameters.Config.yaml`; WDL generated not hand-edited; no secrets committed.
 
-**T15 input:** Antonia will provide LSF log files from the legacy run for the side-by-side comparison and slides.
 
 ---
 
 ## Demo prep (Day 3)
 
-
-**Slide narrative:** [problem-and-solution-overview.md](../deliverables/docs/problem-and-solution-overview.md) · **Onboarding FAQ:** [participant-faq-snap-sprocket-resources.md](../deliverables/docs/participant-faq-snap-sprocket-resources.md)
-
-**3-slide template:**
-
-| Slide | Owner | Content |
-|-------|-------|---------|
-| 1 — Problem | Lindsey Warren | Manual LSF wiring: analyst time, fixed resources, error-prone bash flags |
-| 2 — Solution | Emma Bishop, Antonia Chroni, Rojina Sapkota, Rachana Pandey | YAML toggles + one-command launcher; HPC evidence (T4, T8) |
-| 3 — Results | Lindsey Warren, Rachana Pandey | ROI (T15–T16), biology (T6, T9), limitations, next steps |
-
-**Slide 3 — next steps:** sc-ATAC, sc-PARSE; multi-omics (sc-RNA + sc-ATAC); `snap_multi_project.wdl`; CI layout check; production rollout.
+**Slides & talking points:** [problem-and-solution-overview.md](../deliverables/docs/problem-and-solution-overview.md) · **Pitches:** [daedalus-pitch.md](../deliverables/docs/daedalus-pitch.md) · **Technical FAQ:** [participant-faq](../deliverables/docs/participant-faq-snap-sprocket-resources.md)
 
 **Presenters:** Lindsey Warren, Antonia Chroni, Rojina Sapkota, Emma Bishop, Rachana Pandey
 
-**Live demo:** Show `workflow_profile` toggles → dry-run + `sprocket validate` → scaled resources in `inputs/generated_downstream.json` → LSF status or completed outputs. **Fallback:** submitted state + pre-recorded walkthrough.
+**Live demo:** `workflow_profile` toggles → dry-run + `sprocket validate` → scaled resources → LSF status or outputs. **Fallback:** submitted state + recording.
 
 ---
 
@@ -212,7 +200,7 @@ At the beginning of the reception, each team gives a brief, **60-second report-o
 
 | Report-out speakers | Confirmed? |
 |-------------------|------------|
-| Lindsey Warren, Antonia Chroni, Rojina Sapkota, Emma Bishop, Rachana Pandey | ☑ |
+| Lindsey Warren, Antonia Chroni, Rojina Sapkota, Rachana Pandey | ☑ |
 
 Organizer note: [01-report-out-Wednesday-reception-email.md](../deliverables/reports/01-report-out-Wednesday-reception-email.md)
 
@@ -284,7 +272,7 @@ Organizer note: [01-report-out-Wednesday-reception-email.md](../deliverables/rep
 
 ### Day 3 — Demo session (3:00–6:00 PM)
 
-**Presenters:** Lindsey Warren, Antonia Chroni, Rojina Sapkota, Emma Bishop, Rachana Pandey
+**Presenters:** Lindsey Warren, Antonia Chroni, Rojina Sapkota, Rachana Pandey
 
 #### Judge feedback
 

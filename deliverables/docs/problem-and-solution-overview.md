@@ -65,17 +65,14 @@ Both          →  sprocket validate / run
 
 - ROI timing: legacy vs new (T15–T16)
 - Biology sign-off on upstream and integrative outputs (T6, T9)
-- See [Snap-Sprocket-ROI-one-pager.md](../../analyses/sc-rna-seq-snap-Victoria-Knockout/docs/Snap-Sprocket-ROI-one-pager.md)
+- **Next steps:** sc-epiegenie, sc-PARSE; sc-multiome; `snap_multi_project.wdl`; CI layout check; production rollout
+
 
 ---
 
 ## What the hackathon validates
 
-We are **not** converting bash to WDL from scratch — that work is largely done. We are **testing and demonstrating** the orchestrator on Victoria Knockout (4 samples, ~27k cells):
-
-- [Test log](../validation/hackathon-test-log.md) — T1–T17 pass/fail
-- Live demo — YAML toggle → dry-run → LSF submit
-- Legacy comparison — Antonia provides LSF logs from `launch_full_pipeline.sh` (T15)
+Test matrix, owners, and deliverables: [hackathon runbook](../../project-management/hackathon-runbook.md). Live results: [test log](../validation/hackathon-test-log.md).
 
 ---
 

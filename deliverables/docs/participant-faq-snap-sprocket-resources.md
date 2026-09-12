@@ -7,24 +7,9 @@
 
 ## Context
 
-This document answers common onboarding questions about **what problem we are solving**, **what the hackathon is actually testing**, and **where resource auto-scaling comes from** (hint: not Sprocket itself).
+Technical onboarding: **what the hackathon tests**, **how resource scaling works**, and **copy-paste config examples**.
 
-Start with the shorter [problem-and-solution-overview.md](./problem-and-solution-overview.md) if you want slide-ready talking points first.
-
----
-
-## What problem are we solving?
-
-The pain point is **manual setup** when running SNAP on St. Jude HSF/LSF:
-
-- Turning modules on/off
-- Setting CPU and memory per step
-- Wiring dependencies between steps
-- Re-doing all of that when sample count or Cell Ranger outputs change
-
-The **legacy path** (`launch_full_pipeline.sh` plus per-module `lsf-script.txt` files) uses **static** resource requests and manual bash wiring. That is error-prone and labor-intensive.
-
-The **new path** uses **WDL + Sprocket** plus a **custom resource estimator** so analysts mainly edit YAML toggles and run one launcher command.
+**Problem, solution, and slides:** [problem-and-solution-overview.md](./problem-and-solution-overview.md) · **Team, schedule, tests:** [hackathon runbook](../../project-management/hackathon-runbook.md)
 
 ---
 
@@ -130,34 +115,6 @@ workflow_profile:
   run_de_go: false
   run_rshiny: false
 ```
-
----
-
-## Where to read more
-
-| Doc | Purpose |
-|-----|---------|
-| [Problem & solution overview](./problem-and-solution-overview.md) | Slide-ready problem/solution narrative |
-| [Daedalus pitch](./daedalus-pitch.md) | Tool name, pitches, naming rationale |
-| [Hackathon runbook](../../project-management/hackathon-runbook.md) | Schedule, team pairs, test matrix T1–T17, deliverables |
-| [scripts/README.md](../../analyses/sc-rna-seq-snap-Victoria-Knockout/scripts/README.md) | Launcher flow, YAML config, troubleshooting |
-| [Test log](../validation/hackathon-test-log.md) | Live pass/fail log during the event |
-| [vm-hpc-setup.md](../../docs/vm-hpc-setup.md) | HPC access and modules |
-| [resources-snap.md](../../docs/resources-snap.md) · [resources-sprocket.md](../../docs/resources-sprocket.md) | Background on SNAP and Sprocket |
-
----
-
-## Pair assignments (quick reference)
-
-| Pair | Focus |
-|------|--------|
-| **Emma/Rojina/Antonia** | Code review and development (Emma Bishop, Rojina Sapkota, Antonia Chroni); live demo |
-| **Rojina/Antonia (testing)** | Dry-run and St. Jude HPC testing only — Rojina Sapkota and Antonia Chroni (T2–T5, T7–T8, T12–T14) |
-| **Rachana/A.S.M. Tanjim** | Layout, resource/YAML tests, biology sign-off (T1, T6, T9–T11) |
-| **Lindsey/Rachana** | Hackathon test log ([hackathon-test-log.md](../validation/hackathon-test-log.md)) |
-| **Lindsey/Sarthak** | Docs, PRs, ROI tables, legacy vs new comparison (T15–T17) |
-
-**T15 input:** Antonia provides LSF log files from a legacy `launch_full_pipeline.sh` run for the side-by-side comparison and slides.
 
 ---
 
