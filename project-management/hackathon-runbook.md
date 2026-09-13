@@ -41,15 +41,15 @@ Assignments follow `Task_to_assign: pairs` from the roster.
 | **Rojina/Antonia (testing)** | Rojina Sapkota + Antonia Chroni | Dry-run and St. Jude HPC testing only (T2–T5, T7–T8, T12–T14) |
 | **Rachana/A.S.M. Tanjim** | Rachana Pandey + Tanjim Hassan | Testing results/biology of sc-RNA; GitHub PR review |
 
-| Person | GitHub | Pair | Main responsibility | HPC |
+| Person | GitHub | Pair | Main responsibility | HPC/In-person attendance |
 | --- | --- | --- | --- | --- |
-| Emma Bishop | [emjbishop](https://github.com/emjbishop) | Emma/Rojina/Antonia (co-lead) | Code review and development lead; PR review; live demo | No |
-| Antonia Chroni | [AntoniaChroni](https://github.com/AntoniaChroni) | Emma/Rojina/Antonia (co-lead) · Rojina/Antonia (testing) | Tool author; code review; dry-run + HPC testing (T2–T5, T7–T8, T12–T14); live demo | Yes |
-| Rojina Sapkota | [Rojinasap](https://github.com/Rojinasap) | Emma/Rojina/Antonia · Rojina/Antonia (testing) | Dry-run + WDL toggles (T2–T3, T7); HPC submits (T4, T5, T8); WDL chain (T12–T14) | Yes |
-| Lindsey Warren | [lrwarren94](https://github.com/lrwarren94) | Lindsey/Sarthak · Lindsey/Rachana | PR hygiene, doc structure; test log maintenance (with Rachana) | Memphis |
-| Sarthak Dhanke | [Sarztak](https://github.com/Sarztak) | Lindsey/Sarthak | ROI tables (T15–T16), legacy vs new comparison, PR review | Remote |
-| Rachana Pandey | [rachanapandey2016](https://github.com/rachanapandey2016) | Rachana/A.S.M. Tanjim · Lindsey/Rachana | Test log maintenance (with Lindsey); layout (T1); resource + YAML tests (T10–T11) | Remote |
-| Tanjim Hassan | [asmtanjimhassan](https://github.com/asmtanjimhassan) | Rachana/A.S.M. Tanjim | Biology sign-off (T6, T9) | Remote (async) |
+| Emma Bishop | [emjbishop](https://github.com/emjbishop) | Emma/Rojina/Antonia (co-lead) | Code review and development lead; PR review; live demo | No/Remote (async) |
+| Antonia Chroni | [AntoniaChroni](https://github.com/AntoniaChroni) | Emma/Rojina/Antonia (co-lead) · Rojina/Antonia (testing) | Tool author; code review; dry-run + HPC testing (T2–T5, T7–T8, T12–T14); live demo | Yes/Yes |
+| Rojina Sapkota | [Rojinasap](https://github.com/Rojinasap) | Emma/Rojina/Antonia · Rojina/Antonia (testing) | Dry-run + WDL toggles (T2–T3, T7); HPC submits (T4, T5, T8); WDL chain (T12–T14) | Yes/Yes |
+| Lindsey Warren | [lrwarren94](https://github.com/lrwarren94) | Lindsey/Sarthak · Lindsey/Rachana | PR hygiene, doc structure; test log maintenance (with Rachana) | No/Yes |
+| Sarthak Dhanke | [Sarztak](https://github.com/Sarztak) | Lindsey/Sarthak | ROI tables (T15–T16), legacy vs new comparison, PR review | No/Remote (async) |
+| Rachana Pandey | [rachanapandey2016](https://github.com/rachanapandey2016) | Rachana/A.S.M. Tanjim · Lindsey/Rachana | Test log maintenance (with Lindsey); layout (T1); resource + YAML tests (T10–T11) | No/Yes |
+| Tanjim Hassan | [asmtanjimhassan](https://github.com/asmtanjimhassan) | Rachana/A.S.M. Tanjim | Biology sign-off (T6, T9) | No/Remote (async) |
 
 ### Deliverables by pair
 

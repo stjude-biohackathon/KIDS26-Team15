@@ -48,7 +48,11 @@ In Greek myth, **Daedalus** was the master craftsman — the architect who desig
 
 **Why not SCALR or Scala?** We considered acronyms closer to “scaling,” but **Scalr** (Terraform orchestration) and **scaLR** (scRNA-seq ML) are too easy to confuse; **SCALA** is already a published single-cell multimodal tool. **Daedalus** is distinctive in our context when we introduce it as *the St. Jude SNAP orchestrator*.
 
+**Earlier name:** We first called the tool **Resmetis**[^resmetis].
+
 **How to say it in slides:** *“Daedalus — our SNAP + Sprocket orchestrator”* on first mention; then just “Daedalus.”
+
+[^resmetis]: **Resmetis** was our original working name (resource-scaled metrics for integrated SNAP), but we retired it because it sits too close to **METIS**, an existing scRNA-seq/NGS analysis suite, and to **resmetirom**, an unrelated FDA-approved drug—both likely to cause confusion in search and presentations. **Daedalus** keeps the orchestration-and-craft story without those naming collisions.
 
 ---
 
