@@ -1,0 +1,495 @@
+1/21                                   
+2/21 [logo-file]                       
+3/21                                   
+4/21 [load-library]                    
+5/21                                   
+6/21 [set-dir-and-file-names]          
+7/21                                   
+8/21 [unnamed-chunk-1]                 
+9/21                                   
+10/21 [read-metadata-define-sample-name]
+11/21                                   
+12/21 [run-SoupX]                       
+13/21                                   
+14/21 [unnamed-chunk-2]                 
+15/21                                   
+16/21 [save-output]                     
+17/21                                   
+18/21 [unnamed-chunk-3]                 
+19/21                                   
+20/21 [unnamed-chunk-4]                 
+21/21                                   
+1/21                                   
+2/21 [logo-file]                       
+3/21                                   
+4/21 [load-library]                    
+5/21                                   
+6/21 [set-dir-and-file-names]          
+7/21                                   
+8/21 [unnamed-chunk-1]                 
+9/21                                   
+10/21 [read-metadata-define-sample-name]
+11/21                                   
+12/21 [run-SoupX]                       
+13/21                                   
+14/21 [unnamed-chunk-2]                 
+15/21                                   
+16/21 [save-output]                     
+17/21                                   
+18/21 [unnamed-chunk-3]                 
+19/21                                   
+20/21 [unnamed-chunk-4]                 
+21/21                                   
+[1] "DYE_2519" "DYE_2520" "DYE_2521" "DYE_2522"
+1/30                              
+2/30 [logo-file]                  
+3/30                              
+4/30 [load-library]               
+5/30                              
+6/30 [set-dir-and-file-names]     
+7/30                              
+8/30 [unnamed-chunk-1]            
+9/30                              
+10/30 [define-parameters-for-plots]
+11/30                              
+12/30 [read-process-data]          
+13/30                              
+14/30 [plot-data-before-filtering] 
+15/30                              
+16/30 [run-miQC]                   
+17/30                              
+18/30 [filter-data]                
+19/30                              
+20/30 [plot-cells-genes]           
+21/30                              
+22/30 [plot-genes-library]         
+23/30                              
+24/30 [plot-data-after-filter]     
+25/30                              
+26/30 [process-seurat]             
+27/30                              
+28/30 [unnamed-chunk-2]            
+29/30                              
+30/30 [unnamed-chunk-3]            
+1/30                              
+2/30 [logo-file]                  
+3/30                              
+4/30 [load-library]               
+5/30                              
+6/30 [set-dir-and-file-names]     
+7/30                              
+8/30 [unnamed-chunk-1]            
+9/30                              
+10/30 [define-parameters-for-plots]
+11/30                              
+12/30 [read-process-data]          
+13/30                              
+14/30 [plot-data-before-filtering] 
+15/30                              
+16/30 [run-miQC]                   
+17/30                              
+18/30 [filter-data]                
+19/30                              
+20/30 [plot-cells-genes]           
+21/30                              
+22/30 [plot-genes-library]         
+23/30                              
+24/30 [plot-data-after-filter]     
+25/30                              
+26/30 [process-seurat]             
+27/30                              
+28/30 [unnamed-chunk-2]            
+29/30                              
+30/30 [unnamed-chunk-3]            
+1/30                              
+2/30 [logo-file]                  
+3/30                              
+4/30 [load-library]               
+5/30                              
+6/30 [set-dir-and-file-names]     
+7/30                              
+8/30 [unnamed-chunk-1]            
+9/30                              
+10/30 [define-parameters-for-plots]
+11/30                              
+12/30 [read-process-data]          
+13/30                              
+14/30 [plot-data-before-filtering] 
+15/30                              
+16/30 [run-miQC]                   
+17/30                              
+18/30 [filter-data]                
+19/30                              
+20/30 [plot-cells-genes]           
+21/30                              
+22/30 [plot-genes-library]         
+23/30                              
+24/30 [plot-data-after-filter]     
+25/30                              
+26/30 [process-seurat]             
+27/30                              
+28/30 [unnamed-chunk-2]            
+29/30                              
+30/30 [unnamed-chunk-3]            
+1/30                              
+2/30 [logo-file]                  
+3/30                              
+4/30 [load-library]               
+5/30                              
+6/30 [set-dir-and-file-names]     
+7/30                              
+8/30 [unnamed-chunk-1]            
+9/30                              
+10/30 [define-parameters-for-plots]
+11/30                              
+12/30 [read-process-data]          
+13/30                              
+14/30 [plot-data-before-filtering] 
+15/30                              
+16/30 [run-miQC]                   
+17/30                              
+18/30 [filter-data]                
+19/30                              
+20/30 [plot-cells-genes]           
+21/30                              
+22/30 [plot-genes-library]         
+23/30                              
+24/30 [plot-data-after-filter]     
+25/30                              
+26/30 [process-seurat]             
+27/30                              
+28/30 [unnamed-chunk-2]            
+29/30                              
+30/30 [unnamed-chunk-3]            
+1/30                              
+2/30 [logo-file]                  
+3/30                              
+4/30 [load-library]               
+5/30                              
+6/30 [set-dir-and-file-names]     
+7/30                              
+8/30 [unnamed-chunk-1]            
+9/30                              
+10/30 [define-parameters-for-plots]
+11/30                              
+12/30 [read-process-data]          
+13/30                              
+14/30 [plot-data-before-filtering] 
+15/30                              
+16/30 [run-miQC]                   
+17/30                              
+18/30 [filter-data]                
+19/30                              
+20/30 [plot-cells-genes]           
+21/30                              
+22/30 [plot-genes-library]         
+23/30                              
+24/30 [plot-data-after-filter]     
+25/30                              
+26/30 [process-seurat]             
+27/30                              
+28/30 [unnamed-chunk-2]            
+29/30                              
+30/30 [unnamed-chunk-3]            
+1/30                              
+2/30 [logo-file]                  
+3/30                              
+4/30 [load-library]               
+5/30                              
+6/30 [set-dir-and-file-names]     
+7/30                              
+8/30 [unnamed-chunk-1]            
+9/30                              
+10/30 [define-parameters-for-plots]
+11/30                              
+12/30 [read-process-data]          
+13/30                              
+14/30 [plot-data-before-filtering] 
+15/30                              
+16/30 [run-miQC]                   
+17/30                              
+18/30 [filter-data]                
+19/30                              
+20/30 [plot-cells-genes]           
+21/30                              
+22/30 [plot-genes-library]         
+23/30                              
+24/30 [plot-data-after-filter]     
+25/30                              
+26/30 [process-seurat]             
+27/30                              
+28/30 [unnamed-chunk-2]            
+29/30                              
+30/30 [unnamed-chunk-3]            
+1/30                              
+2/30 [logo-file]                  
+3/30                              
+4/30 [load-library]               
+5/30                              
+6/30 [set-dir-and-file-names]     
+7/30                              
+8/30 [unnamed-chunk-1]            
+9/30                              
+10/30 [define-parameters-for-plots]
+11/30                              
+12/30 [read-process-data]          
+13/30                              
+14/30 [plot-data-before-filtering] 
+15/30                              
+16/30 [run-miQC]                   
+17/30                              
+18/30 [filter-data]                
+19/30                              
+20/30 [plot-cells-genes]           
+21/30                              
+22/30 [plot-genes-library]         
+23/30                              
+24/30 [plot-data-after-filter]     
+25/30                              
+26/30 [process-seurat]             
+27/30                              
+28/30 [unnamed-chunk-2]            
+29/30                              
+30/30 [unnamed-chunk-3]            
+1/30                              
+2/30 [logo-file]                  
+3/30                              
+4/30 [load-library]               
+5/30                              
+6/30 [set-dir-and-file-names]     
+7/30                              
+8/30 [unnamed-chunk-1]            
+9/30                              
+10/30 [define-parameters-for-plots]
+11/30                              
+12/30 [read-process-data]          
+13/30                              
+14/30 [plot-data-before-filtering] 
+15/30                              
+16/30 [run-miQC]                   
+17/30                              
+18/30 [filter-data]                
+19/30                              
+20/30 [plot-cells-genes]           
+21/30                              
+22/30 [plot-genes-library]         
+23/30                              
+24/30 [plot-data-after-filter]     
+25/30                              
+26/30 [process-seurat]             
+27/30                              
+28/30 [unnamed-chunk-2]            
+29/30                              
+30/30 [unnamed-chunk-3]            
+1/23                                       
+2/23 [logo-file]                           
+3/23                                       
+4/23 [load-library]                        
+5/23                                       
+6/23 [unnamed-chunk-1]                     
+7/23                                       
+8/23 [set-dir-and-file-names]              
+9/23                                       
+10/23 [read-metadata-define-sample-name]    
+11/23                                       
+12/23 [run-recoverDoublets-plot-predictions]
+13/23                                       
+14/23 [unnamed-chunk-2]                     
+15/23                                       
+16/23 [create-object]                       
+17/23                                       
+18/23 [filter-object]                       
+19/23                                       
+20/23 [unnamed-chunk-3]                     
+21/23                                       
+22/23 [unnamed-chunk-4]                     
+23/23                                       
+1/23                                       
+2/23 [logo-file]                           
+3/23                                       
+4/23 [load-library]                        
+5/23                                       
+6/23 [unnamed-chunk-1]                     
+7/23                                       
+8/23 [set-dir-and-file-names]              
+9/23                                       
+10/23 [read-metadata-define-sample-name]    
+11/23                                       
+12/23 [run-recoverDoublets-plot-predictions]
+13/23                                       
+14/23 [unnamed-chunk-2]                     
+15/23                                       
+16/23 [create-object]                       
+17/23                                       
+18/23 [filter-object]                       
+19/23                                       
+20/23 [unnamed-chunk-3]                     
+21/23                                       
+22/23 [unnamed-chunk-4]                     
+23/23                                       
+1/30                                   
+2/30 [logo-file]                       
+3/30                                   
+4/30 [load-library]                    
+5/30                                   
+6/30 [unnamed-chunk-1]                 
+7/30                                   
+8/30 [set-dir-and-file-names]          
+9/30                                   
+10/30 [read-metadata-define-sample-name]
+11/30                                   
+12/30 [define-parameters-for-plots]     
+13/30                                   
+14/30 [read-merge-objects]              
+15/30                                   
+16/30 [filter-ambient-RNA]              
+17/30                                   
+18/30 [filter-doublets]                 
+19/30                                   
+20/30 [unnamed-chunk-2]                 
+21/30                                   
+22/30 [unnamed-chunk-3]                 
+23/30                                   
+24/30 [process-seurat]                  
+25/30                                   
+26/30 [save_seurat]                     
+27/30                                   
+28/30 [unnamed-chunk-4]                 
+29/30                                   
+30/30 [unnamed-chunk-5]                 
+1/30                                   
+2/30 [logo-file]                       
+3/30                                   
+4/30 [load-library]                    
+5/30                                   
+6/30 [unnamed-chunk-1]                 
+7/30                                   
+8/30 [set-dir-and-file-names]          
+9/30                                   
+10/30 [read-metadata-define-sample-name]
+11/30                                   
+12/30 [define-parameters-for-plots]     
+13/30                                   
+14/30 [read-merge-objects]              
+15/30                                   
+16/30 [filter-ambient-RNA]              
+17/30                                   
+18/30 [filter-doublets]                 
+19/30                                   
+20/30 [unnamed-chunk-2]                 
+21/30                                   
+22/30 [unnamed-chunk-3]                 
+23/30                                   
+24/30 [process-seurat]                  
+25/30                                   
+26/30 [save_seurat]                     
+27/30                                   
+28/30 [unnamed-chunk-4]                 
+29/30                                   
+30/30 [unnamed-chunk-5]                 
+1/53                                   
+2/53 [logo-file]                       
+3/53                                   
+4/53 [load-library]                    
+5/53                                   
+6/53 [unnamed-chunk-1]                 
+7/53                                   
+8/53 [set-dir-and-file-names]          
+9/53                                   
+10/53 [read-metadata-define-sample-name]
+11/53                                   
+12/53 [read-fastqc-analysis]            
+13/53                                   
+14/53 [unnamed-chunk-2]                 
+15/53                                   
+16/53 [unnamed-chunk-3]                 
+17/53                                   
+18/53 [read-cellranger-analysis]        
+19/53                                   
+20/53 [unnamed-chunk-4]                 
+21/53                                   
+22/53 [read-seurat-qc-plots-file]       
+23/53                                   
+24/53 [read-seurat-qc-plots-file-plot]  
+25/53                                   
+26/53 [read-SoupX]                      
+27/53                                   
+28/53 [unnamed-chunk-5]                 
+29/53                                   
+30/53 [read-SoupX-plots-file]           
+31/53                                   
+32/53 [read-SoupX-plots-file-plot]      
+33/53                                   
+34/53 [read-scDblFinder]                
+35/53                                   
+36/53 [unnamed-chunk-6]                 
+37/53                                   
+38/53 [read-scDblFinder-plots-file]     
+39/53                                   
+40/53 [read-scDblFinder-plots-file-plot]
+41/53                                   
+42/53 [read-Filter-object]              
+43/53                                   
+44/53 [unnamed-chunk-7]                 
+45/53                                   
+46/53 [read-final-plots-file]           
+47/53                                   
+48/53 [read-final-plots-file-plot]      
+49/53                                   
+50/53 [unnamed-chunk-8]                 
+51/53                                   
+52/53 [unnamed-chunk-9]                 
+53/53                                   
+1/53                                   
+2/53 [logo-file]                       
+3/53                                   
+4/53 [load-library]                    
+5/53                                   
+6/53 [unnamed-chunk-1]                 
+7/53                                   
+8/53 [set-dir-and-file-names]          
+9/53                                   
+10/53 [read-metadata-define-sample-name]
+11/53                                   
+12/53 [read-fastqc-analysis]            
+13/53                                   
+14/53 [unnamed-chunk-2]                 
+15/53                                   
+16/53 [unnamed-chunk-3]                 
+17/53                                   
+18/53 [read-cellranger-analysis]        
+19/53                                   
+20/53 [unnamed-chunk-4]                 
+21/53                                   
+22/53 [read-seurat-qc-plots-file]       
+23/53                                   
+24/53 [read-seurat-qc-plots-file-plot]  
+25/53                                   
+26/53 [read-SoupX]                      
+27/53                                   
+28/53 [unnamed-chunk-5]                 
+29/53                                   
+30/53 [read-SoupX-plots-file]           
+31/53                                   
+32/53 [read-SoupX-plots-file-plot]      
+33/53                                   
+34/53 [read-scDblFinder]                
+35/53                                   
+36/53 [unnamed-chunk-6]                 
+37/53                                   
+38/53 [read-scDblFinder-plots-file]     
+39/53                                   
+40/53 [read-scDblFinder-plots-file-plot]
+41/53                                   
+42/53 [read-Filter-object]              
+43/53                                   
+44/53 [unnamed-chunk-7]                 
+45/53                                   
+46/53 [read-final-plots-file]           
+47/53                                   
+48/53 [read-final-plots-file-plot]      
+49/53                                   
+50/53 [unnamed-chunk-8]                 
+51/53                                   
+52/53 [unnamed-chunk-9]                 
+53/53                                   
