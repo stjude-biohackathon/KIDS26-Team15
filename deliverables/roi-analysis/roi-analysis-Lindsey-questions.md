@@ -1,6 +1,6 @@
 # Q1: What is the specific pricing tier/platform cost and mechanisms that StJ uses for HPC consumption for this specific workflow type? (i.e. running compute for X specs costs $Y/hour)
 
-As a general ballpark:
+As a general ballpark (info provided by Michael Brewer, Director - High Performance Research Computing at St. Jude Children's Research Hospital):
 
 - 2.4 cents per hour per core with 32G of memory.
 - $2.50 per hour of GPU with 8 CPU cores and 32G of memory.
