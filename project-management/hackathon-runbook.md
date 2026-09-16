@@ -1,98 +1,52 @@
 # KIDS26 Team 15 — Hackathon Runbook
 
 **Project:** Resource-Aware Multi-Project Workflow Orchestrator for Scalable Single-Cell Analysis  
-**Tool under test:** SNAP + Sprocket downstream launcher (`launch-snap-downstream.sh`)  
-**Analysis repo:** `analyses/sc-rna-seq-snap-Victoria-Knockout/`  
-**Time budget:** Day 1 (4 h) · Day 2 (8 h) · Day 3 (4 h afternoon) + demo session 3:00–6:00 PM  
-**Test log:** [hackathon-test-log.md](../deliverables/validation/hackathon-test-log.md)  
-**HPC setup:** [vm-hpc-setup.md](../docs/vm-hpc-setup.md)  
-**Roster:** [stjude-biohackathon-kids26-team15-info.xlsx](./stjude-biohackathon-kids26-team15-info.xlsx) (update spreadsheet when roster changes — Emma Bishop added 2026-09-12; Clay McLeod added 2026-09-16)
+**Tool:** SNAP + Sprocket launcher (`launch-snap-downstream.sh`) in `analyses/sc-rna-seq-snap-Victoria-Knockout/`  
+**Schedule:** Day 1 (4 h) · Day 2 (8 h) · Day 3 (4 h) · Demo 3:00–6:00 PM  
+**Links:** [Test log](../deliverables/validation/hackathon-test-log.md) · [HPC setup](../docs/vm-hpc-setup.md) · [Roster xlsx](./stjude-biohackathon-kids26-team15-info.xlsx) · [Slack team15](https://stjudebiohackathon.slack.com/archives/C0BT8BF4JEL)
 
 ---
 
 ## Goal
 
-By the end of the hackathon, the team will have **tested, documented, and demonstrated** the resource-aware SNAP + Sprocket orchestrator (`launch-snap-downstream.sh`) and shown measurable ROI over legacy `launch_full_pipeline.sh`.
+Test, document, and demo the resource-aware SNAP + Sprocket orchestrator and show ROI vs legacy `launch_full_pipeline.sh`.
 
-**Success requires:** upstream HPC submit (T4) and upstream + integrative submit (T8) logged with job IDs; biology sign-off (T6, T9); each pair produces a documented artifact.
+**Definition of done**
 
-### Definition of done
-
-- [ ] At least **10 of 17 tests** logged in [hackathon-test-log.md](../deliverables/validation/hackathon-test-log.md)
-- [ ] **T4** and **T8** documented with LSF job IDs
-- [ ] **Biology sign-off** on upstream (T6) and integrative (T9)
-- [ ] Code-review notes committed or issues filed for major findings
-- [ ] **Troubleshooting doc** updated with ≥3 real errors + fixes
-- [ ] **BioHackathon Progress Report – Wednesday**
-- [ ] **3-slide deck** (organizer template): problem, solution, results/impact
-- [ ] **2-minute lightning talk** rehearsed (Lindsey, Antonia, Rojina, Rachana)
-- [ ] **Live demo** rehearsed (or recorded fallback ready)
+- [ ] ≥10 of 17 tests in [hackathon-test-log.md](../deliverables/validation/hackathon-test-log.md)
+- [ ] T4 + T8 with LSF job IDs; biology sign-off T6 + T9
+- [ ] Code-review notes or issues; ≥3 troubleshooting entries
+- [ ] Wednesday progress report; 3-slide deck; 2-min lightning talk; live demo (or recording)
 
 ---
 
 ## Team
 
-Assignments follow `Task_to_assign: pairs` from the roster.
+**Pair labels:** **HPC** = dry-run + St. Jude submits (T2–T5, T7–T8, T12–T14) · **Bio** = layout, biology QC, resource tests (T1, T6, T9–T11) · **Docs** = test log, PRs, ROI (T15–T17)
 
-| Pair | Members | Primary mission |
-|------|---------|-----------------|
-| **Lindsey/Sarthak** | Lindsey Warren + Sarthak Dhanke | GitHub PRs/reviews, docs, automated ROI and project impact |
-| **Emma/Rojina/Antonia** | Emma Bishop + Rojina Sapkota + Antonia Chroni | Code review and development (co-leads); live demo lead |
-| **Rojina/Antonia/Clay (testing)** | Rojina Sapkota + Antonia Chroni + Clay McLeod | Dry-run and St. Jude HPC testing (T2–T5, T7–T8, T12–T14); Clay as needed |
-| **Rachana/A.S.M. Tanjim** | Rachana Pandey + Tanjim Hassan | Testing results/biology of sc-RNA; GitHub PR review |
-
-| Person | GitHub | Pair | Main responsibility | HPC/In-person attendance |
+| Person | GitHub | Pair | Role | HPC / in-person |
 | --- | --- | --- | --- | --- |
-| Emma Bishop | [emjbishop](https://github.com/emjbishop) | Emma/Rojina/Antonia (co-lead) | Code review and development lead; PR review; live demo | No/Remote (async) |
-| Antonia Chroni | [AntoniaChroni](https://github.com/AntoniaChroni) | Emma/Rojina/Antonia (co-lead) · Rojina/Antonia/Clay (testing) | Tool author; code review; dry-run + HPC testing (T2–T5, T7–T8, T12–T14); live demo | Yes/Yes |
-| Rojina Sapkota | [Rojinasap](https://github.com/Rojinasap) | Emma/Rojina/Antonia · Rojina/Antonia/Clay (testing) | Dry-run + WDL toggles (T2–T3, T7); HPC submits (T4, T5, T8); WDL chain (T12–T14) | Yes/Yes |
-| Lindsey Warren | [lrwarren94](https://github.com/lrwarren94) | Lindsey/Sarthak · Lindsey/Rachana | PR hygiene, doc structure; test log maintenance (with Rachana) | No/Yes |
-| Sarthak Dhanke | [Sarztak](https://github.com/Sarztak) | Lindsey/Sarthak | ROI tables (T15–T16), legacy vs new comparison, PR review | No/Remote (async) |
-| Rachana Pandey | [rachanapandey2016](https://github.com/rachanapandey2016) | Rachana/A.S.M. Tanjim · Lindsey/Rachana | Test log maintenance (with Lindsey); layout (T1); resource + YAML tests (T10–T11) | No/Yes |
-| Tanjim Hassan | [asmtanjimhassan](https://github.com/asmtanjimhassan) | Rachana/A.S.M. Tanjim | Biology sign-off (T6, T9) | No/Remote (async) |
-| Clay McLeod | [claymcleod](https://github.com/claymcleod) | Support (as needed) · Rojina/Antonia/Clay (testing) | Code development, code review, dry-run, and HPC testing support as needed | Yes/Remote (async) |
+| Antonia Chroni | [AntoniaChroni](https://github.com/AntoniaChroni) | Code/dev · HPC | Tool author; code review; HPC testing; demo | Yes / Yes |
+| Rojina Sapkota | [Rojinasap](https://github.com/Rojinasap) | Code/dev · HPC | Code review; dry-run, WDL toggles, HPC submits | Yes / Yes |
+| Emma Bishop | [emjbishop](https://github.com/emjbishop) | Code/dev | Code review + development lead; demo | Remote |
+| Clay McLeod | [claymcleod](https://github.com/claymcleod) | Code/dev · HPC | Code review, development, dry-run, HPC testing — as needed | Yes / remote |
+| Lindsey Warren | [lrwarren94](https://github.com/lrwarren94) | Docs · Bio | Test log (with Rachana); PR hygiene | In-person |
+| Rachana Pandey | [rachanapandey2016](https://github.com/rachanapandey2016) | Bio · Docs | Test log (with Lindsey); T1, T10–T11 | In-person |
+| Sarthak Dhanke | [Sarztak](https://github.com/Sarztak) | Docs | ROI, legacy comparison, troubleshooting (T15–T17) | Remote |
+| Tanjim Hassan | [asmtanjimhassan](https://github.com/asmtanjimhassan) | Bio | Biology sign-off T6, T9 | Remote |
 
-### Deliverables by pair
+| Pair | Lead | Deliverable |
+| --- | --- | --- |
+| HPC (Rojina, Antonia, Clay) | Rojina | T2–T5, T7–T8, T12–T14 logged; Antonia provides legacy LSF logs (T15) |
+| Code/dev (Emma, Rojina, Antonia, Clay) | Emma | `docs/code-review-notes.md`; live demo |
+| Bio (Rachana, Tanjim) | Rachana | T1, T6, T9–T11; Tanjim sign-off; legacy outputs from Antonia for QC |
+| Docs (Lindsey, Sarthak) | Lindsey | `hackathon-test-log.md`, `docs/troubleshooting.md`, ROI slides |
 
-| Pair | Lead | Output |
-|------|------|--------|
-| Lindsey/Rachana | Lindsey Warren | `deliverables/validation/hackathon-test-log.md` |
-| Lindsey/Sarthak | Lindsey | `docs/troubleshooting.md`, PR merges, ROI for slides |
-| Emma/Rojina/Antonia | Rojina/Antonia | `docs/code-review-notes.md` + issues; live demo |
-| Rojina/Antonia/Clay (testing) | Rojina Sapkota | T2–T5, T7–T8, T12–T14 (dry-run + St. Jude HPC); Clay as needed; Antonia provides legacy-run LSF log files (T15) |
-| Rachana/A.S.M. Tanjim | Rachana | Test log rows T1, T6, T9–T11; biology sign-off T6, T9; Antonia provides legacy run outputs (`sc-rna-seq-snap-legacy-Victoria-Knockout`) |
-
-**Communications:** [Slack team15](https://stjudebiohackathon.slack.com/archives/C0BT8BF4JEL) · Check-ins: Day 1 end · Day 2 mid-day · Demo Day 3, 3:00–6:00 PM
+Check-ins: Day 1 end · Day 2 mid-day · Demo Day 3.
 
 ---
 
-## Tools
-
-| Tool | Role |
-|------|------|
-| [sc-rna-seq-snap](https://github.com/stjude-dnb-binfcore/sc-rna-seq-snap) | Single-cell analysis modules |
-| [Sprocket](https://github.com/stjude-rust-labs/sprocket) | WDL workflow runner on St. Jude HPC |
-| `launch-snap-downstream.sh` | One-command launcher (dry-run or `--submit`) |
-| `estimate-snap-downstream-resources.R` | Auto-scale LSF CPU/memory from Cell Ranger metrics |
-| Apptainer/Singularity | Container runtime for R/Seurat modules |
-| Victoria Knockout cohort | Test dataset (4 samples, ~27k cells) |
-
----
-
-## What we are testing
-
-The orchestrator replaces manual LSF wiring with:
-
-1. **YAML `workflow_profile` toggles** — turn modules on/off without editing bash flags
-2. **Auto resource scaling** — `estimate-snap-downstream-resources.R` reads Cell Ranger metrics
-3. **WDL + Sprocket validation** — `sprocket check` / `validate` before submit
-4. **One-command launch** — `bash launch-snap-downstream.sh [--submit]`
-
-**Scope:** St. Jude **HPC only** — SNAP **upstream** and **integrative** modules on Victoria Knockout.
-
----
-
-## Environment setup (first 45 min — HPC)
+## Setup (first 45 min)
 
 ```bash
 git clone <team15-repo-url>
@@ -102,156 +56,67 @@ bash scripts/test-downstream-layout.sh    # T1
 bash launch-snap-downstream.sh            # T2 dry-run
 ```
 
-Remote teammates without HPC login pair with **Rojina/Antonia/Clay** for dry-run and submit tests (T2–T5, T7–T8, T12–T14). **Dry-run and St. Jude HPC testing:** Rojina Sapkota, Antonia Chroni, and Clay McLeod (Clay as needed).
+No HPC access? Pair with **HPC** testers for T2–T5, T7–T8, T12–T14. Lindsey + Rachana maintain the test log (tester, date, pass/fail, job ID, notes, screenshot).
 
-Lindsey Warren and Rachana Pandey maintain [hackathon-test-log.md](../deliverables/validation/hackathon-test-log.md). One row per test: tester, date, pass/fail, LSF job ID, notes, screenshot link.
-
-**Pre-hackathon (team lead):** Submit one upstream-only run before the event as demo backup.
+**Scope:** St. Jude HPC only — SNAP upstream + integrative on Victoria Knockout (4 samples, ~27k cells). YAML toggles, auto resource scaling, WDL validation, one-command launch.
 
 ---
 
 ## Test matrix (T1–T17)
 
-Record results in [hackathon-test-log.md](../deliverables/validation/hackathon-test-log.md). Status: `PASS` | `FAIL` | `SKIP` | `BLOCKED`.
+Status: `PASS` | `FAIL` | `SKIP` | `BLOCKED`. Log in [hackathon-test-log.md](../deliverables/validation/hackathon-test-log.md).
 
-| ID | Test | Module(s) | Owner | Command / action | Expected result |
-|----|------|-----------|-------|------------------|-----------------|
-| **T1** | Layout sanity | — | Rachana/A.S.M. Tanjim | `bash scripts/test-downstream-layout.sh` | All expected WDL/input files present |
-| **T2** | Dry-run pipeline | — | Rojina/Antonia/Clay | `bash launch-snap-downstream.sh` | WDL regen → estimate → check → validate pass |
-| **T3** | Upstream — WDL toggle | `run_upstream` | Rojina/Antonia/Clay | Only `run_upstream: true`; dry-run | WDL contains upstream task only |
-| **T4** | Upstream — HPC submit | `run_upstream` | Rojina/Antonia/Clay | `bash launch-snap-downstream.sh --submit` | LSF job ID returned |
-| **T5** | Upstream — LSF monitoring | `run_upstream` | Rojina/Antonia/Clay | `bjobs -u $USER`; tail upstream stderr | Job visible; logs accessible |
-| **T6** | Upstream — biology QC | `run_upstream` | Rachana/A.S.M. Tanjim | Review QC plots, cell counts, filters | Tanjim signs off upstream outputs |
-| **T7** | Upstream + integrative — WDL toggle | both | Rojina/Antonia/Clay | Both modules true; dry-run | WDL chain: upstream → integrative |
-| **T8** | Upstream + integrative — HPC submit | both | Rojina/Antonia/Clay | `bash launch-snap-downstream.sh --submit` | LSF job ID returned |
-| **T9** | Integrative — biology QC | `run_integrative` | Rachana/A.S.M. Tanjim | Review Harmony outputs, UMAP | Tanjim signs off integrative outputs |
-| **T10** | Resource scaling | both | Rachana/A.S.M. Tanjim | `estimate-snap-downstream-resources.R --update-yaml` | JSON reflects sample count; resources updated |
-| **T11** | Generated YAML overlay | — | Rachana/A.S.M. Tanjim | Inspect `project_parameters.generated.yaml` | Master YAML untouched; scaled resources in overlay |
-| **T12** | WDL module chain | upstream → integrative | Rojina/Antonia/Clay | Inspect generated WDL dependency chain | Integrative depends on upstream |
-| **T13** | `snap_parallel_plan.R` safety | upstream | Rojina/Antonia/Clay | `SNAP_FUTURE_WORKERS=1` vs `2` | No NFS bus errors; document behavior |
-| **T14** | Email notification | — | Rojina/Antonia/Clay | Confirm `CONTACT_EMAIL` on submit | Workflow submitted email received |
-| **T15** | Legacy vs new comparison | — | Lindsey/Sarthak | Compare `launch_full_pipeline.sh` vs `workflow_profile` | Side-by-side table for slides |
-| **T16** | ROI timing | — | Lindsey/Sarthak | Time YAML edit + dry-run vs legacy bash | Minutes-to-launch-ready on HPC |
-| **T17** | Troubleshooting doc | — | Lindsey/Sarthak | Log every real HPC error + fix | Entries in `docs/troubleshooting.md` |
+| ID | Test | Owner | Command / action | Expected |
+|----|------|-------|------------------|----------|
+| T1 | Layout sanity | Bio | `bash scripts/test-downstream-layout.sh` | All WDL/input files present |
+| T2 | Dry-run pipeline | HPC | `bash launch-snap-downstream.sh` | Regen → estimate → check → validate pass |
+| T3 | Upstream WDL toggle | HPC | `run_upstream: true`; dry-run | Upstream task only |
+| T4 | Upstream HPC submit | HPC | `bash launch-snap-downstream.sh --submit` | LSF job ID |
+| T5 | Upstream LSF monitoring | HPC | `bjobs -u $USER`; tail stderr | Job visible; logs OK |
+| T6 | Upstream biology QC | Bio | Review QC plots, counts | Tanjim sign-off |
+| T7 | Upstream + integrative toggle | HPC | Both modules true; dry-run | Upstream → integrative chain |
+| T8 | Upstream + integrative submit | HPC | `--submit` | LSF job ID |
+| T9 | Integrative biology QC | Bio | Review Harmony, UMAP | Tanjim sign-off |
+| T10 | Resource scaling | Bio | `estimate-snap-downstream-resources.R --update-yaml` | Resources updated |
+| T11 | Generated YAML overlay | Bio | Inspect `project_parameters.generated.yaml` | Master YAML untouched |
+| T12 | WDL module chain | HPC | Inspect dependency chain | Integrative depends on upstream |
+| T13 | `snap_parallel_plan.R` safety | HPC | `SNAP_FUTURE_WORKERS=1` vs `2` | No NFS bus errors |
+| T14 | Email notification | HPC | Confirm `CONTACT_EMAIL` on submit | Email received |
+| T15 | Legacy vs new | Docs | Compare `launch_full_pipeline.sh` vs YAML toggles | Slide table |
+| T16 | ROI timing | Docs | Time YAML edit + dry-run vs legacy | Minutes to launch-ready |
+| T17 | Troubleshooting doc | Docs | Log HPC errors + fixes | `docs/troubleshooting.md` |
 
-**Module run evidence** (in test log): job IDs for (1) upstream-only, (2) integrative-only, (3) upstream + integrative chain.
-
-**T3 / T7:** Set `workflow_profile` toggles in `project_parameters.Config.yaml`, then dry-run. Example YAML: [participant FAQ — workflow_profile examples](../deliverables/docs/participant-faq-snap-sprocket-resources.md#workflow_profile-examples-for-t3-t4-and-t7-t8). Launcher commands: [scripts/README.md](../analyses/sc-rna-seq-snap-Victoria-Knockout/scripts/README.md).
+T3/T7 YAML examples: [participant FAQ](../deliverables/docs/participant-faq-snap-sprocket-resources.md#workflow_profile-examples-for-t3-t4-and-t7-t8). Code review targets: `launch-snap-sprocket.sh`, `estimate-snap-downstream-resources.R`, `generate-snap-wdl.R`, `snap_parallel_plan.R`, `snap-read-config.sh`.
 
 ---
 
-## Pair work details
+## Schedule
 
-### Emma/Rojina/Antonia — code review, development, demo
+| Day | Focus |
+|-----|-------|
+| **Day 1** (4 h) | Kickoff · T1–T2 · start T3–T4 · end-of-day sync |
+| **Day 2** (8 h) | T3–T14 · T4/T8 submits · mid-day sync · draft slides |
+| **Day 3** (4 h) | Sign-off · deck · rehearse lightning + demo |
+| **Demo** (3–6 PM) | Lightning → demo room → judge Q&A |
 
-Review: `launch-snap-sprocket.sh`, `estimate-snap-downstream-resources.R`, `generate-snap-wdl.R`, `snap_parallel_plan.R`, `snap-read-config.sh`.
+**Wednesday report-out (60 s):** Lindsey, Antonia, Rojina, Rachana — [organizer note](../deliverables/reports/01-report-out-Wednesday-reception-email.md)
 
-**Emma Bishop:** Lead code review and development coordination with Rojina and Antonia; maintain `docs/code-review-notes.md` and PR review standards.
-
-**Clay McLeod:** Available as needed for code development, code review, dry-run, and HPC testing support (pair with Emma/Rojina/Antonia on PRs, implementation, and T2–T5, T7–T8, T12–T14).
-
-**Rojina Sapkota + Antonia Chroni (+ Clay McLeod as needed):** Dry-run and St. Jude HPC testers (T2–T5, T7–T8, T12–T14). Antonia provides LSF log files from the legacy `launch_full_pipeline.sh` run for Lindsey/Sarthak (T15 legacy vs new comparison).
-
-Issue template: **Severity** · **Found by** · **Steps** · **Expected** · **Actual**
-
-### Rachana/A.S.M. Tanjim — testing and biology
-
-Rachana: T1, T10, T11. Tanjim: biology sign-off T6, T9. Screenshot every PASS and FAIL.
-
-**Antonia:** Will provide run outputs from `sc-rna-seq-snap-legacy-Victoria-Knockout` (`analyses/sc-rna-seq-snap-Victoria-Knockout-legacy/`) for upstream and integrative biology review (T6, T9).
-
-### Lindsey/Sarthak — docs, PRs, ROI
-
-PR checklist: `set -euo pipefail`; YAML edits only in `project_parameters.Config.yaml`; WDL generated not hand-edited; no secrets committed.
-
-
----
-
-## Demo prep (Day 3)
-
-**Slides & talking points:** [problem-and-solution-overview.md](../deliverables/docs/problem-and-solution-overview.md) · **Pitches:** [daedalus-pitch.md](../deliverables/docs/daedalus-pitch.md) · **Technical FAQ:** [participant-faq](../deliverables/docs/participant-faq-snap-sprocket-resources.md)
-
-**Presenters:** Lindsey Warren, Antonia Chroni, Rojina Sapkota, Emma Bishop, Rachana Pandey
-
-**Live demo:** `workflow_profile` toggles → dry-run + `sprocket validate` → scaled resources → LSF status or outputs. **Fallback:** submitted state + recording.
-
----
-
-## Three-day schedule
-
-| Day | Hours | Focus |
-|-----|-------|-------|
-| **Day 1** | 4 h | Align, setup, T1–T2; start T3–T4 |
-| **Day 2** | 8 h | T1–T14 logged; T4, T8 submits; draft slides |
-| **Day 3** | 4 h | Polish deck, rehearse |
-| **Day 3 demo** | 3:00–6:00 PM | Lightning (3:00–4:00) → demo room → judge Q&A |
-
-### Day 1 (4 h)
-
-| Block | Activity | Who |
-|-------|----------|-----|
-| 0:00–0:30 | Kickoff: pairs, test log, HPC access | All |
-| 0:30–1:15 | Clone, T1 | All · Rojina/Antonia/Clay: T2 dry-run |
-| 1:15–3:00 | Parallel work | Rojina/Antonia/Clay: T2–T4 · Rachana/A.S.M. Tanjim: T1 · Emma/Rojina/Antonia: code review · Lindsey/Rachana: test log |
-| 3:00–4:00 | Sync; schedule T4; Day 2 priorities | All |
-
-### Wednesday reception report-out (60 seconds)
-
-At the beginning of the reception, each team gives a brief, **60-second report-out** highlighting their day. This can include key updates, progress made, notable accomplishments, or anything else your team would like to share.
-
-**Action required:** Identify who from your team will give the report-out. If that person will not attend the reception, designate a teammate who will be present to share the update on your team's behalf.
-
-| Report-out speakers | Confirmed? |
-|-------------------|------------|
-| Lindsey Warren, Antonia Chroni, Rojina Sapkota, Rachana Pandey | ☑ |
-
-Organizer note: [01-report-out-Wednesday-reception-email.md](../deliverables/reports/01-report-out-Wednesday-reception-email.md)
-
-
-### Day 2 (8 h)
-
-| Block | Activity | Who |
-|-------|----------|-----|
-| 0:00–3:00 | Parallel work | Rojina/Antonia/Clay: T3–T5, T7–T8, T12–T14 · Rachana/A.S.M. Tanjim: T6, T9–T11 · Emma/Rojina/Antonia: code review · Lindsey/Sarthak: T15–T17 |
-| 3:00–3:30 | Mid-day sync | All |
-| 3:30–7:30 | Continue testing; draft slide content | All |
-| 7:30–8:00 | Day 2 wrap | Pair leads |
-
-### Day 3 (4 h + demo)
-
-| Block | Activity |
-|-------|----------|
-| 0:00–1:00 | Final sign-off; merge PRs or document follow-ups |
-| 1:00–2:00 | Finalize 3-slide deck |
-| 2:00–3:00 | Rehearse lightning + live demo |
-| 3:00–6:00 PM | Lightning → demo room → judge feedback (capture in [Session notes](#session-notes)) |
+**Demo presenters:** Lindsey, Antonia, Rojina, Emma, Rachana · [Slides](../deliverables/docs/problem-and-solution-overview.md) · [Pitch](../deliverables/docs/daedalus-pitch.md) · Fallback: pre-submitted job + recording
 
 ---
 
 ## Checklists
 
-### Pre-hackathon (team lead)
+**Pre-hackathon (lead)**
 
-- [x] Cell Ranger complete for Victoria Knockout
-- [x] `project_metadata.tsv` present and valid
-- [x] Apptainer `.sif` accessible on HPC
-- [x] One upstream-only job pre-submitted (demo backup)
-- [x] Teammates added to GitHub repo
-- [x] Shared test log location communicated
-- [x] HPC accounts verified; remote members know handoff process
-- [ ] Organizer 3-slide template downloaded
-- [ ] Event deck added to `deliverables/slides/` (filename TBD; separate from kickoff `kickoff/kids26-team15-2026-09-04.pptx`)
-- [x] Report-out speaker (and backup) designated for Wednesday reception
-- [x] Legacy-run LSF log files provided by Antonia (`launch_full_pipeline.sh`; for T15)
-- [x] `CONTACT_EMAIL` set in `project_parameters.Config.yaml`
+- [x] Cell Ranger, metadata, Apptainer, demo backup job, GitHub access, test log shared, HPC verified
+- [x] Report-out speakers; legacy LSF logs; `CONTACT_EMAIL` set
+- [ ] Organizer 3-slide template; event deck in `deliverables/slides/`
 
-### Day-of (all pairs)
+**Day-of**
 
-- [ ] T1 passes; T2 dry-run logged
-- [ ] Findings shared at Day 1 and Day 2 syncs
-- [ ] Pair deliverable committed or PR opened by end of Day 2
-- [ ] Legacy-run LSF log files received from Antonia (T15 legacy vs new comparison)
-- [ ] 3-slide content contributed; lightning + demo rehearsed before 3:00 PM Day 3
+- [ ] T1 + T2 logged; syncs Day 1 + Day 2; pair deliverables by Day 2 end
+- [ ] Deck + rehearsal before 3:00 PM Day 3
 
 ---
 
@@ -259,35 +124,27 @@ Organizer note: [01-report-out-Wednesday-reception-email.md](../deliverables/rep
 
 | Risk | Mitigation | Owner |
 |------|------------|-------|
-| Long runtime blocks demo | Pre-submit upstream; demo shows submitted state + recording | Antonia |
-| Integrative waits on upstream | Submit T4 Day 1; chain T8 Day 2 | Rojina/Antonia/Clay |
-| Tanjim remote (+11 h CDT) | Async updates; Rachana pairs for T6, T9 sign-off | Rachana |
-| NFS bus errors with parallel R | Default `SNAP_FUTURE_WORKERS=1`; document in T13 | Rojina/Antonia/Clay |
-| Remote members lack HPC | Pair with Rojina/Antonia/Clay for T4, T8 | Rojina/Antonia/Clay |
-
-**Stretch goals if done early:** T13 worker comparison; `snap_multi_project.wdl`; GitHub Actions layout check; PRs for quick fixes.
+| Long runtime blocks demo | Pre-submit; show submitted state + recording | Antonia |
+| Integrative waits on upstream | T4 Day 1; T8 Day 2 | HPC |
+| Tanjim remote (+11 h) | Rachana pairs for T6, T9 | Rachana |
+| NFS / parallel R | `SNAP_FUTURE_WORKERS=1`; document T13 | HPC |
+| Remote, no HPC | Pair with HPC for T4, T8 | HPC |
 
 ---
-
-
 
 ## Session notes
 
-### Day 3 — Demo session (3:00–6:00 PM)
+### Day 3 — Demo (3:00–6:00 PM)
 
-**Presenters:** Lindsey Warren, Antonia Chroni, Rojina Sapkota, Rachana Pandey
+**Presenters:** Lindsey, Antonia, Rojina, Rachana
 
 #### Judge feedback
 
-[Capture notes during demo room session]
-
----
+[Notes]
 
 ### Day 2 — Mid-day sync
 
 [Notes]
-
----
 
 ### Day 1 — End-of-day sync
 
@@ -297,12 +154,6 @@ Organizer note: [01-report-out-Wednesday-reception-email.md](../deliverables/rep
 
 ## References
 
-- [Problem & solution overview](../deliverables/docs/problem-and-solution-overview.md)
-- [Participant FAQ — SNAP, Sprocket, and resource scaling](../deliverables/docs/participant-faq-snap-sprocket-resources.md)
-- [scripts/README.md](../analyses/sc-rna-seq-snap-Victoria-Knockout/scripts/README.md)
-- [wdl/README.md](../analyses/sc-rna-seq-snap-Victoria-Knockout/wdl/README.md)
-- [Snap-Sprocket-ROI-one-pager.md](../analyses/sc-rna-seq-snap-Victoria-Knockout/docs/Snap-Sprocket-ROI-one-pager.md)
-- [resources-snap.md](../docs/resources-snap.md) · [resources-sprocket.md](../docs/resources-sprocket.md)
-- [learning-path-wdl-sprocket-containers.md](../docs/learning-path-wdl-sprocket-containers.md)
+[Problem overview](../deliverables/docs/problem-and-solution-overview.md) · [Participant FAQ](../deliverables/docs/participant-faq-snap-sprocket-resources.md) · [scripts/README](../analyses/sc-rna-seq-snap-Victoria-Knockout/scripts/README.md) · [wdl/README](../analyses/sc-rna-seq-snap-Victoria-Knockout/wdl/README.md) · [ROI one-pager](../analyses/sc-rna-seq-snap-Victoria-Knockout/docs/Snap-Sprocket-ROI-one-pager.md) · [SNAP](../docs/resources-snap.md) · [Sprocket](../docs/resources-sprocket.md)
 
 **Maintainer:** Antonia Chroni / KIDS26 Team 15 · **Last updated:** 2026-09-16
