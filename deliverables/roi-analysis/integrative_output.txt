@@ -1,0 +1,42 @@
+warning: The `fitz` API is deprecated and will be removed in future. Use `import pymupdf` instead.
+Saturday, September 12, 2026 at 12:02:01 PM Central Daylight Time
+Subject: Job 320244722: <run-integrative-analysis> in cluster <<CLUSTER_NAME>> Done
+Date: Saturday, September 12, 2026 at 11:59:32 AM Central Daylight Time
+From: LSF <lsfadmin@example.org>
+To: USER <user@example.org>
+Job <run-integrative-analysis> was submitted from host <submit-node> by user <USER> in cluster
+<<CLUSTER_NAME>> at Sat Sep 12 09:55:55 2026
+Job was executed on host(s) <10*compute-node>, in queue <standard>, as user <USER> in cluster
+<<CLUSTER_NAME>> at Sat Sep 12 11:43:31 2026
+</home/USER> was used as the home directory.
+</sc-rna-seq-snap-legacy-Victoria-Knockout-shareable/analyses/integrative-analysis> was
+used as the working directory.
+Started at Sat Sep 12 11:43:31 2026
+Terminated at Sat Sep 12 11:59:25 2026
+Results reported at Sat Sep 12 11:59:25 2026
+Your job looked like:
+-----------------------------------------------------------
+# LSBATCH: User input
+#BSUB -P project
+#BSUB -J run-integrative-analysis
+#BSUB -oo job.out -eo job.err
+#BSUB -n 10
+#BSUB -R "rusage[mem=96GB] span[hosts=1]"
+#BSUB -cwd "."
+singularity exec ../../rstudio_4.4.0_seurat_4.4.0_latest.sif bash run-integrative-analysis.sh
+-----------------------------------------------------------
+Successfully completed.
+Resource usage summary:
+    CPU time :                                   642.00 sec.
+    Max Memory :                                 24416 MB
+    Average Memory :                             14433.89 MB
+    Total Requested Memory :                     983040.00 MB
+    Delta Memory :                               958624.00 MB
+    Max Swap :                                   -
+    Max Processes :                              17
+    Max Threads :                                136
+    Run time :                                   954 sec.
+    Turnaround time :                            7410 sec.
+Read file <job.out> for stdout output of this job.
+Read file <job.err> for stderr output of this job.
+
