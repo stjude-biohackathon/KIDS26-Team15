@@ -22,6 +22,11 @@ Honnell et al. 2022 maps a **modular Vsx2 super-enhancer (CRC-SE)** upstream of 
 
 ### Key scRNA-seq findings from the paper
 
+In the Honnell (2022) paper, the only information provided is scRNA-seq results with cell type annotations (Muller glia, RPC, Bipolar neurons, amacrine, etc.). Our analysis is not annotated with cell types. I also thoroughly reviewed the supplementary information section of the paper. You can check the supplementary info - dataset 5 (for scRNA-seq only). There are cell numbers per cell type and total cells for WT, OrJ, and Vsx2-SE KO. https://www.nature.com/articles/s41467-021-27924-y
+
+There is no information regarding QC reports, DoubletFinder, UMAP creation, or other analysis information in the paper. Only consistency I could find is in the methods section. The top 3,000 variable features were selected which is consistent with our project parameter input. Although it's not that significant.
+
+
 | Finding | Observation |
 |--------|-------------|
 | **Full SE deletion (Vsx2-SEΔ/Δ)** | Complete loss of bipolar neurons; those cells appear to switch fate toward **rods and Müller glia** |
@@ -87,6 +92,7 @@ Team 15 runbook estimate: ~27k cells pre-QC → ~21k post-QC (consistent).
 ### Biological relevance at this stage
 
 Upstream confirms data quality and shows per-sample structure. It does **not** yet label retinal cell types (rods, bipolar, Müller glia, etc.) — that is the paper's Fig. 6E level of interpretation.
+
 
 ---
 
