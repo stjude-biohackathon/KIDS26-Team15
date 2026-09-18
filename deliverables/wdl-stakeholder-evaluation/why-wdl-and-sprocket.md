@@ -60,50 +60,39 @@ All alternatives were assessed on the same axes:
 
 ---
 
-
-## Notes on WDL vs. Nextflow
-
-St. Jude and Fred Hutch use WDL and Sprocket for bioinformatics workflows. The following notes summarize why the combination can be a practical choice for teams building or modernizing workflows.
-
 ## WDL Compared with Nextflow
 
-People often describe Nextflow as complex. If a team already has a Nextflow pipeline, it may make sense to continue using it. However, for teams working primarily with Bash or other scripts today, WDL can be faster to learn and set up.
+Nextflow is considered the lingua franca of bioinformatics workflow languages. With the scalability  incredibly flexible, which comes with a tradeoff in complexity. If a team already has a Nextflow pipeline, it makes sense to continue using it. However, for teams working primarily with Bash or other scripts today, WDL can be faster to learn and set up. If complexity needs evolve over time, it may make sense to reconsider Nextflow.
 
-WDL is intended to be more user-friendly while still supporting the workflow features needed for bioinformatics. It is open source and supported by a community of users and contributors.
+WDL is intended to be user-friendly while still supporting the workflow features needed for bioinformatics. Nextflow offers more advanced features than WDL (i.e., functional programming), which makes sense for some bioinformatics workloads. However, those features are not necessary for the SNAP workflow.
 
-A related concern is governance and long-term trust. Nextflow is owned by a company, while WDL is developed as a community-driven open standard. The community model can reduce concerns about unexpected changes to user agreements or licensing terms.
+WDL is developed as a community-driven open standard, while Nextflow is open source but not community-driven. The community-driven model fits with St. Jude's ethos and commitment to community collaboration and encourages sustainable longer-term adoption.
 
-A useful summary from the discussion was:
+Finally, St. Jude benefits from having strong in-house talent that helps maintain the WDL language, which means expert advice is always close at hand.
 
-> WDL can do 95% of what Nextflow does with 15% of the complexity.
-
-The exact percentages are a rule-of-thumb rather than a benchmark, but the underlying point is that WDL aims to provide the capabilities most bioinformatics teams need without requiring the full complexity of a larger workflow ecosystem.
-
-## An Open Standard for Bioinformatics
+## WDL Compared with CWL
 
 WDL and CWL were identified as the two community-driven open standards for bioinformatics workflows.
 
-WDL also benefits from close involvement by people who understand both workflow language design and bioinformatics practice. The main language designer is in-house at Fred Hutch, and Clay helps support and develop the language. Having that expertise available within the organization makes it easier to get practical guidance when building workflows.
+WDL benefits from close involvement by people who understand both workflow language design and bioinformatics practice. In-house St. Jude talent helps support and develop the language. Having that expertise available within the organization makes it easier to get practical guidance when building workflows.
 
-## Why WDL?
-
-The discussion highlighted four main advantages:
-
+## Conclusion: why WDL?
 1. **Ease of use:** WDL is designed to be readable and writable by humans, making workflows easier to understand and maintain.
-2. **Community development:** WDL is an open, community-developed standard rather than a format controlled solely by one vendor.
+2. **Community development:** WDL is an open, community-developed standard which aligns with the St. Jude Ethos.
 3. **Strong typing:** WDL is a strongly typed language customized for bioinformatics. Types help catch mismatched inputs and other errors before execution.
 4. **In-house support:** Having experienced WDL developers and users available within the organization is especially valuable when teams are learning the language or troubleshooting workflows.
 
-Overall, WDL strikes a practical balance between complexity and language features for the bioinformatics community.
+Overall, the team decided that WDL strikes a practical balance between complexity and language features for the users of Daedalus.
 
-## Workflow Graphs
+---
+
+## Technical notes on Workflow Graphs in WIDL
 
 WDL workflows are represented as directed acyclic graphs (DAGs). Each task is a node, and the dependencies between tasks form the edges of the analysis graph.
 
 By defining a workflow, a team makes the structure of the analysis explicit. The graph can be inspected before anything runs, which helps users understand dependencies, identify opportunities for parallel execution, and catch structural problems early.
 
 Sprocket provides an execution environment for running WDL workflows, while WDL provides the language used to define the workflow and its dependencies.
-
 
 ---
 
