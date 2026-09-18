@@ -24,17 +24,19 @@ roi-analysis/
 │   ├── P1-ROI-Cost-Analysis.md
 │   ├── P1-ROI-Job-Output-Details.md
 │   └── P1-ROI-Cost-Scenarios.md
-├── scripts/                            # Analysis scripts
-│   ├── roi_calculator.py               # Legacy flow calculator
-│   └── roi_calculator_daedalus.py      # Daedalus flow calculator
-├── docs/                               # Reference documents
-│   ├── roi_scenarios.csv               # Low/expected/high scenario parameters
-│   └── data-analyst-time.md            # Analyst time estimation methodology
-├── roi_analysis_notebook.ipynb         # Jupyter notebook for display
-├── roi-analysis-Lindsey-questions.md   # HPC cost model and analyst rate
-├── pyproject.toml                      # Python dependencies
-├── uv.lock                             # Dependency lock file
-└── README.md                           # This file
+├── scripts/                                # Analysis scripts
+│   ├── roi_calculator.py                   # Legacy flow calculator
+│   └── roi_calculator_daedalus.py          # Daedalus flow calculator
+├── notebooks /                             # Jupyter notebooks for analysis and display
+│   ├── roi_analysis_notebook.ipynb         # Legacy vs Deadalus comparision and display
+│   └── aug_data_exp.ipynb                  # August Jobs data exploration
+├── docs/                                   # Reference documents
+│   ├── roi_scenarios.csv                   # Low/expected/high scenario parameters
+│   ├── roi-analysis-Lindsey-questions.md   # HPC cost model and analyst rate
+│   └── data-analyst-time.md                # Analyst time estimation methodology
+├── pyproject.toml                          # Python dependencies
+├── uv.lock                                 # Dependency lock file
+└── README.md                               # This file
 ```
 
 ## Quick Start
