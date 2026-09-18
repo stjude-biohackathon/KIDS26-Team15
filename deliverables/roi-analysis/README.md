@@ -1,6 +1,6 @@
 # P1 · ROI Analysis: SNAP Legacy vs Daedalus
 
-Resource utilization comparison between the legacy SNAP workflow (`launch_full_pipeline.sh`) and the new Daedalus orchestrator.
+Resource utilization and cost comparison between the legacy SNAP workflow (`launch_full_pipeline.sh`) and the new Daedalus orchestrator.
 
 ## Folder Structure
 
@@ -15,16 +15,25 @@ roi-analysis/
 ├── output/                             # Generated visualizations
 │   ├── cpu_utilization_comparison.png
 │   ├── memory_utilization_comparison.png
-│   └── memory_requested_vs_used.png
+│   ├── memory_requested_vs_used.png
+│   ├── analyst_savings_by_scenario.png
+│   ├── hpc_cost_comparison.png
+│   └── cost_improvement_pct.png
 ├── reports/                            # Analysis markdown files
 │   ├── P1-ROI-Combined-Run-Data.md
 │   ├── P1-ROI-Cost-Analysis.md
-│   └── P1-ROI-Job-Output-Details.md
+│   ├── P1-ROI-Job-Output-Details.md
+│   └── P1-ROI-Cost-Scenarios.md
 ├── scripts/                            # Analysis scripts
 │   ├── roi_calculator.py               # Legacy flow calculator
 │   └── roi_calculator_daedalus.py      # Daedalus flow calculator
+├── docs/                               # Reference documents
+│   ├── roi_scenarios.csv               # Low/expected/high scenario parameters
+│   └── data-analyst-time.md            # Analyst time estimation methodology
 ├── roi_analysis_notebook.ipynb         # Jupyter notebook for display
 ├── roi-analysis-Lindsey-questions.md   # HPC cost model and analyst rate
+├── pyproject.toml                      # Python dependencies
+├── uv.lock                             # Dependency lock file
 └── README.md                           # This file
 ```
 
@@ -50,6 +59,7 @@ jupyter notebook roi_analysis_notebook.ipynb
 | Legacy upstream | `input/Job-run-upstream-analysis-Done.pdf` | LSF job completion email (PDF) |
 | Legacy integrative | `input/Job-run-integrative-analysis-Done.pdf` | LSF job completion email (PDF) |
 | Daedalus | `input/resource_usage_*.json` | Sprocket resource usage output |
+| Scenarios | `docs/roi_scenarios.csv` | Low/expected/high cost parameters |
 
 ## Key Metrics
 
@@ -60,6 +70,8 @@ All utilization calculations use **average memory** (not peak) for fair comparis
 
 ## Key Findings
 
+### Resource Utilization
+
 | Metric | Legacy Up | Daedalus Up | Legacy Int | Daedalus Int |
 |--------|-----------|-------------|------------|--------------|
 | Memory Utilization | 9.6% | 23.6% | 1.5% | 5.4% |
@@ -67,14 +79,29 @@ All utilization calculations use **average memory** (not peak) for fair comparis
 | Peak Memory | 96 GB | 22 GB | 24 GB | 10 GB |
 | Wall-clock | 1h 47m | 1h 8m | 16m | 17m |
 
-**Conclusion:** Daedalus shows directional improvement but the auto-scaler is still conservative. Real wins are fewer cores (16→8), lower peak memory, faster runtime, and YAML-driven configuration — not utilization %.
+### Cost Analysis
 
-## Cost Analysis
+**Compute savings** (St. Jude pricing $0.024/core-hour):
+- Legacy: $0.75/run → Daedalus: $0.42/run (44% reduction)
 
-Using St. Jude HPC pricing ($0.024/core-hour):
-- Legacy compute: $0.75 per run
-- Daedalus compute: $0.42 per run
-- **Savings: 44%**
+**Analyst time savings** (dominant factor):
+| Scenario | Legacy Hrs/Run | Daedalus Hrs/Run | Savings/Run | Annual Savings | ROI | Payback |
+|----------|----------------|------------------|-------------|----------------|-----|---------|
+| Low | 4 | 1 | $144 | $1,748 | -32.6% | 14 runs |
+| Expected | 6 | 1.5 | $216 | $5,244 | 48.1% | 14 runs |
+| High | 8 | 2 | $288 | $13,993 | 136.1% | 18 runs |
+
+**Analyst savings are 99% of total ROI** — HPC compute savings are negligible at St. Jude pricing.
+
+## Outputs
+
+The notebook generates 6 charts in `output/`:
+1. `memory_utilization_comparison.png` — Memory utilization side by side
+2. `cpu_utilization_comparison.png` — CPU utilization side by side
+3. `memory_requested_vs_used.png` — Requested vs actual memory
+4. `analyst_savings_by_scenario.png` — Analyst hours and cost by scenario
+5. `hpc_cost_comparison.png` — HPC cost comparison
+6. `cost_improvement_pct.png` — % improvement HPC vs analyst
 
 ## Requirements
 
@@ -83,5 +110,5 @@ Using St. Jude HPC pricing ($0.024/core-hour):
 - pandas, matplotlib, seaborn (for notebook)
 
 ```bash
-uv add pymupdf pandas matplotlib seaborn
+uv sync
 ```
