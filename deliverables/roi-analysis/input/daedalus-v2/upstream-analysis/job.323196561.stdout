@@ -1,0 +1,43 @@
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@noderome160>
+Subject: Job 323196561: <snap-qs38BR76VD-required-run_upstream-upstream-gLTONxQ8Fvoe> in cluster <hpcf_research_cluster> Done
+
+Job <snap-qs38BR76VD-required-run_upstream-upstream-gLTONxQ8Fvoe> was submitted from host <noderome274> by user <achroni> in cluster <hpcf_research_cluster> at Thu Sep 17 20:16:38 2026
+Job was executed on host(s) <noderome160>, in queue <standard>, as user <achroni> in cluster <hpcf_research_cluster> at Thu Sep 17 20:16:48 2026
+</dir> was used as the home directory.
+</dir/stjude-biohackathon-KIDS26-testing/antonia_chroni/daedalus-v2/sc-rna-seq-snap-sprocket-Victoria-Knockout> was used as the working directory.
+Started at Thu Sep 17 20:16:48 2026
+Terminated at Thu Sep 17 21:18:41 2026
+Results reported at Thu Sep 17 21:18:41 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+/dir/stjude-biohackathon-KIDS26-testing/antonia_chroni/daedalus-v2/sc-rna-seq-snap-sprocket-Victoria-Knockout/out/runs/daedalus_from_cellranger/2026-09-18_011508101889588/calls/upstream/attempts/0/apptainer_command
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   3968.12 sec.
+    Max Memory :                                 24597 MB
+    Average Memory :                             9004.64 MB
+    Total Requested Memory :                     34332.28 MB
+    Delta Memory :                               9735.28 MB
+    Max Swap :                                   -
+    Max Processes :                              13
+    Max Threads :                                45
+    Run time :                                   3713 sec.
+    Turnaround time :                            3723 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file </dir/stjude-biohackathon-KIDS26-testing/antonia_chroni/daedalus-v2/sc-rna-seq-snap-sprocket-Victoria-Knockout/out/runs/daedalus_from_cellranger/2026-09-18_011508101889588/calls/upstream/attempts/0/job.323196561.stderr> for stderr output of this job.
+
