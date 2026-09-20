@@ -6,34 +6,41 @@ Resource utilization and cost comparison between the legacy SNAP workflow (`laun
 
 ```
 roi-analysis/
-├── input/                              # Raw data files
-│   ├── Job-run-upstream-analysis-Done.pdf
-│   ├── Job-run-integrative-analysis-Done.pdf
-│   ├── resource_usage_2026-09-12_143900834470824.json
-│   ├── upstream_output.txt              # Extracted text from PDF
-│   └── integrative_output.txt           # Extracted text from PDF
-├── output/                             # Generated visualizations
-│   ├── cpu_utilization_comparison.png
+├── input/                                  # Raw data files
+│   ├── Job-run-upstream-analysis-Done.pdf          # Legacy upstream LSF job (PDF)
+│   ├── Job-run-integrative-analysis-Done.pdf       # Legacy integrative LSF job (PDF)
+│   ├── resource_usage_2026-09-12_*.json            # Daedalus prototype resource usage (JSON)
+│   ├── AugJobs_WithRunDashInName.xlsx              # August HPC jobs (all SNAP users)
+│   └── daedalus-v2/                                # Daedalus v2 experiment outputs
+│       ├── upstream-analysis/job.323196561.stdout
+│       ├── integrative-analysis/job.323198973.stdout
+│       └── outputs.json
+├── output/                                 # Generated visualizations
 │   ├── memory_utilization_comparison.png
+│   ├── cpu_utilization_comparison.png
 │   ├── memory_requested_vs_used.png
 │   ├── analyst_savings_by_scenario.png
 │   ├── hpc_cost_comparison.png
 │   └── cost_improvement_pct.png
-├── reports/                            # Analysis markdown files
-│   ├── P1-ROI-Combined-Run-Data.md
-│   ├── P1-ROI-Cost-Analysis.md
-│   ├── P1-ROI-Job-Output-Details.md
-│   └── P1-ROI-Cost-Scenarios.md
+├── reports/                                # Analysis reports (markdown)
+│   ├── P1-ROI-Combined-Run-Data.md         # Combined run data tables
+│   ├── P1-ROI-Cost-Analysis.md             # Cost analysis
+│   ├── P1-ROI-Cost-Scenarios.md            # Low/expected/high scenarios
+│   └── P1-ROI-Job-Output-Details.md        # job.out/job.err details
 ├── scripts/                                # Analysis scripts
 │   ├── roi_calculator.py                   # Legacy flow calculator
 │   └── roi_calculator_daedalus.py          # Daedalus flow calculator
-├── notebooks /                             # Jupyter notebooks for analysis and display
-│   ├── roi_analysis_notebook.ipynb         # Legacy vs Deadalus comparision and display
-│   └── aug_data_exp.ipynb                  # August Jobs data exploration
+├── notebooks/                              # Jupyter notebooks
+│   ├── roi_analysis_legacy_vs_daedalus_v2.ipynb    # Main analysis notebook
+│   └── archive/                            # Older notebooks
+│       ├── aug_data_exp.ipynb              # August jobs exploration
+│       └── roi_analysis_legacy_vs_daedalus_prototype.ipynb
 ├── docs/                                   # Reference documents
 │   ├── roi_scenarios.csv                   # Low/expected/high scenario parameters
 │   ├── roi-analysis-Lindsey-questions.md   # HPC cost model and analyst rate
 │   └── data-analyst-time.md                # Analyst time estimation methodology
+├── .gitignore
+├── .python-version
 ├── pyproject.toml                          # Python dependencies
 ├── uv.lock                                 # Dependency lock file
 └── README.md                               # This file
@@ -50,8 +57,8 @@ uv run python3 roi_calculator.py ../input/Job-run-upstream-analysis-Done.pdf ../
 uv run python3 roi_calculator_daedalus.py ../input/resource_usage_2026-09-12_143900834470824.json
 
 # Launch notebook (from roi-analysis/ root)
-cd ..
-jupyter notebook roi_analysis_notebook.ipynb
+cd ../notebooks
+jupyter notebook roi_analysis_legacy_vs_daedalus_v2.ipynb
 ```
 
 ## Data Sources
@@ -60,7 +67,9 @@ jupyter notebook roi_analysis_notebook.ipynb
 |--------|------|-------------|
 | Legacy upstream | `input/Job-run-upstream-analysis-Done.pdf` | LSF job completion email (PDF) |
 | Legacy integrative | `input/Job-run-integrative-analysis-Done.pdf` | LSF job completion email (PDF) |
-| Daedalus | `input/resource_usage_*.json` | Sprocket resource usage output |
+| Daedalus v1 | `input/resource_usage_*.json` | Sprocket resource usage output |
+| Daedalus v2 | `input/daedalus-v2/*.stdout` | LSF stdout files from Sprocket run |
+| August jobs | `input/AugJobs_WithRunDashInName.xlsx` | All SNAP HPC jobs (Aug 2026) |
 | Scenarios | `docs/roi_scenarios.csv` | Low/expected/high cost parameters |
 
 ## Key Metrics
@@ -74,17 +83,34 @@ All utilization calculations use **average memory** (not peak) for fair comparis
 
 ### Resource Utilization
 
-| Metric | Legacy Up | Daedalus Up | Legacy Int | Daedalus Int |
-|--------|-----------|-------------|------------|--------------|
-| Memory Utilization | 9.6% | 23.6% | 1.5% | 5.4% |
-| CPU Utilization | 7.1% | 11.5% | 6.7% | 5.8% |
-| Peak Memory | 96 GB | 22 GB | 24 GB | 10 GB |
-| Wall-clock | 1h 47m | 1h 8m | 16m | 17m |
+**Upstream:**
+
+| Metric | Legacy | Daedalus Prototype | Daedalus v2 |
+|--------|--------|--------------------|-------------|
+| Memory Utilization | 9.6% | 23.6% | 26.2% |
+| CPU Utilization | 7.1% | 11.5% | 13.4% |
+| Peak Memory | 96 GB | 22 GB | 24 GB |
+| Avg Memory Used | 46 GB | 8.5 GB | 8.8 GB |
+| Requested Memory | 480 GB | 36 GB | 34 GB |
+| Wall-clock | 1h 47m | 1h 8m | 1h 2m |
+| Cores | 16 | 8 | 8 |
+
+**Integrative:**
+
+| Metric | Legacy | Daedalus Prototype | Daedalus v2 |
+|--------|--------|--------------------|-------------|
+| Memory Utilization | 1.5% | 5.4% | 6.9% |
+| CPU Utilization | 6.7% | 5.8% | 10.1% |
+| Peak Memory | 24 GB | 10 GB | 10.4 GB |
+| Avg Memory Used | 14.1 GB | 6.3 GB | 7.4 GB |
+| Requested Memory | 960 GB | 116 GB | 108 GB |
+| Wall-clock | 16m | 17m | 10m |
+| Cores | 10 | 10 | 10 |
 
 ### Cost Analysis
 
 **Compute savings** (St. Jude pricing $0.024/core-hour):
-- Legacy: $0.75/run → Daedalus: $0.42/run (44% reduction)
+- Legacy: 31.29 core-hrs = $0.75/run → Daedalus Prototype: 11.99 core-hrs = $0.29/run (62% reduction) → Daedalus v2: 9.95 core-hrs = $0.24/run (68% reduction)
 
 **Analyst time savings** (dominant factor):
 | Scenario | Legacy Hrs/Run | Daedalus Hrs/Run | Savings/Run | Annual Savings | ROI | Payback |
