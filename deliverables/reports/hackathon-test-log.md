@@ -12,8 +12,6 @@ All testing activities, issue tracking, technical discussions, and project progr
  📋 [sc-rna-seq-snap-sprocket](https://github.com/stjude-dnb-binfcore/sc-rna-seq-snap-sprocket)
  
  
-
 ---
 
-**Maintainer:** KIDS26 Team 15 · **Status:** Report Hackathon Test Log
-
+**Maintainer:** KIDS26 Team 15 · Generated during KIDS26 Team 15 Biohackathon 26 (September 16-18, 2026)

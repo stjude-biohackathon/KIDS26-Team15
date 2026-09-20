@@ -2,11 +2,14 @@
 
 **Question:** Can a resource-aware SNAP + Sprocket orchestrator replace manual LSF wiring for scalable single-cell analysis?
 
-**Expected output:** Tested downstream launcher, documented HPC test results, code-review notes, 3-slide deck, 2-minute lightning talk, and live demo for judges.
+**Expected output:** Tested downstream launcher (for two Snap modules), documented HPC test results, code-review notes, 3-slide deck, 2-minute lightning talk, and live demo for judges.
 
 **Team lead:** Antonia Chroni ([@AntoniaChroni](https://github.com/AntoniaChroni))  
-**Code review & development leads:** Emma Bishop, Rojina Sapkota, Antonia Chroni  
-**Dry-run & HPC testers:** Rojina Sapkota, Antonia Chroni (only)  
+**Code review & development leads:** Clay McLeod, Emma Bishop, Antonia Chroni  
+**Dry-run & HPC testers:** Clay McLeod, Antonia Chroni, Rojina Sapkota (only St Jude HPC users)  
+**Biology assessment leads:** Rachana Pandey, A.S.M. Tanjim Hassan
+**WDL and ROI analysis leads:** Lindsey Warren, Sarthak Sunil Dhanke
+
 **Slack:** [Team channel](https://stjudebiohackathon.slack.com/archives/C0BT8BF4JEL) (team15)
 
 ---
@@ -31,17 +34,23 @@
 
 ```text
 KIDS26-Team15/
-├── README.md                              This file
-├── analyses/sc-rna-seq-snap-Victoria-Knockout/   Main work area (launcher, WDL, scripts)
+├── analyses/
+│   ├── sc-rna-seq-snap-legacy-Victoria-Knockout-shareable    Results from Legacy Run
+│   └── sc-rna-seq-snap-sprocket-Victoria-Knockout-shareable  Results from Daedalus Run
+├── data/                                  project_metadata
+└── deliverables/
+│   ├── biological-validation-benchmarking/ Biological comparisons and assessments
+│   ├── docs/                              Pitches, problem overview, participant FAQ
+│   ├── reports/                           Event report-outs
+│   ├── roi-analysis/                      ROI analysis
+│   ├── slides/                            Kickoff deck + event deck (TBD; see README there)
+│   └── wdl-stakeholder-evaluation/        Assessment of WDL vs various workflow languages
 ├── docs/                                  HPC setup, troubleshooting, learning resources
+├── LICENSE.md
 ├── project-management/
 │   ├── hackathon-runbook.md               Operational guide (read this before Day 1)
 │   └── stjude-biohackathon-kids26-team15-info.xlsx
-└── deliverables/
-    ├── docs/                              Pitches, problem overview, participant FAQ
-    ├── validation/hackathon-test-log.md   Shared test log
-    ├── reports/                           Event report-outs
-    └── slides/                            Kickoff deck + event deck (TBD; see README there)
+└── README.md                              This file
 ```
 
 **Tools:** SNAP (`sc-rna-seq-snap`), WDL, Sprocket, R/Seurat, Apptainer, LSF, YAML config · Victoria Knockout cohort (4 samples, ~27k cells)
@@ -55,3 +64,9 @@ KIDS26-Team15/
 1. Branch → focused change → PR → teammate review → merge.
 2. Do not commit secrets, credentials, or private data.
 3. See [Git and GitHub basics](docs/git-github-basics.md) if needed.
+
+
+---
+
+**Maintainer:** KIDS26 Team 15 · Generated during KIDS26 Team 15 Biohackathon 26 (September 16-18, 2026)
+
