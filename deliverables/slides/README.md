@@ -1,11 +1,10 @@
 # Slides
 
-| Folder / file | Purpose | Status |
-|---------------|---------|--------|
-| `kickoff/kids26-team15-2026-09-04.pptx` | **Kickoff meeting** (2026-09-04) — intro to team and project | Done |
-| *(event deck — TBD)* | **Hackathon demo / lightning talk** — 3-slide organizer template (problem, solution, results/impact) | To be added before Day 3 |
 
-**Presenters (event):** Lindsey Warren, Antonia Chroni, Rojina Sapkota, Emma Bishop, Rachana Pandey
+- `KIDS-Team15-kickoff-2026-09-04.pdf`: **Kickoff meeting** (2026-09-04) — intro to team and project
+- `KIDS-Team15-Presentation.pdf`: **Hackathon demo / lightning talk** (2026-09-18) — 3-slide organizer template (problem, solution, results/impact) 
 
-**Speaker notes source (event deck):** [Daedalus pitch](../docs/daedalus-pitch.md) · [Problem & solution overview](../docs/problem-and-solution-overview.md)  
-**Deeper context:** [Participant FAQ](../docs/participant-faq-snap-sprocket-resources.md) · [ROI one-pager](../../analyses/sc-rna-seq-snap-Victoria-Knockout/docs/Snap-Sprocket-ROI-one-pager.md)
+
+---
+
+**Maintainer:** KIDS26 Team 15 · Generated during KIDS26 Team 15 Biohackathon 26 (September 16-18, 2026)
