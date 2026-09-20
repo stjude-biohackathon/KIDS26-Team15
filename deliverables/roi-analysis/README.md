@@ -6,44 +6,38 @@ Resource utilization and cost comparison between the legacy SNAP workflow (`laun
 
 ```
 roi-analysis/
+├── docs/                                   # Reference documents
+│   ├── data-analyst-time.md                # Analyst time estimation methodology
+│   ├── roi-analysis-Lindsey-questions.md   # HPC cost model and analyst rate
+│   └── roi_scenarios.csv                   # Low/expected/high scenario parameters
 ├── input/                                  # Raw data files
-│   ├── Job-run-upstream-analysis-Done.pdf          # Legacy upstream LSF job (PDF)
-│   ├── Job-run-integrative-analysis-Done.pdf       # Legacy integrative LSF job (PDF)
-│   ├── resource_usage_2026-09-12_*.json            # Daedalus prototype resource usage (JSON)
 │   ├── AugJobs_WithRunDashInName.xlsx              # August HPC jobs (all SNAP users)
-│   └── daedalus-v2/                                # Daedalus v2 experiment outputs
-│       ├── upstream-analysis/job.323196561.stdout
-│       ├── integrative-analysis/job.323198973.stdout
-│       └── outputs.json
+│   ├── daedalus-v2/                                # Daedalus v2 experiment outputs
+│   │   ├── integrative-analysis/job.323198973.stdout
+│   │   ├── outputs.json
+│   │   └── upstream-analysis/job.323196561.stdout
+│   ├── Job-run-integrative-analysis-Done.pdf       # Legacy integrative LSF job (PDF)
+│   ├── Job-run-upstream-analysis-Done.pdf          # Legacy upstream LSF job (PDF)
+│   └── resource_usage_2026-09-12_*.json            # Daedalus prototype resource usage (JSON)
+├── notebooks/                              # Jupyter notebooks
+│   └── roi_analysis_legacy_vs_daedalus_v2.ipynb    # Main analysis notebook
 ├── output/                                 # Generated visualizations
-│   ├── memory_utilization_comparison.png
-│   ├── cpu_utilization_comparison.png
-│   ├── memory_requested_vs_used.png
 │   ├── analyst_savings_by_scenario.png
+│   ├── cost_improvement_pct.png
+│   ├── cpu_utilization_comparison.png
 │   ├── hpc_cost_comparison.png
-│   └── cost_improvement_pct.png
+│   ├── memory_requested_vs_used.png
+│   └── memory_utilization_comparison.png
+├── pyproject.toml                          # Python dependencies
+├── README.md                               # This file
 ├── reports/                                # Analysis reports (markdown)
 │   ├── P1-ROI-Combined-Run-Data.md         # Combined run data tables
-│   ├── P1-ROI-Cost-Analysis.md             # Cost analysis
 │   ├── P1-ROI-Cost-Scenarios.md            # Low/expected/high scenarios
 │   └── P1-ROI-Job-Output-Details.md        # job.out/job.err details
 ├── scripts/                                # Analysis scripts
 │   ├── roi_calculator.py                   # Legacy flow calculator
 │   └── roi_calculator_daedalus.py          # Daedalus flow calculator
-├── notebooks/                              # Jupyter notebooks
-│   ├── roi_analysis_legacy_vs_daedalus_v2.ipynb    # Main analysis notebook
-│   └── archive/                            # Older notebooks
-│       ├── aug_data_exp.ipynb              # August jobs exploration
-│       └── roi_analysis_legacy_vs_daedalus_prototype.ipynb
-├── docs/                                   # Reference documents
-│   ├── roi_scenarios.csv                   # Low/expected/high scenario parameters
-│   ├── roi-analysis-Lindsey-questions.md   # HPC cost model and analyst rate
-│   └── data-analyst-time.md                # Analyst time estimation methodology
-├── .gitignore
-├── .python-version
-├── pyproject.toml                          # Python dependencies
-├── uv.lock                                 # Dependency lock file
-└── README.md                               # This file
+└── uv.lock                                 # Dependency lock file
 ```
 
 ## Quick Start
