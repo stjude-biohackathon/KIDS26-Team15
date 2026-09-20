@@ -48,6 +48,8 @@ def parse_modules(data: dict) -> list:
         metrics['cpu_time_sec'] = float(actual.get('cpu_time_sec', 0))
         metrics['wall_time_sec'] = float(actual.get('wall_time_sec', 0))
         
+        # total memory used
+        metrics['total_requested_memory_gb'] = metrics['requested_cpu'] * metrics['requested_memory_gb']
         parsed.append(metrics)
     
     return parsed
@@ -58,9 +60,9 @@ def calculate_utilization(metrics: dict) -> dict:
     results = {}
     
     # Memory utilization: avg used / requested (matches legacy calculation)
-    if metrics['requested_memory_gb'] > 0 and metrics['actual_avg_memory_gb'] > 0:
-        results['memory_utilization_pct'] = (metrics['actual_avg_memory_gb'] / metrics['requested_memory_gb']) * 100
-        results['memory_waste_gb'] = metrics['requested_memory_gb'] - metrics['actual_avg_memory_gb']
+    if metrics['total_requested_memory_gb'] > 0 and metrics['actual_avg_memory_gb'] > 0:
+        results['memory_utilization_pct'] = (metrics['actual_avg_memory_gb'] / metrics['total_requested_memory_gb']) * 100
+        results['memory_waste_gb'] = metrics['total_requested_memory_gb'] - metrics['actual_avg_memory_gb']
     
     # CPU utilization: actual CPU time / allocated core-time
     if metrics['wall_time_sec'] > 0 and metrics['requested_cpu'] > 0:

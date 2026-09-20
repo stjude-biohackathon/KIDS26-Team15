@@ -87,7 +87,7 @@ All utilization calculations use **average memory** (not peak) for fair comparis
 
 | Metric | Legacy | Daedalus Prototype | Daedalus v2 |
 |--------|--------|--------------------|-------------|
-| Memory Utilization | 9.6% | 23.6% | 26.2% |
+| Memory Utilization | 9.6% | 3.0% | 3.1% |
 | CPU Utilization | 7.1% | 11.5% | 13.4% |
 | Peak Memory | 96 GB | 22 GB | 24 GB |
 | Avg Memory Used | 46 GB | 8.5 GB | 8.8 GB |
@@ -99,7 +99,7 @@ All utilization calculations use **average memory** (not peak) for fair comparis
 
 | Metric | Legacy | Daedalus Prototype | Daedalus v2 |
 |--------|--------|--------------------|-------------|
-| Memory Utilization | 1.5% | 5.4% | 6.9% |
+| Memory Utilization | 1.5% | 0.5% | 0.6% |
 | CPU Utilization | 6.7% | 5.8% | 10.1% |
 | Peak Memory | 24 GB | 10 GB | 10.4 GB |
 | Avg Memory Used | 14.1 GB | 6.3 GB | 7.4 GB |
