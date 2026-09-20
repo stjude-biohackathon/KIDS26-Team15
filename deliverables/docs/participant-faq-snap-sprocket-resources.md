@@ -124,4 +124,4 @@ workflow_profile:
 
 ---
 
-**Maintainer:** KIDS26 Team 15 · **Last updated:** 2026-09-12
+**Maintainer:** KIDS26 Team 15 · Generated during KIDS26 Team 15 Biohackathon 26 (September 16-18, 2026)

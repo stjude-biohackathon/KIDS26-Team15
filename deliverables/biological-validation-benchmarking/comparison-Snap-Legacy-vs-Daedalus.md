@@ -90,5 +90,5 @@ What would concern me more is if you observed:
 
 ---
 
-**Maintainer:** KIDS26 Team 15 · **Status:** Report Comparison of Snap Legacy vs Daedalus
+**Maintainer:** KIDS26 Team 15 · Generated during KIDS26 Team 15 Biohackathon 26 (September 16-18, 2026)
 
