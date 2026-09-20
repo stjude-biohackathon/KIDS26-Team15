@@ -30,7 +30,7 @@ Supported by workflow structure; not quantified in LSF metrics:
 
 1. Single cohort (4 samples); scalability to larger projects not measured here.
 2. Legacy and Daedalus runs used slightly different submission dates/times; biology and inputs matched.
-3. Legacy fastqc/cellranger not compared (no LSF summaries).
+3. Only upstream + integrative modules were compared; the total pipeline ROI is incomplete (out of scope for Biohackathon)
 4. One Daedalus upstream dev failure excluded from production metrics.
 5. HPC and analyst dollar rates are parameterized, not official St. Jude pricing.
 6. Legacy integrative turnaround includes manual upstream dependency wait (~1.8 h on same-day pair).
