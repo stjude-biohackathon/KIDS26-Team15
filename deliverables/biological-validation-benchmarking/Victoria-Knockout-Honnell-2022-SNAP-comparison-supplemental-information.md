@@ -63,3 +63,8 @@ Takes the filtered Seurat objects from `upstream-analysis` and merges them into 
 <img width="880" height="667" alt="Image" src="https://github.com/user-attachments/assets/e0d4b3c4-29e1-4905-a757-b1ead9c9ac73" />
 
 <img width="1000" height="500" alt="Image" src="https://github.com/user-attachments/assets/896a588e-452e-4fef-ba6f-bfdb4c048d6e" />
+
+
+---
+
+**Maintainer:** KIDS26 Team 15 · Generated during KIDS26 Team 15 Biohackathon 26 (September 16-18, 2026)

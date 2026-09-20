@@ -203,4 +203,4 @@ SNAP (current state)
 
 ---
 
-*Maintainer notes: Generated during KIDS26 Team 15 hackathon prep for biology sign-off (T6, T9) and paper-to-pipeline context.*
+**Maintainer:** KIDS26 Team 15 · Generated during KIDS26 Team 15 Biohackathon 26 (September 16-18, 2026)
