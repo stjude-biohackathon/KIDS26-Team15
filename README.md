@@ -43,7 +43,6 @@ KIDS26-Team15/
 │   ├── docs/                              Pitches, problem overview, participant FAQ
 │   ├── reports/                           Event report-outs
 │   ├── roi-analysis/                      ROI analysis
-│   ├── reports/                           Event report-outs
 │   ├── slides/                            Kickoff deck + event deck (TBD; see README there)
 │   └── wdl-stakeholder-evaluation/        Assessment of WDL vs various workflow languages
 ├── docs/                                  HPC setup, troubleshooting, learning resources

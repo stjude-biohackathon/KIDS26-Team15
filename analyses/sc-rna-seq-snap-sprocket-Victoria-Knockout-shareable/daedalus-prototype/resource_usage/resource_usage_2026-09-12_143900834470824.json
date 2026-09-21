@@ -1,0 +1,58 @@
+{
+  "generated_at": "2026-09-12T11:52:38-05:00",
+  "snap_root": "/sc-rna-seq-snap-sprocket-Victoria-Knockout-shareable",
+  "run_id": "2026-09-12_143900834470824",
+  "run_dir": "/sc-rna-seq-snap-sprocket-Victoria-Knockout-shareable/out/runs/sc_rna_seq_snap_downstream/2026-09-12_143900834470824",
+  "modules": [
+    {
+      "run_id": "2026-09-12_143900834470824",
+      "module": "integrative",
+      "call_alias": "integrative_y",
+      "lsf_job_id": "320291380",
+      "lsf_status": "DONE",
+      "requested": {
+        "cpu": 10,
+        "memory_gb": 116,
+        "lsf_queue": "standard"
+      },
+      "actual": {
+        "max_memory_gb": 10.3000,
+        "avg_memory_gb": 6.3000,
+        "cpu_time_sec": 612.8,
+        "wall_time_sec": 1048
+      },
+      "efficiency": {
+        "memory_utilization_pct": 8.88,
+        "lsf_mem_efficiency_pct": 9.59,
+        "cpu_avg_efficiency_pct": 5.80,
+        "cpu_peak_efficiency_pct": 10.00
+      },
+      "lsf_exit_code": null
+    },
+    {
+      "run_id": "2026-09-12_143900834470824",
+      "module": "upstream",
+      "call_alias": "upstream",
+      "lsf_job_id": "320229569",
+      "lsf_status": "DONE",
+      "requested": {
+        "cpu": 8,
+        "memory_gb": 36,
+        "lsf_queue": "standard"
+      },
+      "actual": {
+        "max_memory_gb": 21.7000,
+        "avg_memory_gb": 8.5000,
+        "cpu_time_sec": 3768.4,
+        "wall_time_sec": 4087
+      },
+      "efficiency": {
+        "memory_utilization_pct": 60.28,
+        "lsf_mem_efficiency_pct": 64.94,
+        "cpu_avg_efficiency_pct": 11.53,
+        "cpu_peak_efficiency_pct": 16.67
+      },
+      "lsf_exit_code": null
+    }
+  ]
+}

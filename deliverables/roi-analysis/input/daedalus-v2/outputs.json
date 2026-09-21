@@ -1,0 +1,81 @@
+{
+  "daedalus_from_cellranger.cellranger_outputs": [
+    {
+      "sample_id": "DYE_2519",
+      "count_output": "/DIR/sc-rna-seq-snap-sprocket-Victoria-Knockout/analyses/cellranger-analysis/results/02_cellranger_count/DefaultParameters/DYE_2519/outs",
+      "metrics_csv": "/DIR/sc-rna-seq-snap-sprocket-Victoria-Knockout/analyses/cellranger-analysis/results/02_cellranger_count/DefaultParameters/DYE_2519/outs/metrics_summary.csv",
+      "estimated_cells": 4865
+    },
+    {
+      "sample_id": "DYE_2520",
+      "count_output": "/DIR/sc-rna-seq-snap-sprocket-Victoria-Knockout/analyses/cellranger-analysis/results/02_cellranger_count/DefaultParameters/DYE_2520/outs",
+      "metrics_csv": "/DIR/sc-rna-seq-snap-sprocket-Victoria-Knockout/analyses/cellranger-analysis/results/02_cellranger_count/DefaultParameters/DYE_2520/outs/metrics_summary.csv",
+      "estimated_cells": 7477
+    },
+    {
+      "sample_id": "DYE_2521",
+      "count_output": "/DIR/sc-rna-seq-snap-sprocket-Victoria-Knockout/analyses/cellranger-analysis/results/02_cellranger_count/DefaultParameters/DYE_2521/outs",
+      "metrics_csv": "/DIR/sc-rna-seq-snap-sprocket-Victoria-Knockout/analyses/cellranger-analysis/results/02_cellranger_count/DefaultParameters/DYE_2521/outs/metrics_summary.csv",
+      "estimated_cells": 6351
+    },
+    {
+      "sample_id": "DYE_2522",
+      "count_output": "/DIR/sc-rna-seq-snap-sprocket-Victoria-Knockout/analyses/cellranger-analysis/results/02_cellranger_count/DefaultParameters/DYE_2522/outs",
+      "metrics_csv": "/DIR/sc-rna-seq-snap-sprocket-Victoria-Knockout/analyses/cellranger-analysis/results/02_cellranger_count/DefaultParameters/DYE_2522/outs/metrics_summary.csv",
+      "estimated_cells": 8208
+    }
+  ],
+  "daedalus_from_cellranger.cellranger_summary": "/DIR/sc-rna-seq-snap-sprocket-Victoria-Knockout/out/runs/daedalus_from_cellranger/2026-09-18_154441616807273/calls/write_cellranger_summary/attempts/0/work/cellranger_summary.tsv",
+  "daedalus_from_cellranger.estimated_cells": [
+    4865,
+    7477,
+    6351,
+    8208
+  ],
+  "daedalus_from_cellranger.num_samples": 4,
+  "daedalus_from_cellranger.downstream_resources": {
+    "upstream_cpu": 8,
+    "upstream_memory_gb": 36,
+    "upstream_future_globals_gib": 200,
+    "integrative_cpu": 10,
+    "integrative_memory_gb": 116,
+    "integrative_future_globals_gib": 200,
+    "cluster_cpu": 4,
+    "cluster_memory_gb": 58,
+    "cluster_future_globals_gib": 400,
+    "contamination_cpu": 8,
+    "contamination_memory_gb": 116,
+    "contamination_future_globals_gib": 400,
+    "cell_types_cpu": 4,
+    "cell_types_memory_gb": 77,
+    "clone_phylogeny_cpu": 16,
+    "clone_phylogeny_memory_gb": 30,
+    "de_go_cpu": 4,
+    "de_go_memory_gb": 39,
+    "de_go_future_globals_gib": 200,
+    "rshiny_cpu": 4,
+    "rshiny_memory_gb": 30
+  },
+  "daedalus_from_cellranger.upstream_cpu": 8,
+  "daedalus_from_cellranger.upstream_memory_gb": 36,
+  "daedalus_from_cellranger.upstream_future_globals_gib": 200,
+  "daedalus_from_cellranger.integrative_cpu": 10,
+  "daedalus_from_cellranger.integrative_memory_gb": 116,
+  "daedalus_from_cellranger.integrative_future_globals_gib": 200,
+  "daedalus_from_cellranger.upstream_completion": "/DIR/sc-rna-seq-snap-sprocket-Victoria-Knockout/out/runs/daedalus_from_cellranger/2026-09-18_154441616807273/calls/upstream/attempts/0/work/upstream.done",
+  "daedalus_from_cellranger.upstream_results": "/DIR/sc-rna-seq-snap-sprocket-Victoria-Knockout/analyses/upstream-analysis/results",
+  "daedalus_from_cellranger.cluster_completion": null,
+  "daedalus_from_cellranger.cluster_results": null,
+  "daedalus_from_cellranger.cell_types_completion": null,
+  "daedalus_from_cellranger.cell_types_results": null,
+  "daedalus_from_cellranger.rshiny_completion": null,
+  "daedalus_from_cellranger.rshiny_results": null,
+  "daedalus_from_cellranger.integrative_completion": "/DIR/sc-rna-seq-snap-sprocket-Victoria-Knockout/out/runs/daedalus_from_cellranger/2026-09-18_154441616807273/calls/integrative/attempts/0/work/integrative.done",
+  "daedalus_from_cellranger.integrative_results": "/DIR/sc-rna-seq-snap-sprocket-Victoria-Knockout/analyses/integrative-analysis/results",
+  "daedalus_from_cellranger.contamination_removal_completion": null,
+  "daedalus_from_cellranger.contamination_removal_results": null,
+  "daedalus_from_cellranger.clone_phylogeny_completion": null,
+  "daedalus_from_cellranger.clone_phylogeny_results": null,
+  "daedalus_from_cellranger.de_go_completion": null,
+  "daedalus_from_cellranger.de_go_results": null
+}
