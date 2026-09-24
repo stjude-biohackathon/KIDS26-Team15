@@ -1,4 +1,4 @@
-scenario,analyst_hourly_rate_usd,legacy_analyst_hours_per_run,daedalus_analyst_hours_per_run,hpc_cpu_hour_rate_usd,hpc_memory_gb_hour_rate_usd,implementation_hours,maintenance_hours_per_year,runs_per_year,analyst_savings_per_run_usd,hpc_savings_per_run_usd,total_savings_per_run_usd,annual_savings_usd,implementation_cost_usd,annual_maintenance_cost_usd,net_annual_benefit_usd,net_benefit_year_one_usd,roi_pct,payback_runs
-low,48.08,4,1,0.02,0.001,40,8,12,144.24,1.43,145.67,1748.04,2000,400,1348.04,-651.96,-32.6,13.73
-expected,48.08,6,1.5,0.03,0.0015,60,12,24,216.36,2.14,218.5,5244,3120,624,4620,1500,48.08,14.28
-high,48.08,8,2,0.05,0.002,80,20,48,288.48,3.04,291.52,13992.96,5360,1340,12652.96,7292.96,136.06,18.39
+scenario,analyst_hourly_rate_usd,legacy_analyst_hours_per_run,daedalus_analyst_hours_per_run,hpc_cpu_hour_rate_usd,hpc_memory_gb_hour_rate_usd,implementation_hours,maintenance_hours_per_year,runs_per_year,analyst_savings_per_run_usd,hpc_savings_per_run_usd,total_savings_per_run_usd,annual_savings_usd,implementation_cost_usd,annual_maintenance_cost_usd,net_annual_benefit_usd,roi_pct,payback_runs
+low,48.08,4,1,0.02,0.001,40,8,12,144.24,1.43,145.67,1748.04,2000,400,1348.04,-32.6,13.73
+expected,48.08,6,1.5,0.03,0.0015,60,12,24,216.36,2.14,218.5,5244,3120,624,4620,48.08,14.28
+high,48.08,8,2,0.05,0.002,80,20,48,288.48,3.04,291.52,13992.96,5360,1340,12652.96,136.06,18.39
