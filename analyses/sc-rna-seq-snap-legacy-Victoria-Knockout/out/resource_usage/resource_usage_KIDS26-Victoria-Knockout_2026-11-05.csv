@@ -1,0 +1,12 @@
+run_id,module,call_alias,analysis_dir,team15_run_status,legacy_run_status,lsf_job_id,lsf_status,requested_cpu,requested_memory_gb,requested_lsf_queue,actual_max_memory_gb,actual_avg_memory_gb,memory_utilization_pct,lsf_mem_efficiency_pct,cpu_time_sec,wall_time_sec,cpu_avg_efficiency_pct,cpu_peak_efficiency_pct,lsf_exit_code,legacy_last_sample
+KIDS26-Victoria-Knockout_2026-11-05,fastqc,fastqc-analysis,fastqc-analysis,not_run_yet,DONE,335795999,DONE,6,2,standard,1.2178,1.0412,60.89,10.15,1975.72,516,63.82,,,
+KIDS26-Victoria-Knockout_2026-11-05,cellranger,cellranger-analysis,cellranger-analysis,not_run_yet,DONE,335796179,DONE,6,48,standard,0.1309,0.0339,0.27,0.28,54.73,1314,0.69,,,DYE_2519
+KIDS26-Victoria-Knockout_2026-11-05,upstream,run-upstream-analysis,upstream-analysis,not_run_yet,DONE,335796637,DONE,16,30,standard,94.9688,45.9841,316.56,19.79,6973,6864,6.35,,,
+KIDS26-Victoria-Knockout_2026-11-05,integrative,run-integrative-analysis,integrative-analysis,not_run_yet,DONE,335796638,DONE,10,96,standard,22.9053,18.0494,23.86,2.39,546,7365,0.74,,,
+KIDS26-Victoria-Knockout_2026-11-05,cluster,run-cluster-cell-calling,cluster-cell-calling,not_run_yet,DONE,335796641,DONE,4,48,standard,27.1807,17.5052,56.63,14.16,3835,10302,9.31,,,
+KIDS26-Victoria-Knockout_2026-11-05,contamination_removal,run-cell-contamination-removal-analysis,cell-contamination-removal-analysis,not_run_yet,NOT_RUN,,NOT_RUN,8,96,standard,,,,,,,,,,
+KIDS26-Victoria-Knockout_2026-11-05,cell_types,run-cell-types-annotation,cell-types-annotation,not_run_yet,DONE,335796642,DONE,4,64,standard,9.7061,6.2143,15.17,3.79,787.12,11083,1.78,,,
+KIDS26-Victoria-Knockout_2026-11-05,clone_phylogeny,run-clone-phylogeny-analysis,clone-phylogeny-analysis,not_run_yet,NOT_RUN,,NOT_RUN,16,30,standard,,,,,,,,,,
+KIDS26-Victoria-Knockout_2026-11-05,de_go,run-de-go-analysis,de-go-analysis,not_run_yet,NOT_RUN,,NOT_RUN,4,32,standard,,,,,,,,,,
+KIDS26-Victoria-Knockout_2026-11-05,rshiny,run-rshiny-app,rshiny-app,not_run_yet,DONE,335796644,DONE,4,30,standard,6.8018,3.6285,22.67,5.67,51.8,11142,0.12,,,
+KIDS26-Victoria-Knockout_2026-11-05,project_updates,run-project-updates,project-updates,not_run_yet,NOT_RUN,,NOT_RUN,1,4,standard,,,,,,,,,,
