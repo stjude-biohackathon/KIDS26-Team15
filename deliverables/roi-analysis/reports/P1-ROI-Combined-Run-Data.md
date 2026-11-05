@@ -3,6 +3,8 @@
 **Source:** `analyses/sc-rna-seq-snap-legacy-Victoria-Knockout-shareable/`  
 **Cohort:** Victoria Knockout (4 samples, ~27k cells)
 
+> **Scoped ROI:** Biohackathon = **2 modules** (upstream, integrative); post-hackathon = **5 modules** + FastQC/Cell Ranger + Daedalus biological validation — see [`P1-ROI-Biohackathon-vs-Post-Hackathon-Comparison.md`](P1-ROI-Biohackathon-vs-Post-Hackathon-Comparison.md) (`../input/resource_usage_KIDS26-Victoria-Knockout_2026-11-05.csv`, `resource_usage_2026-10-28_232725179937495.csv`).
+
 ---
 
 ## Run 1: FastQC Analysis

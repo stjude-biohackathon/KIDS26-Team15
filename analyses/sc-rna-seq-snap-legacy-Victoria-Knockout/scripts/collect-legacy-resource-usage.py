@@ -63,10 +63,17 @@ CSV_HEADER = [
     "cpu_avg_efficiency_pct",
     "cpu_peak_efficiency_pct",
     "lsf_exit_code",
-    "legacy_lsf_pdf",
     "legacy_last_sample",
-    "legacy_log_path",
 ]
+
+
+def rel_legacy_path(path: str) -> str:
+    if not path:
+        return ""
+    try:
+        return os.path.relpath(path, LEGACY_ROOT)
+    except ValueError:
+        return os.path.basename(path)
 
 
 def parse_lsf_script(path: str) -> dict[str, Any]:
@@ -336,9 +343,9 @@ def build_row(
         "cpu_avg_efficiency_pct": "",
         "cpu_peak_efficiency_pct": "",
         "lsf_exit_code": stats.get("lsf_exit_code", ""),
-        "legacy_lsf_pdf": stats.get("pdf_path", "") if pdf else "",
+        "legacy_lsf_pdf": rel_legacy_path(stats.get("pdf_path", "")) if pdf else "",
         "legacy_last_sample": stats.get("last_sample", ""),
-        "legacy_log_path": stats.get("log_path", ""),
+        "legacy_log_path": rel_legacy_path(stats.get("log_path", "")),
     }
     row["memory_utilization_pct"] = memory_utilization(
         row["actual_max_memory_gb"], row["requested_memory_gb"]
@@ -354,6 +361,14 @@ def build_row(
     return row
 
 
+def csv_row_with_na(row: dict[str, str]) -> dict[str, str]:
+    out = {key: row.get(key, "") for key in CSV_HEADER}
+    for key, value in out.items():
+        if value is None or str(value).strip() == "":
+            out[key] = "NA"
+    return out
+
+
 def main() -> None:
     run_id = os.environ.get(
         "RUN_ID",
@@ -367,9 +382,9 @@ def main() -> None:
     rows = [build_row(run_id, ad, mod, alias) for ad, mod, alias in MODULES]
 
     with open(csv_path, "w", newline="", encoding="utf-8") as fh:
-        writer = csv.DictWriter(fh, fieldnames=CSV_HEADER)
+        writer = csv.DictWriter(fh, fieldnames=CSV_HEADER, extrasaction="ignore")
         writer.writeheader()
-        writer.writerows(rows)
+        writer.writerows(csv_row_with_na(row) for row in rows)
 
     payload = {
         "generated_at": datetime.now(timezone.utc).astimezone().isoformat(),
