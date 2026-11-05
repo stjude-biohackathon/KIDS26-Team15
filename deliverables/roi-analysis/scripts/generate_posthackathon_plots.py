@@ -228,16 +228,15 @@ def main() -> None:
     width = 0.38
     util_fig_w = max(10, len(modules) * 1.2)
 
-    # 1 — Memory + CPU utilization (two panels)
-    fig, axes = plt.subplots(2, 1, figsize=(util_fig_w, 10))
-    scope = "Post-hackathon scope (5 modules, Victoria Knockout)"
+    # 1 — Memory + CPU utilization (one row, two panels)
+    fig, axes = plt.subplots(1, 2, figsize=(util_fig_w * 1.55, 5.5))
     _plot_utilization_panel(
         axes[0],
         modules,
         legacy_mem,
         daed_mem,
         ylabel="Memory utilization (%)\n(avg used / total requested)",
-        title=f"Memory utilization — {scope}",
+        title="Memory utilization",
         show_legend=True,
         width=width,
     )
@@ -247,11 +246,17 @@ def main() -> None:
         legacy_cpu,
         daed_cpu,
         ylabel="CPU utilization (%)",
-        title=f"CPU utilization — {scope}",
+        title="CPU utilization",
         show_legend=False,
         width=width,
     )
-    fig.tight_layout(pad=1.5)
+    fig.suptitle(
+        "Post-hackathon scope (5 modules, Victoria Knockout) — Legacy vs Daedalus",
+        fontsize=13,
+        fontweight="bold",
+        y=1.02,
+    )
+    fig.tight_layout(rect=(0, 0, 1, 0.96), pad=1.2)
     fig.savefig(OUT / "resource_utilization_comparison.png", dpi=150, bbox_inches="tight")
     plt.close(fig)
 
@@ -328,7 +333,7 @@ def main() -> None:
     )
 
     scenario_labels = scenarios_df["scenario"].str.title()
-    fig, axes = plt.subplots(3, 1, figsize=(10, 14))
+    fig, axes = plt.subplots(1, 3, figsize=(16, 5.5))
     _plot_legacy_vs_daedalus_cost_panel(
         axes[0],
         x_s,
@@ -337,8 +342,7 @@ def main() -> None:
         scenarios_df["hpc_pct_reduction"],
         ylabel="HPC cost ($) / run",
         title=(
-            f"HPC — Legacy vs Daedalus "
-            f"({legacy_core_h:.1f} vs {daedalus_core_h:.1f} core-hrs × scenario $/core-hr)"
+            f"HPC $/run ({legacy_core_h:.0f} vs {daedalus_core_h:.0f} core-hrs)"
         ),
         value_fmt="${:.2f}",
         show_legend=True,
@@ -350,7 +354,7 @@ def main() -> None:
         scenarios_df["daedalus_analyst_hours_per_run"],
         scenarios_df["analyst_hours_pct_reduction"],
         ylabel="Analyst hours / run",
-        title="Analyst time — Legacy vs Daedalus (hours per run from roi_scenarios.csv)",
+        title="Analyst hours / run",
         value_fmt="{:.1f} h",
         show_legend=False,
     )
@@ -361,24 +365,20 @@ def main() -> None:
         scenarios_df["daedalus_analyst_cost"],
         scenarios_df["analyst_pct_reduction"],
         ylabel="Analyst cost ($) / run",
-        title="Analyst cost — Legacy vs Daedalus (hours × $48.08/hr)",
+        title="Analyst cost $/run (@ $48.08/hr)",
         value_fmt="${:.0f}",
         show_legend=False,
     )
     for ax in axes:
         ax.set_xticks(list(x_s))
         ax.set_xticklabels(scenario_labels)
-    fig.text(
-        0.5,
-        0.01,
-        "Each scenario varies HPC $/core-hr (low / expected / high). "
-        "Analyst hours and $ from roi_scenarios.csv. Savings % = (Legacy − Daedalus) / Legacy.",
-        ha="center",
-        fontsize=9,
-        style="italic",
-        wrap=True,
+    fig.suptitle(
+        "Legacy vs Daedalus — cost per run (low / expected / high scenarios)",
+        fontsize=13,
+        fontweight="bold",
+        y=1.02,
     )
-    fig.tight_layout(rect=(0, 0.03, 1, 1), pad=1.5)
+    fig.tight_layout(rect=(0, 0, 1, 0.96), pad=1.2)
     fig.savefig(OUT / "cost_improvement_pct.png", dpi=150, bbox_inches="tight")
     plt.close(fig)
 
