@@ -10,22 +10,24 @@
 | Data file | Role |
 |-----------|------|
 | `resource_usage_KIDS26-Victoria-Knockout_2026-11-05.csv` | Legacy SNAP LSF export (KIDS26) |
-| `resource_usage_2026-10-28_232725179937495.csv` | Daedalus/Sprocket post-hackathon downstream run |
+| `resource_usage_2026-11-05_220340654817588.csv` | Daedalus/Sprocket post-hackathon downstream run |
+
+> **Note:** This Daedalus `resource_usage` export has no rows for `de_go`, `project_updates` (those modules were not in this Sprocket run). Daedalus combined HPC in §2 therefore matches the five paired modules only — not five paired + `de_go` + `project_updates`.
 
 ## 1. Biohackathon ROI (2 modules: legacy vs Daedalus)
 
 | Module | Legacy CPUs | Daedalus CPUs | Legacy req mem (GB/slot) | Daedalus req mem | Legacy avg mem (GB) | Daedalus avg mem | Legacy wall | Daedalus wall | Legacy core-hrs | Daedalus core-hrs |
 |--------|-------------|---------------|---------------------------|------------------|--------------------|------------------|-------------|---------------|---------------|-------------------|
-| upstream | 16 | 8 | 30.00 | 36.00 | 45.98 | 8.90 | 1h 54m | 0h 59m | 30.51 | 7.87 |
-| integrative | 10 | 10 | 96.00 | 116.00 | 18.05 | 7.30 | 2h 2m | 0h 11m | 20.46 | 1.93 |
+| upstream | 16 | 8 | 30.00 | 36.00 | 45.98 | 8.20 | 1h 54m | 1h 8m | 30.51 | 9.14 |
+| integrative | 10 | 10 | 96.00 | 116.00 | 18.05 | 7.10 | 2h 2m | 0h 9m | 20.46 | 1.62 |
 
 ### Biohackathon totals (upstream + integrative only)
 
 | Metric | Legacy | Daedalus |
 |--------|--------|----------|
-| Allocated core-hours | 50.97 | 9.80 |
-| Est. HPC cost (@ $0.024/core-hr) | $1.22 | $0.24 |
-| Core-hour change (Daedalus vs legacy) | — | **80.8%** vs legacy |
+| Allocated core-hours | 50.97 | 10.76 |
+| Est. HPC cost (@ $0.024/core-hr) | $1.22 | $0.26 |
+| Core-hour change (Daedalus vs legacy) | — | **78.9%** vs legacy |
 
 ## 2. Post-hackathon ROI
 
@@ -33,19 +35,19 @@
 
 | Module | Legacy CPUs | Daedalus CPUs | Legacy req mem (GB/slot) | Daedalus req mem | Legacy avg mem (GB) | Daedalus avg mem | Legacy wall | Daedalus wall | Legacy core-hrs | Daedalus core-hrs |
 |--------|-------------|---------------|---------------------------|------------------|--------------------|------------------|-------------|---------------|---------------|-------------------|
-| upstream | 16 | 8 | 30.00 | 36.00 | 45.98 | 8.90 | 1h 54m | 0h 59m | 30.51 | 7.87 |
-| integrative | 10 | 10 | 96.00 | 116.00 | 18.05 | 7.30 | 2h 2m | 0h 11m | 20.46 | 1.93 |
-| cluster | 4 | 4 | 48.00 | 58.00 | 17.51 | 9.10 | 2h 51m | 1h 4m | 11.45 | 4.29 |
-| cell_types | 4 | 4 | 64.00 | 77.00 | 6.21 | 6.40 | 3h 4m | 0h 13m | 12.31 | 0.92 |
-| rshiny | 4 | 4 | 30.00 | 30.00 | 3.63 | 3.30 | 3h 5m | 0h 1m | 12.38 | 0.07 |
+| upstream | 16 | 8 | 30.00 | 36.00 | 45.98 | 8.20 | 1h 54m | 1h 8m | 30.51 | 9.14 |
+| integrative | 10 | 10 | 96.00 | 116.00 | 18.05 | 7.10 | 2h 2m | 0h 9m | 20.46 | 1.62 |
+| cluster | 4 | 4 | 48.00 | 58.00 | 17.51 | 8.60 | 2h 51m | 0h 57m | 11.45 | 3.85 |
+| cell_types | 4 | 4 | 64.00 | 77.00 | 6.21 | 6.20 | 3h 4m | 0h 13m | 12.31 | 0.88 |
+| rshiny | 4 | 4 | 30.00 | 30.00 | 3.63 | 3.00 | 3h 5m | 0h 1m | 12.38 | 0.08 |
 
 ### Post-hackathon paired-module totals (5 modules)
 
 | Metric | Legacy | Daedalus |
 |--------|--------|----------|
-| Allocated core-hours | 87.11 | 15.08 |
-| Est. HPC cost (@ $0.024/core-hr) | $2.09 | $0.36 |
-| Core-hour change (Daedalus vs legacy) | — | **82.7%** vs legacy |
+| Allocated core-hours | 87.11 | 15.57 |
+| Est. HPC cost (@ $0.024/core-hr) | $2.09 | $0.37 |
+| Core-hour change (Daedalus vs legacy) | — | **82.1%** vs legacy |
 
 ### 2b. FastQC & Cell Ranger (both pipelines)
 
@@ -62,8 +64,8 @@ Both legacy and Daedalus Victoria Knockout projects use the same **FastQC** and 
 
 | Module | Legacy CPUs | Daedalus CPUs | Legacy req mem (GB/slot) | Daedalus req mem | Legacy avg mem (GB) | Daedalus avg mem | Legacy wall | Daedalus wall | Legacy core-hrs | Daedalus core-hrs |
 |--------|-------------|---------------|---------------------------|------------------|--------------------|------------------|-------------|---------------|---------------|-------------------|
-| de_go | NA | 4 | NA | 39.00 | NA | 9.90 | NA | 2h 42m | 0.00 | 10.80 |
-| project_updates | NA | 1 | NA | 5.00 | NA | 0.12 | NA | 0h 0m | 0.00 | 0.00 |
+| de_go | NA | NA | NA | NA | NA | NA | NA | NA | 0.00 | NA |
+| project_updates | NA | NA | NA | NA | NA | NA | NA | NA | 0.00 | NA |
 
 | Module | Legacy | Daedalus | Notes |
 |--------|--------|----------|-------|
@@ -73,14 +75,14 @@ Both legacy and Daedalus Victoria Knockout projects use the same **FastQC** and 
 
 | Metric | Legacy | Daedalus |
 |--------|--------|----------|
-| Allocated core-hours | 90.16 | 25.88 |
-| Est. HPC cost (@ $0.024/core-hr) | $2.16 | $0.62 |
-| Core-hour change (Daedalus vs legacy) | — | **71.3%** vs legacy |
+| Allocated core-hours | 90.16 | 15.57 |
+| Est. HPC cost (@ $0.024/core-hr) | $2.16 | $0.37 |
+| Core-hour change (Daedalus vs legacy) | — | **82.7%** vs legacy |
 
 ## 3. Findings (scoped)
 
-1. **Biohackathon (2 modules):** Daedalus used **9.8** vs legacy **51.0** allocated core-hours on upstream + integrative (~$0.24 vs ~$1.22 HPC).
-2. **Post-hackathon (5 paired modules):** Daedalus **15.1** vs legacy **87.1** core-hours on the expanded module set (cluster, cell_types, rshiny added to the comparison).
+1. **Biohackathon (2 modules):** Daedalus used **10.8** vs legacy **51.0** allocated core-hours on upstream + integrative (~$0.26 vs ~$1.22 HPC).
+2. **Post-hackathon (5 paired modules):** Daedalus **15.6** vs legacy **87.1** core-hours on the expanded module set (cluster, cell_types, rshiny added to the comparison).
 3. **Shared QC/align:** Add **3.0** legacy core-hours for FastQC + Cell Ranger when costing the full legacy SNAP path.
 4. **Biological validation:** Post-hackathon Daedalus adds automated validation (no legacy equivalent in this ROI export).
 5. **Analyst time dominates ROI** — see `docs/data-analyst-time.md` and scenario charts in `output/results-posthackathon/`.

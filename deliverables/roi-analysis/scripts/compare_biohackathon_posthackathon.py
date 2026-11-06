@@ -107,16 +107,24 @@ def module_row_table(
         d_ch = core_hours(dr) if dr else 0.0
         sum_l += l_ch
         sum_d += d_ch
+        def dval(key: str, digits: int = 2) -> str:
+            if dr and key in dr:
+                return fmt_num(fnum(dr[key]), digits)
+            return "NA"
+
+        def dwall() -> str:
+            return fmt_hours(fnum(dr["wall_time_sec"])) if dr else "NA"
+
         lines.append(
             f"| {mod} | "
             f"{fmt_num(fnum(lr['requested_cpu']) if lr else None, 0)} | "
-            f"{fmt_num(fnum(dr['requested_cpu']) if dr else None, 0)} | "
+            f"{dval('requested_cpu', 0)} | "
             f"{fmt_num(fnum(lr['requested_memory_gb']) if lr else None)} | "
-            f"{fmt_num(fnum(dr['requested_memory_gb']) if dr else None)} | "
+            f"{dval('requested_memory_gb')} | "
             f"{fmt_num(fnum(lr['actual_avg_memory_gb']) if lr else None)} | "
-            f"{fmt_num(fnum(dr['actual_avg_memory_gb']) if dr else None)} | "
+            f"{dval('actual_avg_memory_gb')} | "
             f"{fmt_hours(fnum(lr['wall_time_sec']) if lr else None)} | "
-            f"{fmt_hours(fnum(dr['wall_time_sec']) if dr else None)} | "
+            f"{dwall()} | "
             f"{fmt_num(l_ch)} | {fmt_num(d_ch) if d_ch else 'NA'} |"
         )
     lines.append("")
@@ -161,6 +169,19 @@ def build_report(legacy_path: Path, daedalus_path: Path) -> str:
     lines.append(f"| `{legacy_path.name}` | Legacy SNAP LSF export (KIDS26) |")
     lines.append(f"| `{daedalus_path.name}` | Daedalus/Sprocket post-hackathon downstream run |")
     lines.append("")
+    missing_daedalus_only = [
+        m
+        for m in POSTHACKATHON_DAEDALUS_ONLY_MODULES
+        if m != "biological_validation" and m not in daedalus
+    ]
+    if missing_daedalus_only:
+        lines.append(
+            "> **Note:** This Daedalus `resource_usage` export has no rows for "
+            + ", ".join(f"`{m}`" for m in missing_daedalus_only)
+            + " (those modules were not in this Sprocket run). Daedalus combined HPC in §2 therefore "
+            "matches the five paired modules only — not five paired + `de_go` + `project_updates`."
+        )
+        lines.append("")
 
     # --- Biohackathon ---
     lines.append("## 1. Biohackathon ROI (2 modules: legacy vs Daedalus)")
@@ -268,7 +289,11 @@ def main() -> None:
     parser.add_argument(
         "--daedalus",
         type=Path,
-        default=Path("../input/resource_usage_2026-10-28_232725179937495.csv"),
+        default=Path(__file__).resolve().parent.parent.parent.parent
+        / "analyses"
+        / "sc-rna-seq-snap-daedalus-Victoria-Knockout"
+        / "daedalus-post-hackathon"
+        / "resource_usage_2026-11-05_220340654817588.csv",
     )
     parser.add_argument(
         "--output",

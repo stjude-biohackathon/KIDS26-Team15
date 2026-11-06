@@ -1,0 +1,6 @@
+run_id,module,call_alias,lsf_job_id,lsf_status,requested_cpu,requested_memory_gb,requested_lsf_queue,actual_max_memory_gb,actual_avg_memory_gb,memory_utilization_pct,lsf_mem_efficiency_pct,cpu_time_sec,wall_time_sec,cpu_avg_efficiency_pct,cpu_peak_efficiency_pct,lsf_exit_code
+2026-11-05_220340654817588,cell_types,cell_types,335936021,DONE,4,77,standard,9.6000,6.2000,12.47,13.44,787.9,795,24.78,28.69,
+2026-11-05_220340654817588,cluster,cluster,335935512,DONE,4,58,standard,13.7000,8.6000,23.62,25.53,3439.7,3461,24.85,25.89,
+2026-11-05_220340654817588,integrative,integrative,335934857,DONE,10,116,standard,9.9000,7.1000,8.53,9.24,604.5,584,10.24,13.17,
+2026-11-05_220340654817588,rshiny,rshiny,335936508,DONE,4,30,standard,5.9000,3.0000,19.67,21.14,60.9,73,22.46,25.00,
+2026-11-05_220340654817588,upstream,upstream,335926234,DONE,8,36,standard,22.2000,8.2000,61.67,66.42,4548.0,4113,13.82,20.62,

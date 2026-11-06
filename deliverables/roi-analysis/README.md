@@ -59,7 +59,7 @@ uv run python3 roi_calculator.py ../input/Job-run-upstream-analysis-Done.pdf ../
 # Run Daedalus calculator
 uv run python3 roi_calculator_daedalus.py ../input/resource_usage_2026-09-12_143900834470824.json
 
-# Regenerate biohackathon vs post-hackathon comparison (Nov 2025 legacy vs Oct 2025 Daedalus CSVs)
+# Regenerate biohackathon vs post-hackathon comparison (Nov 2025 legacy vs Nov 2026 Daedalus CSV)
 uv run python3 compare_biohackathon_posthackathon.py
 
 # Regenerate post-hackathon plots (requires matplotlib + pandas; e.g. module load matplotlib/3.9.2-gfbf-2024a)
@@ -81,7 +81,7 @@ jupyter notebook roi_analysis_posthackathon_resource_usage.ipynb
 | Legacy integrative | `input/Job-run-integrative-analysis-Done.pdf` | LSF job completion email (PDF) |
 | Daedalus v1 | `input/resource_usage_*.json` | Sprocket resource usage output |
 | KIDS26 legacy (Nov 2025) | `input/resource_usage_KIDS26-Victoria-Knockout_2026-11-05.csv` | Full legacy module LSF export |
-| Daedalus post-hackathon | `input/resource_usage_2026-10-28_232725179937495.csv` | Victoria Knockout Daedalus downstream run |
+| Daedalus post-hackathon | `../analyses/sc-rna-seq-snap-daedalus-Victoria-Knockout/daedalus-post-hackathon/resource_usage_2026-11-05_220340654817588.csv` | Victoria Knockout Daedalus downstream run (single copy; SMB: `smb://jude.stjude.org/developmentalneurobiology/core_operations/Bioinformatics/achroni/GitHub/stjude-biohackathon/stjude-biohackathon-KIDS26/KIDS26-Team15/analyses/sc-rna-seq-snap-daedalus-Victoria-Knockout/daedalus-post-hackathon/resource_usage_2026-11-05_220340654817588.csv`) |
 | Daedalus v2 | `input/daedalus-v2/*.stdout` | LSF stdout files from Sprocket run |
 | August jobs | `input/AugJobs_WithRunDashInName.xlsx` | All SNAP HPC jobs (Aug 2026) |
 | Scenarios | `docs/roi_scenarios.csv` | Low/expected/high cost parameters |

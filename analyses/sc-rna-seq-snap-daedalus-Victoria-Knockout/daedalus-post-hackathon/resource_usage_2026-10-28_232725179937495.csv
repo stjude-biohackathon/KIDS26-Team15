@@ -1,8 +1,0 @@
-run_id,module,call_alias,lsf_job_id,lsf_status,requested_cpu,requested_memory_gb,requested_lsf_queue,actual_max_memory_gb,actual_avg_memory_gb,memory_utilization_pct,lsf_mem_efficiency_pct,cpu_time_sec,wall_time_sec,cpu_avg_efficiency_pct,cpu_peak_efficiency_pct,lsf_exit_code
-2026-10-28_232725179937495,cell_types,cell_types,334644699,DONE,4,77,standard,10.0000,6.4000,12.99,13.96,823.3,826,24.89,28.75,
-2026-10-28_232725179937495,cluster,cluster,334643499,DONE,4,58,standard,14.3000,9.1000,24.66,26.53,3821.7,3862,24.75,25.83,
-2026-10-28_232725179937495,de_go,de_go,334645070,DONE,4,39,standard,14.3000,9.9000,36.67,39.39,9635.6,9721,24.68,25.42,
-2026-10-28_232725179937495,integrative,integrative,334642710,DONE,10,116,standard,10.2000,7.3000,8.79,9.52,712.2,695,10.17,13.33,
-2026-10-28_232725179937495,project_updates,project_updates,334645094,DONE,1,5,standard,0.1660,0.1240,3.32,3.57,4.0,12,33.33,33.33,
-2026-10-28_232725179937495,rshiny,rshiny,334645069,DONE,4,30,standard,6.8000,3.3000,22.67,24.36,56.1,66,29.10,37.50,
-2026-10-28_232725179937495,upstream,upstream,334641484,DONE,8,36,standard,23.4000,8.9000,65.00,69.93,3833.0,3540,13.53,17.08,

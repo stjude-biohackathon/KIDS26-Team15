@@ -27,7 +27,14 @@ from scripts.roi_scope import (  # noqa: E402
 MEMORY_REQUESTED_VS_USED_MODULES = tuple(COMPARE_MODULES)
 
 LEGACY_CSV = ROOT / "input/resource_usage_KIDS26-Victoria-Knockout_2026-11-05.csv"
-DAEDALUS_CSV = ROOT / "input/resource_usage_2026-10-28_232725179937495.csv"
+_TEAM15_ROOT = ROOT.parent.parent  # roi-analysis → deliverables → KIDS26-Team15
+DAEDALUS_CSV = (
+    _TEAM15_ROOT
+    / "analyses"
+    / "sc-rna-seq-snap-daedalus-Victoria-Knockout"
+    / "daedalus-post-hackathon"
+    / "resource_usage_2026-11-05_220340654817588.csv"
+)
 ROI_SCENARIOS = ROOT / "docs/roi_scenarios.csv"
 OUT = ROOT / "output/results-posthackathon"
 
