@@ -20,23 +20,32 @@ roi-analysis/
 │   ├── Job-run-upstream-analysis-Done.pdf          # Legacy upstream LSF job (PDF)
 │   └── resource_usage_2026-09-12_*.json            # Daedalus prototype resource usage (JSON)
 ├── notebooks/                              # Jupyter notebooks
-│   └── roi_analysis_legacy_vs_daedalus_v2.ipynb    # Main analysis notebook
-├── output/                                 # Generated visualizations
-│   ├── analyst_savings_by_scenario.png
+│   ├── roi_analysis_legacy_vs_daedalus_v2.ipynb    # Original (PDF + Daedalus v2) — writes `output/`
+│   └── roi_analysis_posthackathon_resource_usage.ipynb  # September 2026 CSV comparison — writes `output/results-posthackathon/`
+├── output/                                 # Generated visualizations (original run)
 │   ├── cost_improvement_pct.png
 │   ├── cpu_utilization_comparison.png
-│   ├── hpc_cost_comparison.png
 │   ├── memory_requested_vs_used.png
 │   └── memory_utilization_comparison.png
+├── output/results-posthackathon/           # Post-hackathon CSV comparison plots (preserves output/ above)
+│   ├── resource_utilization_comparison.png   # Memory + CPU % (two panels)
+│   ├── memory_requested_vs_used.png
+│   ├── cost_improvement_pct.png
+│   └── comparison_summary.csv
 ├── pyproject.toml                          # Python dependencies
 ├── README.md                               # This file
 ├── reports/                                # Analysis reports (markdown)
 │   ├── P1-ROI-Combined-Run-Data.md         # Combined run data tables
+│   ├── P1-ROI-Biohackathon-vs-Post-Hackathon-Comparison.md  # KIDS26 legacy CSV vs Daedalus post-hackathon CSV
 │   ├── P1-ROI-Cost-Scenarios.md            # Low/expected/high scenarios
 │   └── P1-ROI-Job-Output-Details.md        # job.out/job.err details
 ├── scripts/                                # Analysis scripts
 │   ├── roi_calculator.py                   # Legacy flow calculator
-│   └── roi_calculator_daedalus.py          # Daedalus flow calculator
+│   ├── roi_calculator_daedalus.py          # Daedalus flow calculator
+│   ├── roi_scope.py                        # Biohackathon (2) vs post-hackathon module scopes
+│   ├── compare_biohackathon_posthackathon.py  # Scoped ROI markdown report
+│   ├── load_resource_usage_csv.py
+│   └── generate_posthackathon_plots.py
 └── uv.lock                                 # Dependency lock file
 ```
 
@@ -50,9 +59,18 @@ uv run python3 roi_calculator.py ../input/Job-run-upstream-analysis-Done.pdf ../
 # Run Daedalus calculator
 uv run python3 roi_calculator_daedalus.py ../input/resource_usage_2026-09-12_143900834470824.json
 
+# Regenerate biohackathon vs post-hackathon comparison (September 2026 legacy vs November 2026 Daedalus CSV)
+uv run python3 compare_biohackathon_posthackathon.py
+
+# Regenerate post-hackathon plots (requires matplotlib + pandas; e.g. module load matplotlib/3.9.2-gfbf-2024a)
+python3 scripts/generate_posthackathon_plots.py
+
 # Launch notebook (from roi-analysis/ root)
 cd ../notebooks
 jupyter notebook roi_analysis_legacy_vs_daedalus_v2.ipynb
+
+# Post-hackathon resource_usage CSVs → output/results-posthackathon/
+jupyter notebook roi_analysis_posthackathon_resource_usage.ipynb
 ```
 
 ## Data Sources
@@ -62,6 +80,8 @@ jupyter notebook roi_analysis_legacy_vs_daedalus_v2.ipynb
 | Legacy upstream | `input/Job-run-upstream-analysis-Done.pdf` | LSF job completion email (PDF) |
 | Legacy integrative | `input/Job-run-integrative-analysis-Done.pdf` | LSF job completion email (PDF) |
 | Daedalus v1 | `input/resource_usage_*.json` | Sprocket resource usage output |
+| KIDS26 legacy (September 2026) | `input/resource_usage_KIDS26-Victoria-Knockout_2026-11-05.csv` | Full legacy module LSF export |
+| Daedalus post-hackathon | `../analyses/sc-rna-seq-snap-daedalus-Victoria-Knockout/daedalus-post-hackathon/resource_usage_2026-11-05_220340654817588.csv` | Victoria Knockout Daedalus downstream run (single copy; SMB: `smb://jude.stjude.org/developmentalneurobiology/core_operations/Bioinformatics/achroni/GitHub/stjude-biohackathon/stjude-biohackathon-KIDS26/KIDS26-Team15/analyses/sc-rna-seq-snap-daedalus-Victoria-Knockout/daedalus-post-hackathon/resource_usage_2026-11-05_220340654817588.csv`) |
 | Daedalus v2 | `input/daedalus-v2/*.stdout` | LSF stdout files from Sprocket run |
 | August jobs | `input/AugJobs_WithRunDashInName.xlsx` | All SNAP HPC jobs (Aug 2026) |
 | Scenarios | `docs/roi_scenarios.csv` | Low/expected/high cost parameters |
@@ -74,6 +94,15 @@ All utilization calculations use **average memory** (not peak) for fair comparis
 - **CPU Utilization** = `actual_cpu_time / (wall_time × cores)`
 
 ## Key Findings
+
+**Victoria Knockout ROI scopes** ([`P1-ROI-Biohackathon-vs-Post-Hackathon-Comparison.md`](reports/P1-ROI-Biohackathon-vs-Post-Hackathon-Comparison.md)):
+
+| Phase | Compared modules | Notes |
+|-------|------------------|-------|
+| **Biohackathon** | 2 — `upstream`, `integrative` | Legacy vs Daedalus head-to-head |
+| **Post-hackathon** | 5 — `upstream`, `integrative`, `cluster`, `cell_types`, `rshiny` | Plus **FastQC & Cell Ranger** on shared project data (legacy HPC in CSV); **biological validation** (Daedalus only); `de_go` / `project_updates` in Daedalus export |
+
+HPC totals in that report are **summed per scope** (not the full CSV overlap). Post-hackathon plots: `resource_utilization_comparison.png` (memory + CPU, 5 modules), `memory_requested_vs_used.png`, `cost_improvement_pct.png` (HPC/analyst $ uses legacy 5 + fastqc + cellranger vs Daedalus 5 + de_go + project_updates core-hours).
 
 ### Resource Utilization
 
@@ -121,9 +150,7 @@ The notebook generates 6 charts in `output/`:
 1. `memory_utilization_comparison.png` — Memory utilization side by side
 2. `cpu_utilization_comparison.png` — CPU utilization side by side
 3. `memory_requested_vs_used.png` — Requested vs actual memory
-4. `analyst_savings_by_scenario.png` — Analyst hours and cost by scenario
-5. `hpc_cost_comparison.png` — HPC cost comparison
-6. `cost_improvement_pct.png` — % improvement HPC vs analyst
+4. `cost_improvement_pct.png` — Legacy vs Daedalus per scenario: **HPC $/run**, **analyst hours/run**, and **analyst $/run**, with % savings on Daedalus bars
 
 ## Requirements
 

@@ -21,3 +21,7 @@ bin-release/
 # Desktop Services Store - invisible file that gets automatically created anytime you open a folder with Finder on the macOS
 .DS_Store
 */.DS_Store
+
+# Ignore script containing local/sensitive paths
+/analyses/sc-rna-seq-snap-legacy-Victoria-Knockout/scripts/collect-legacy-resource-usage.py
+/analyses/sc-rna-seq-snap-legacy-Victoria-Knockout/out/resource_usage/resource_usage_KIDS26-Victoria-Knockout_2026-11-05.json
