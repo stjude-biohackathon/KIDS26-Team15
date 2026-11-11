@@ -21,7 +21,7 @@ roi-analysis/
 │   └── resource_usage_2026-09-12_*.json            # Daedalus prototype resource usage (JSON)
 ├── notebooks/                              # Jupyter notebooks
 │   ├── roi_analysis_legacy_vs_daedalus_v2.ipynb    # Original (PDF + Daedalus v2) — writes `output/`
-│   └── roi_analysis_posthackathon_resource_usage.ipynb  # Nov 2025 CSV comparison — writes `output/results-posthackathon/`
+│   └── roi_analysis_posthackathon_resource_usage.ipynb  # September 2026 CSV comparison — writes `output/results-posthackathon/`
 ├── output/                                 # Generated visualizations (original run)
 │   ├── cost_improvement_pct.png
 │   ├── cpu_utilization_comparison.png
@@ -59,7 +59,7 @@ uv run python3 roi_calculator.py ../input/Job-run-upstream-analysis-Done.pdf ../
 # Run Daedalus calculator
 uv run python3 roi_calculator_daedalus.py ../input/resource_usage_2026-09-12_143900834470824.json
 
-# Regenerate biohackathon vs post-hackathon comparison (Nov 2025 legacy vs Nov 2026 Daedalus CSV)
+# Regenerate biohackathon vs post-hackathon comparison (September 2026 legacy vs November 2026 Daedalus CSV)
 uv run python3 compare_biohackathon_posthackathon.py
 
 # Regenerate post-hackathon plots (requires matplotlib + pandas; e.g. module load matplotlib/3.9.2-gfbf-2024a)
@@ -80,7 +80,7 @@ jupyter notebook roi_analysis_posthackathon_resource_usage.ipynb
 | Legacy upstream | `input/Job-run-upstream-analysis-Done.pdf` | LSF job completion email (PDF) |
 | Legacy integrative | `input/Job-run-integrative-analysis-Done.pdf` | LSF job completion email (PDF) |
 | Daedalus v1 | `input/resource_usage_*.json` | Sprocket resource usage output |
-| KIDS26 legacy (Nov 2025) | `input/resource_usage_KIDS26-Victoria-Knockout_2026-11-05.csv` | Full legacy module LSF export |
+| KIDS26 legacy (September 2026) | `input/resource_usage_KIDS26-Victoria-Knockout_2026-11-05.csv` | Full legacy module LSF export |
 | Daedalus post-hackathon | `../analyses/sc-rna-seq-snap-daedalus-Victoria-Knockout/daedalus-post-hackathon/resource_usage_2026-11-05_220340654817588.csv` | Victoria Knockout Daedalus downstream run (single copy; SMB: `smb://jude.stjude.org/developmentalneurobiology/core_operations/Bioinformatics/achroni/GitHub/stjude-biohackathon/stjude-biohackathon-KIDS26/KIDS26-Team15/analyses/sc-rna-seq-snap-daedalus-Victoria-Knockout/daedalus-post-hackathon/resource_usage_2026-11-05_220340654817588.csv`) |
 | Daedalus v2 | `input/daedalus-v2/*.stdout` | LSF stdout files from Sprocket run |
 | August jobs | `input/AugJobs_WithRunDashInName.xlsx` | All SNAP HPC jobs (Aug 2026) |
