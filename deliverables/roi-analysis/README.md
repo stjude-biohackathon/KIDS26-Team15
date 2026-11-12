@@ -148,11 +148,18 @@ HPC totals in that report are **summed per scope** (not the full CSV overlap). P
 
 ## Outputs
 
-The notebook generates 6 charts in `output/`:
-1. `memory_utilization_comparison.png` — Memory utilization side by side
-2. `cpu_utilization_comparison.png` — CPU utilization side by side
-3. `memory_requested_vs_used.png` — Requested vs actual memory
-4. `cost_improvement_pct.png` — Legacy vs Daedalus per scenario: **HPC $/run**, **analyst hours/run**, and **analyst $/run**, with % savings on Daedalus bars
+**Post-hackathon Victoria Knockout** (`scripts/generate_posthackathon_plots.py` → `output/results-posthackathon/`):
+
+| File | Purpose |
+|------|---------|
+| `combined_utilization_time_comparison.png` | **Slide summary (2×2):** memory & CPU utilization, wall-clock, and core-hours (Legacy vs Daedalus, five paired modules) |
+| `resource_utilization_comparison.png` | Same util panels as top row of the combined figure (wider layout) |
+| `computational_time_comparison.png` | Wall-clock + core-hours with % vs Legacy (wider layout) |
+| `memory_requested_vs_used.png` | Per-module requested vs avg used memory (why utilization differs) |
+| `cost_improvement_pct.png` | Low/expected/high scenarios: HPC $, analyst hours, analyst $ per run |
+| `comparison_summary.csv` | Module-level metrics behind the charts |
+
+**Biohackathon notebook (v2)** — legacy PDF vs Daedalus v2 prototypes in `output/` and `output/results-biohackathon/` (see folder tree above).
 
 ## Requirements
 
