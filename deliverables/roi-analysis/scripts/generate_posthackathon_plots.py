@@ -163,6 +163,53 @@ def _plot_utilization_panel(
     ax.set_ylim(0, ymax * 1.25 if ymax else 1)
 
 
+def _annotate_time_bars(
+    ax,
+    legacy_vals: list[float],
+    daedalus_vals: list[float],
+    *,
+    value_fmt: str,
+    show_pct: bool,
+    label_fs: int = 8,
+) -> None:
+    """Bar value labels and optional % reduction on Daedalus bars."""
+    ymax = 0.0
+    for container, vals in zip(ax.containers[:2], (legacy_vals, daedalus_vals)):
+        for bar, v in zip(container, vals):
+            if v <= 0:
+                continue
+            h = bar.get_height()
+            ymax = max(ymax, h)
+            ax.annotate(
+                value_fmt.format(v),
+                xy=(bar.get_x() + bar.get_width() / 2, h),
+                xytext=(0, 3),
+                textcoords="offset points",
+                ha="center",
+                va="bottom",
+                fontsize=label_fs,
+            )
+    if show_pct:
+        for i, v_l in enumerate(legacy_vals):
+            v_d = daedalus_vals[i] if i < len(daedalus_vals) else 0
+            if v_l <= 0 or v_d <= 0:
+                continue
+            pct = (v_l - v_d) / v_l * 100
+            bar = ax.containers[1][i]
+            ax.annotate(
+                f"−{pct:.0f}%",
+                xy=(bar.get_x() + bar.get_width() / 2, bar.get_height()),
+                xytext=(0, 14),
+                textcoords="offset points",
+                ha="center",
+                va="bottom",
+                fontsize=label_fs,
+                color="#333333",
+            )
+    if ymax > 0:
+        ax.set_ylim(0, ymax * 1.38)
+
+
 def _plot_legacy_vs_daedalus_cost_panel(
     ax,
     x_s: range,
@@ -267,7 +314,110 @@ def main() -> None:
     fig.savefig(OUT / "resource_utilization_comparison.png", dpi=150, bbox_inches="tight")
     plt.close(fig)
 
-    # 2 — Requested vs avg memory (paired downstream modules only)
+    # 2 — Wall-clock + allocated core-hours (computational time)
+    legacy_wall = [legacy[m]["wall_h"] if m in legacy else 0 for m in modules]
+    daed_wall = [daedalus[m]["wall_h"] if m in daedalus else 0 for m in modules]
+    legacy_ch = [legacy[m]["core_hours"] if m in legacy else 0 for m in modules]
+    daed_ch = [daedalus[m]["core_hours"] if m in daedalus else 0 for m in modules]
+
+    fig, axes = plt.subplots(1, 2, figsize=(util_fig_w * 1.55, 5.5))
+    _plot_utilization_panel(
+        axes[0],
+        modules,
+        legacy_wall,
+        daed_wall,
+        ylabel="Wall-clock (h)",
+        title="Wall-clock time",
+        show_legend=True,
+        width=width,
+    )
+    _plot_utilization_panel(
+        axes[1],
+        modules,
+        legacy_ch,
+        daed_ch,
+        ylabel="Allocated core-hours",
+        title="Allocated core-hours",
+        show_legend=False,
+        width=width,
+    )
+    _annotate_time_bars(axes[0], legacy_wall, daed_wall, value_fmt="{:.2f} h", show_pct=True)
+    _annotate_time_bars(axes[1], legacy_ch, daed_ch, value_fmt="{:.2f}", show_pct=True)
+    fig.suptitle(
+        "Computational time — Legacy vs Daedalus (Victoria Knockout, 5 modules)",
+        fontsize=13,
+        fontweight="bold",
+        y=1.02,
+    )
+    fig.tight_layout(rect=(0, 0, 1, 0.96), pad=1.2)
+    fig.savefig(OUT / "computational_time_comparison.png", dpi=150, bbox_inches="tight")
+    plt.close(fig)
+
+    # 2b — Four-panel slide: utilization + computational time
+    combo_h = max(9.5, len(modules) * 0.55)
+    combo_w = max(16, util_fig_w * 1.35)
+    fig, axes = plt.subplots(2, 2, figsize=(combo_w, combo_h))
+    ax00, ax01, ax10, ax11 = axes.flatten()
+    _plot_utilization_panel(
+        ax00,
+        modules,
+        legacy_mem,
+        daed_mem,
+        ylabel="Memory util (%)\n(avg used / total requested)",
+        title="Memory utilization",
+        show_legend=True,
+        width=width,
+    )
+    _plot_utilization_panel(
+        ax01,
+        modules,
+        legacy_cpu,
+        daed_cpu,
+        ylabel="CPU util (%)",
+        title="CPU utilization",
+        show_legend=False,
+        width=width,
+    )
+    _plot_utilization_panel(
+        ax10,
+        modules,
+        legacy_wall,
+        daed_wall,
+        ylabel="Wall-clock (h)",
+        title="Wall-clock time",
+        show_legend=False,
+        width=width,
+    )
+    _plot_utilization_panel(
+        ax11,
+        modules,
+        legacy_ch,
+        daed_ch,
+        ylabel="Allocated core-hours",
+        title="Allocated core-hours",
+        show_legend=False,
+        width=width,
+    )
+    _annotate_time_bars(
+        ax10, legacy_wall, daed_wall, value_fmt="{:.2f} h", show_pct=True, label_fs=7
+    )
+    _annotate_time_bars(ax11, legacy_ch, daed_ch, value_fmt="{:.2f}", show_pct=True, label_fs=7)
+    fig.suptitle(
+        "Legacy vs Daedalus — utilization & computational time "
+        "(Victoria Knockout, 5 modules)",
+        fontsize=14,
+        fontweight="bold",
+        y=0.98,
+    )
+    fig.tight_layout(rect=(0, 0, 1, 0.96), pad=1.4)
+    fig.savefig(
+        OUT / "combined_utilization_time_comparison.png",
+        dpi=150,
+        bbox_inches="tight",
+    )
+    plt.close(fig)
+
+    # 3 — Requested vs avg memory (paired downstream modules only)
     memory_modules = [
         m for m in MEMORY_REQUESTED_VS_USED_MODULES if m in legacy or m in daedalus
     ]
@@ -317,7 +467,7 @@ def main() -> None:
     legacy_hpc = legacy_core_h * scenarios_df["hpc_cpu_hour_rate_usd"]
     daed_hpc = daedalus_core_h * scenarios_df["hpc_cpu_hour_rate_usd"]
 
-    # 5 — Legacy vs Daedalus: HPC $, analyst hours, analyst $ (single scenario summary figure)
+    # 6 — Legacy vs Daedalus: HPC $, analyst hours, analyst $ (single scenario summary figure)
     scenarios_df["legacy_hpc_cost"] = legacy_hpc
     scenarios_df["daedalus_hpc_cost"] = daed_hpc
     scenarios_df["analyst_hours_pct_reduction"] = (
@@ -401,6 +551,8 @@ def main() -> None:
                 "daedalus_cpu_util_pct": daedalus.get(mod, {}).get("cpu_util_pct"),
                 "legacy_core_hours": legacy.get(mod, {}).get("core_hours"),
                 "daedalus_core_hours": daedalus.get(mod, {}).get("core_hours"),
+                "legacy_wall_h": legacy.get(mod, {}).get("wall_h"),
+                "daedalus_wall_h": daedalus.get(mod, {}).get("wall_h"),
             }
         )
     pd.DataFrame(rows).to_csv(summary, index=False)

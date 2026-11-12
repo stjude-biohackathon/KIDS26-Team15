@@ -273,7 +273,10 @@ def build_report(legacy_path: Path, daedalus_path: Path) -> str:
     lines.append("")
     lines.append(
         "Charts use the **post-hackathon five-module** scope unless labeled otherwise: "
-        "`output/results-posthackathon/` (regenerate with `scripts/generate_posthackathon_plots.py`)."
+        "`output/results-posthackathon/` — `combined_utilization_time_comparison.png` (2×2 summary), "
+        "or `resource_utilization_comparison.png` + `computational_time_comparison.png`; "
+        "`memory_requested_vs_used.png`, `cost_improvement_pct.png` "
+        "(regenerate with `scripts/generate_posthackathon_plots.py`)."
     )
     lines.append("")
     return "\n".join(lines)

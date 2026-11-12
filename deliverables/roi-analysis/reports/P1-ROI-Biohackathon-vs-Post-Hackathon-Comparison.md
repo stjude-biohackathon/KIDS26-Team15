@@ -89,4 +89,4 @@ Both legacy and Daedalus Victoria Knockout projects use the same **FastQC** and 
 
 ## Plots
 
-Charts use the **post-hackathon five-module** scope unless labeled otherwise: `output/results-posthackathon/` (regenerate with `scripts/generate_posthackathon_plots.py`).
+Charts use the **post-hackathon five-module** scope unless labeled otherwise: `output/results-posthackathon/` — `combined_utilization_time_comparison.png` (2×2 slide summary), or separate `resource_utilization_comparison.png` + `computational_time_comparison.png`; also `memory_requested_vs_used.png`, `cost_improvement_pct.png` (regenerate with `scripts/generate_posthackathon_plots.py`).
